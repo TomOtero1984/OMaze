@@ -1,4 +1,4 @@
-open Omaze_ir
+open Ir
 
 (* Simple DFS-based topological sort. External deps (missing targets) are ignored. *)
 let topo_sort (graph : build_graph) : target list =

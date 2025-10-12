@@ -1,4 +1,0 @@
-(executable
- (name main)
- (modules main omaze_ir omaze_parser omaze_graph omaze_cmake_gen)
- (libraries str))

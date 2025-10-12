@@ -1,0 +1,4 @@
+(library
+  (name omaze)
+  (public_name OMaze)
+  (modules ir parser graph cmake_gen))

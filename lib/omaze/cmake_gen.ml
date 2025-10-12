@@ -1,4 +1,4 @@
-open Omaze_ir
+open Ir
 
 let sanitize_name s =
   String.map (fun c -> if c = ':' || c = '/' || c = '-' then '_' else c) s
@@ -32,7 +32,7 @@ let generate_cmake t =
   base ^ headers_line ^ link_line
 
 let generate_cmake_for_graph graph =
-  let ordered = Omaze_graph.topo_sort graph in
+  let ordered = Graph.topo_sort graph in
   let header = "cmake_minimum_required(VERSION 3.15)\nproject(OMaze_Converted)\n\n" in
   let body = List.map generate_cmake ordered |> String.concat "\n" in
   header ^ body

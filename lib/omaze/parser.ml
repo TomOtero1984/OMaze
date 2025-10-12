@@ -1,4 +1,4 @@
-open Omaze_ir
+open Ir
 
 (* Very small, forgiving parser for a subset of Starlark used in BUILD files.
    Supports cc_library and cc_binary with name, srcs, hdrs, deps.
