@@ -1,0 +1,12 @@
+cc_library(
+    name = "mylib",
+    srcs = ["mylib.cc"],
+    hdrs = ["mylib.h"],
+    deps = []
+)
+
+cc_binary(
+    name = "myapp",
+    srcs = ["main.cc"],
+    deps = ["mylib"]
+)
