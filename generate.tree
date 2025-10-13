@@ -1,0 +1,313 @@
+output
+├── litert
+│   ├── ats
+│   ├── build_common
+│   ├── c
+│   │   ├── internal
+│   │   └── options
+│   ├── cc
+│   │   ├── dynamic_runtime
+│   │   │   └── options
+│   │   ├── internal
+│   │   └── options
+│   ├── compiler
+│   │   └── plugin
+│   ├── core
+│   │   ├── cache
+│   │   ├── model
+│   │   └── util
+│   ├── integration_test
+│   ├── kotlin
+│   ├── python
+│   │   └── litert_wrapper
+│   │       ├── common
+│   │       ├── compiled_model_wrapper
+│   │       └── tensor_buffer_wrapper
+│   ├── runtime
+│   │   ├── accelerators
+│   │   │   ├── dispatch
+│   │   │   └── xnnpack
+│   │   ├── compiler
+│   │   └── dispatch
+│   ├── samples
+│   │   ├── async_segmentation
+│   │   └── semantic_similarity
+│   ├── sdk_util
+│   ├── test
+│   │   └── generators
+│   ├── tools
+│   │   ├── culprit_finder
+│   │   └── flags
+│   │       └── vendors
+│   └── vendors
+│       ├── c
+│       ├── cc
+│       ├── examples
+│       ├── google_tensor
+│       │   ├── compiler
+│       │   └── dispatch
+│       ├── intel_openvino
+│       │   ├── compiler
+│       │   └── dispatch
+│       ├── mediatek
+│       │   ├── compiler
+│       │   │   └── legalizations
+│       │   ├── dispatch
+│       │   └── schema
+│       └── qualcomm
+│           ├── compiler
+│           ├── core
+│           │   ├── backends
+│           │   ├── builders
+│           │   ├── dump
+│           │   ├── schema
+│           │   ├── transformation
+│           │   ├── utils
+│           │   └── wrappers
+│           │       └── tests
+│           ├── dispatch
+│           ├── qnn_backend_test
+│           └── tools
+└── tflite
+    ├── acceleration
+    │   └── configuration
+    │       └── c
+    ├── async
+    │   ├── c
+    │   ├── interop
+    │   │   └── c
+    │   └── testing
+    ├── c
+    │   └── jni
+    ├── converter
+    │   ├── core
+    │   │   ├── api
+    │   │   └── c
+    │   ├── debug
+    │   ├── delegates
+    │   │   └── flex
+    │   ├── experimental
+    │   │   ├── common
+    │   │   ├── remat
+    │   │   └── tac
+    │   │       ├── examples
+    │   │       ├── hardwares
+    │   │       ├── py_wrapper
+    │   │       └── utils
+    │   ├── integrations
+    │   │   └── python
+    │   │       └── mlir
+    │   │           └── _mlir_libs
+    │   ├── kernels
+    │   │   └── internal
+    │   │       └── utils
+    │   ├── metrics
+    │   ├── python
+    │   │   └── interpreter_wrapper
+    │   ├── quantization
+    │   │   ├── common
+    │   │   │   └── quantization_lib
+    │   │   ├── ir
+    │   │   ├── lite
+    │   │   │   └── toco_legacy
+    │   │   └── tensorflow
+    │   ├── schema
+    │   ├── sparsity
+    │   ├── stablehlo
+    │   │   ├── odml_converter
+    │   │   └── transforms
+    │   │       └── legalize_hlo_conversions
+    │   ├── tests
+    │   │   └── flatbuffer2mlir
+    │   └── tools
+    │       ├── optimize
+    │       └── versioning
+    ├── core
+    │   ├── acceleration
+    │   │   └── configuration
+    │   │       └── c
+    │   ├── api
+    │   ├── async
+    │   │   ├── c
+    │   │   ├── interop
+    │   │   │   └── c
+    │   │   └── testing
+    │   ├── c
+    │   ├── experimental
+    │   │   └── acceleration
+    │   │       ├── configuration
+    │   │       │   └── c
+    │   │       └── mini_benchmark
+    │   │           └── c
+    │   ├── kernels
+    │   ├── shims
+    │   └── tools
+    ├── delegates
+    │   ├── coreml
+    │   │   └── builders
+    │   ├── external
+    │   ├── flex
+    │   │   ├── java
+    │   │   │   └── src
+    │   │   │       └── main
+    │   │   │           └── native
+    │   │   └── test
+    │   ├── gpu
+    │   │   ├── cl
+    │   │   │   ├── default
+    │   │   │   ├── kernels
+    │   │   │   └── testing
+    │   │   ├── common
+    │   │   │   ├── default
+    │   │   │   ├── google
+    │   │   │   ├── selectors
+    │   │   │   │   └── default
+    │   │   │   ├── task
+    │   │   │   ├── tasks
+    │   │   │   │   └── special
+    │   │   │   ├── testing
+    │   │   │   │   └── feature_parity
+    │   │   │   │       └── generators
+    │   │   │   └── transformations
+    │   │   ├── gl
+    │   │   │   ├── compiler
+    │   │   │   ├── converters
+    │   │   │   ├── kernels
+    │   │   │   ├── runtime
+    │   │   │   └── workgroups
+    │   │   ├── java
+    │   │   │   └── src
+    │   │   │       └── main
+    │   │   │           └── native
+    │   │   └── metal
+    │   ├── hexagon
+    │   │   ├── builders
+    │   │   │   └── tests
+    │   │   ├── hexagon_nn
+    │   │   └── java
+    │   │       └── src
+    │   │           └── main
+    │   │               └── native
+    │   ├── nnapi
+    │   │   └── java
+    │   │       └── src
+    │   │           └── main
+    │   │               └── native
+    │   ├── utils
+    │   │   ├── dummy_delegate
+    │   │   └── experimental
+    │   │       ├── sample_stable_delegate
+    │   │       └── stable_delegate
+    │   └── xnnpack
+    ├── examples
+    │   ├── label_image
+    │   └── minimal
+    ├── experimental
+    │   ├── acceleration
+    │   │   ├── compatibility
+    │   │   ├── configuration
+    │   │   │   └── c
+    │   │   └── mini_benchmark
+    │   │       ├── c
+    │   │       ├── metrics
+    │   │       └── model_modifier
+    │   ├── genai
+    │   ├── microfrontend
+    │   │   └── lib
+    │   ├── ml_adjacent
+    │   │   ├── algo
+    │   │   ├── data
+    │   │   └── tflite
+    │   ├── resource
+    │   └── shlo
+    │       ├── legacy
+    │       │   ├── bench
+    │       │   └── test
+    │       └── ops
+    ├── internal
+    ├── java
+    │   ├── jni
+    │   └── src
+    │       ├── main
+    │       │   └── native
+    │       └── test
+    │           └── native
+    ├── kernels
+    │   ├── ctc
+    │   ├── gradient
+    │   ├── internal
+    │   │   └── utils
+    │   ├── parse_example
+    │   ├── perception
+    │   ├── shim
+    │   │   └── test_op
+    │   └── variants
+    │       └── py
+    ├── nnapi
+    │   └── sl
+    ├── profiling
+    │   ├── proto
+    │   └── telemetry
+    │       └── c
+    ├── python
+    │   ├── analyzer_wrapper
+    │   ├── interpreter_wrapper
+    │   ├── metrics
+    │   ├── optimize
+    │   └── testdata
+    ├── schema
+    │   ├── builtin_ops_header
+    │   └── builtin_ops_list
+    ├── stablehlo
+    │   └── schema
+    ├── testing
+    │   └── kernel_test
+    ├── toco
+    │   ├── graph_transformations
+    │   │   └── tests
+    │   ├── logging
+    │   ├── python
+    │   ├── tensorflow_graph_matching
+    │   └── tflite
+    └── tools
+        ├── benchmark
+        │   ├── android
+        │   ├── experimental
+        │   │   ├── c
+        │   │   ├── delegate_performance
+        │   │   │   └── android
+        │   │   │       ├── proto
+        │   │   │       └── src
+        │   │   │           ├── main
+        │   │   │           │   └── native
+        │   │   │           └── test
+        │   │   │               └── native
+        │   │   └── firebase
+        │   │       └── android
+        │   └── proto
+        ├── delegates
+        │   ├── compatibility
+        │   │   ├── common
+        │   │   ├── gpu
+        │   │   ├── nnapi
+        │   │   └── protos
+        │   └── experimental
+        │       └── stable_delegate
+        ├── evaluation
+        │   ├── proto
+        │   ├── stages
+        │   │   └── utils
+        │   └── tasks
+        │       ├── coco_object_detection
+        │       ├── imagenet_image_classification
+        │       └── inference_diff
+        ├── optimize
+        │   ├── calibration
+        │   ├── python
+        │   └── sparsity
+        ├── serialization
+        ├── signature
+        ├── strip_buffers
+        └── versioning
+
+311 directories

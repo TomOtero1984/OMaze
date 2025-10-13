@@ -1,0 +1,23 @@
+# Auto-generated CMake for package tflite/converter/core/api
+
+add_library(__tflite_converter_core_api_error_reporter)
+  //tflite/converter/core/api:error_reporter.cc
+target_sources(__tflite_converter_core_api_error_reporter PRIVATE //tflite/converter/core/api:error_reporter.h)
+
+add_executable(__tflite_converter_core_api_error_reporter_test //tflite/converter/core/api:error_reporter_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_converter_core_api_error_reporter_test COMMAND __tflite_converter_core_api_error_reporter_test)
+
+add_library(__tflite_converter_core_api_flatbuffer_conversions)
+  //tflite/converter/core/api:flatbuffer_conversions.cc
+target_sources(__tflite_converter_core_api_flatbuffer_conversions PRIVATE //tflite/converter/core/api:flatbuffer_conversions.h)
+target_link_libraries(__tflite_converter_core_api_flatbuffer_conversions __tflite_converter_core_c_tflite_common __tflite_converter_kernels_internal_compatibility_macros __tflite_converter_schema_schema_fbs _com_google_absl__absl_log_absl_log _com_google_absl__absl_status_status _com_google_absl__absl_strings_str_format _flatbuffers___runtime_cc)
+
+add_executable(__tflite_converter_core_api_flatbuffer_conversions_test //tflite/converter/core/api:flatbuffer_conversions_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_converter_core_api_flatbuffer_conversions_test COMMAND __tflite_converter_core_api_flatbuffer_conversions_test)
+
+# Unsupported rule filegroup for //tflite/converter/core/api:tflite_internal_cc_3p_api_deps_src
+
+add_library(__tflite_converter_core_api_verifier)
+target_sources(__tflite_converter_core_api_verifier PRIVATE //tflite/converter/core/api:verifier.h)
+target_link_libraries(__tflite_converter_core_api_verifier __tflite_converter_core_api_error_reporter)
+

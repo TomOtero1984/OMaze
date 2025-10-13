@@ -1,0 +1,7 @@
+# Auto-generated CMake for package tflite/delegates/gpu/common/testing
+
+add_library(__tflite_delegates_gpu_common_testing_interpreter_utils)
+  //tflite/delegates/gpu/common/testing:interpreter_utils.cc
+target_sources(__tflite_delegates_gpu_common_testing_interpreter_utils PRIVATE //tflite/delegates/gpu/common/testing:interpreter_utils.h)
+target_link_libraries(__tflite_delegates_gpu_common_testing_interpreter_utils __tflite_framework __tflite_core_framework __tflite_core_api_api __tflite_core_c_common __tflite_core_kernels_builtin_ops __tflite_delegates_gpu_common_status __tflite_delegates_gpu_common_tensor __tflite_schema_schema_fbs)
+

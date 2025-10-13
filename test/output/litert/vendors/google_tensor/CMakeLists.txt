@@ -1,0 +1,10 @@
+# Auto-generated CMake for package litert/vendors/google_tensor
+
+add_library(__litert_vendors_google_tensor_adapter)
+  //litert/vendors/google_tensor:adapter.cc
+target_sources(__litert_vendors_google_tensor_adapter PRIVATE //litert/vendors/google_tensor:adapter.h)
+target_link_libraries(__litert_vendors_google_tensor_adapter __litert_c_litert_runtime_c_api_shared_lib __litert_cc_litert_expected __litert_core_dynamic_loading _com_google_absl__absl_debugging_leak_check _com_google_absl__absl_log_log _com_google_absl__absl_status_statusor _com_google_absl__absl_strings_strings)
+
+add_executable(__litert_vendors_google_tensor_adapter_test //litert/vendors/google_tensor:adapter_test.cc)
+add_test(NAME __litert_vendors_google_tensor_adapter_test COMMAND __litert_vendors_google_tensor_adapter_test)
+

@@ -1,0 +1,272 @@
+# Auto-generated CMake for package tflite/kernels/internal
+
+# Unsupported rule config_setting for //tflite/kernels/internal:aarch64
+
+# Unsupported rule alias for //tflite/kernels/internal:aarch64_any
+
+# Unsupported rule alias for //tflite/kernels/internal:arm32_any
+
+# Unsupported rule alias for //tflite/kernels/internal:arm32_any_2
+
+# Unsupported rule alias for //tflite/kernels/internal:arm32_any_3
+
+# Unsupported rule alias for //tflite/kernels/internal:arm32_any_4
+
+# Unsupported rule alias for //tflite/kernels/internal:arm_any
+
+# Unsupported rule config_setting for //tflite/kernels/internal:armhf
+
+# Unsupported rule config_setting for //tflite/kernels/internal:armv7
+
+add_library(__tflite_kernels_internal_audio_utils)
+  //tflite/kernels/internal:mfcc.cc //tflite/kernels/internal:mfcc_dct.cc //tflite/kernels/internal:mfcc_mel_filterbank.cc //tflite/kernels/internal:spectrogram.cc
+target_sources(__tflite_kernels_internal_audio_utils PRIVATE //tflite/kernels/internal:mfcc.h //tflite/kernels/internal:mfcc_dct.h //tflite/kernels/internal:mfcc_mel_filterbank.h //tflite/kernels/internal:spectrogram.h)
+target_link_libraries(__tflite_kernels_internal_audio_utils _fft2d___fft2d _org_tensorflow__third_party_fft2d_fft2d_headers)
+
+add_executable(__tflite_kernels_internal_averagepool_quantized_test //tflite/kernels/internal:averagepool_quantized_test.cc)
+add_test(NAME __tflite_kernels_internal_averagepool_quantized_test COMMAND __tflite_kernels_internal_averagepool_quantized_test)
+
+add_library(__tflite_kernels_internal_avx2_quantization_utils)
+target_sources(__tflite_kernels_internal_avx2_quantization_utils PRIVATE //tflite/kernels/internal:optimized/avx2_quantization_utils.h)
+target_link_libraries(__tflite_kernels_internal_avx2_quantization_utils __tflite_kernels_internal_compatibility)
+
+add_executable(__tflite_kernels_internal_avx2_quantization_utils_test //tflite/kernels/internal:optimized/avx2_quantization_utils_test.cc)
+add_test(NAME __tflite_kernels_internal_avx2_quantization_utils_test COMMAND __tflite_kernels_internal_avx2_quantization_utils_test)
+
+add_executable(__tflite_kernels_internal_batch_to_space_nd_test //tflite/kernels/internal:batch_to_space_nd_test.cc)
+add_test(NAME __tflite_kernels_internal_batch_to_space_nd_test COMMAND __tflite_kernels_internal_batch_to_space_nd_test)
+
+add_library(__tflite_kernels_internal_common)
+  //tflite/kernels/internal:common.cc
+target_sources(__tflite_kernels_internal_common PRIVATE //tflite/kernels/internal:common.h)
+target_link_libraries(__tflite_kernels_internal_common __tflite_kernels_internal_cppmath __tflite_kernels_internal_cpu_check __tflite_kernels_internal_types __tflite_core_macros _gemmlowp___fixedpoint)
+
+add_library(__tflite_kernels_internal_compatibility)
+target_sources(__tflite_kernels_internal_compatibility PRIVATE //tflite/kernels/internal:compatibility.h)
+target_link_libraries(__tflite_kernels_internal_compatibility __tflite_kernels_op_macros)
+
+add_library(__tflite_kernels_internal_constants)
+target_sources(__tflite_kernels_internal_constants PRIVATE //tflite/kernels/internal:constants.h)
+
+add_executable(__tflite_kernels_internal_conv_per_channel_quantized_16x8_test //tflite/kernels/internal:conv_per_channel_quantized_16x8_test.cc)
+add_test(NAME __tflite_kernels_internal_conv_per_channel_quantized_16x8_test COMMAND __tflite_kernels_internal_conv_per_channel_quantized_16x8_test)
+
+add_library(__tflite_kernels_internal_cppmath)
+target_sources(__tflite_kernels_internal_cppmath PRIVATE //tflite/kernels/internal:cppmath.h //tflite/kernels/internal:max.h //tflite/kernels/internal:min.h)
+
+add_library(__tflite_kernels_internal_cpu_check)
+  //tflite/kernels/internal:optimized/cpu_check.cc
+target_sources(__tflite_kernels_internal_cpu_check PRIVATE //tflite/kernels/internal:optimized/cpu_check.h //tflite/kernels/internal:optimized/neon_check.h //tflite/kernels/internal:optimized/sse_check.h)
+target_link_libraries(__tflite_kernels_internal_cpu_check _arm_neon_2_x86_sse___arm_neon_2_x86_sse)
+
+add_executable(__tflite_kernels_internal_depthwiseconv_float_test //tflite/kernels/internal:depthwiseconv_float_test.cc)
+add_test(NAME __tflite_kernels_internal_depthwiseconv_float_test COMMAND __tflite_kernels_internal_depthwiseconv_float_test)
+
+add_executable(__tflite_kernels_internal_depthwiseconv_per_channel_quantized_16x8_test //tflite/kernels/internal:depthwiseconv_per_channel_quantized_16x8_test.cc)
+add_test(NAME __tflite_kernels_internal_depthwiseconv_per_channel_quantized_16x8_test COMMAND __tflite_kernels_internal_depthwiseconv_per_channel_quantized_16x8_test)
+
+add_executable(__tflite_kernels_internal_depthwiseconv_per_channel_quantized_test //tflite/kernels/internal:depthwiseconv_per_channel_quantized_test.cc)
+add_test(NAME __tflite_kernels_internal_depthwiseconv_per_channel_quantized_test COMMAND __tflite_kernels_internal_depthwiseconv_per_channel_quantized_test)
+
+add_executable(__tflite_kernels_internal_depthwiseconv_quantized_test //tflite/kernels/internal:depthwiseconv_quantized_test.cc //tflite/kernels/internal:optimized/depthwiseconv_uint8_transitional.h)
+add_test(NAME __tflite_kernels_internal_depthwiseconv_quantized_test COMMAND __tflite_kernels_internal_depthwiseconv_quantized_test)
+
+# Unsupported rule filegroup for //tflite/kernels/internal:headers
+
+# Unsupported rule genrule for //tflite/kernels/internal:install_nnapi_extra_headers
+
+add_library(__tflite_kernels_internal_kernel_utils)
+  //tflite/kernels/internal:kernel_utils.cc
+target_sources(__tflite_kernels_internal_kernel_utils PRIVATE //tflite/kernels/internal:kernel_utils.h)
+target_link_libraries(__tflite_kernels_internal_kernel_utils __tflite_kernels_internal_tensor_utils __tflite_core_c_common)
+
+add_library(__tflite_kernels_internal_legacy_optimized_base)
+target_sources(__tflite_kernels_internal_legacy_optimized_base PRIVATE //tflite/kernels/internal:optimized/depthwiseconv_3x3_filter_common.h //tflite/kernels/internal:optimized/depthwiseconv_float.h //tflite/kernels/internal:optimized/depthwiseconv_uint8.h //tflite/kernels/internal:optimized/depthwiseconv_uint8_3x3_filter.h //tflite/kernels/internal:optimized/im2col_utils.h //tflite/kernels/internal:optimized/legacy_optimized_ops.h //tflite/kernels/internal:optimized/optimized_ops.h)
+target_link_libraries(__tflite_kernels_internal_legacy_optimized_base __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath __tflite_kernels_internal_cpu_check __tflite_kernels_internal_legacy_reference_base __tflite_kernels_internal_optimized_base __tflite_kernels_internal_quantization_util __tflite_kernels_internal_strided_slice_logic __tflite_kernels_internal_tensor __tflite_kernels_internal_tensor_utils __tflite_kernels_internal_transpose_utils __tflite_kernels_internal_types __tflite_macros __tflite_core_c_common __tflite_kernels_cpu_backend_context __tflite_kernels_cpu_backend_gemm __tflite_kernels_cpu_backend_threadpool _eigen_archive___eigen3 _gemmlowp___gemmlowp _ruy__ruy_profiler_instrumentation)
+
+add_library(__tflite_kernels_internal_legacy_reference_base)
+target_sources(__tflite_kernels_internal_legacy_reference_base PRIVATE //tflite/kernels/internal:reference/add.h //tflite/kernels/internal:reference/add_n.h //tflite/kernels/internal:reference/arg_min_max.h //tflite/kernels/internal:reference/batch_matmul.h //tflite/kernels/internal:reference/batch_to_space_nd.h //tflite/kernels/internal:reference/binary_function.h //tflite/kernels/internal:reference/cast.h //tflite/kernels/internal:reference/ceil.h //tflite/kernels/internal:reference/comparisons.h //tflite/kernels/internal:reference/concatenation.h //tflite/kernels/internal:reference/conv.h //tflite/kernels/internal:reference/conv3d.h //tflite/kernels/internal:reference/cumsum.h //tflite/kernels/internal:reference/densify.h //tflite/kernels/internal:reference/depth_to_space.h //tflite/kernels/internal:reference/depthwiseconv_float.h //tflite/kernels/internal:reference/depthwiseconv_uint8.h //tflite/kernels/internal:reference/dequantize.h //tflite/kernels/internal:reference/div.h //tflite/kernels/internal:reference/elu.h //tflite/kernels/internal:reference/exp.h //tflite/kernels/internal:reference/fill.h //tflite/kernels/internal:reference/floor.h //tflite/kernels/internal:reference/floor_div.h //tflite/kernels/internal:reference/floor_mod.h //tflite/kernels/internal:reference/fully_connected.h //tflite/kernels/internal:reference/gather.h //tflite/kernels/internal:reference/hard_swish.h //tflite/kernels/internal:reference/l2normalization.h //tflite/kernels/internal:reference/leaky_relu.h //tflite/kernels/internal:reference/legacy_reference_ops.h //tflite/kernels/internal:reference/log_softmax.h //tflite/kernels/internal:reference/logistic.h //tflite/kernels/internal:reference/lstm_cell.h //tflite/kernels/internal:reference/maximum_minimum.h //tflite/kernels/internal:reference/mul.h //tflite/kernels/internal:reference/neg.h //tflite/kernels/internal:reference/pad.h //tflite/kernels/internal:reference/pooling.h //tflite/kernels/internal:reference/prelu.h //tflite/kernels/internal:reference/process_broadcast_shapes.h //tflite/kernels/internal:reference/quantize.h //tflite/kernels/internal:reference/reduce.h //tflite/kernels/internal:reference/reference_ops.h //tflite/kernels/internal:reference/requantize.h //tflite/kernels/internal:reference/resize_nearest_neighbor.h //tflite/kernels/internal:reference/reverse.h //tflite/kernels/internal:reference/round.h //tflite/kernels/internal:reference/select.h //tflite/kernels/internal:reference/slice.h //tflite/kernels/internal:reference/softmax.h //tflite/kernels/internal:reference/space_to_batch_nd.h //tflite/kernels/internal:reference/space_to_depth.h //tflite/kernels/internal:reference/strided_slice.h //tflite/kernels/internal:reference/string_comparisons.h //tflite/kernels/internal:reference/sub.h //tflite/kernels/internal:reference/tanh.h //tflite/kernels/internal:reference/transpose.h //tflite/kernels/internal:reference/transpose_conv.h)
+target_link_libraries(__tflite_kernels_internal_legacy_reference_base __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath __tflite_kernels_internal_legacy_types __tflite_kernels_internal_quantization_util __tflite_kernels_internal_reference_base __tflite_kernels_internal_reference_comparisons __tflite_kernels_internal_strided_slice_logic __tflite_kernels_internal_tensor __tflite_kernels_internal_tensor_utils __tflite_kernels_internal_types __tflite_macros __tflite_string_util __tflite_core_c_c_api_types __tflite_core_c_common __tflite_kernels_op_macros __tflite_kernels_internal_utils_sparsity_format_converter _eigen_archive___eigen3 _gemmlowp___gemmlowp _ruy__ruy_profiler_instrumentation)
+
+add_library(__tflite_kernels_internal_legacy_types)
+target_sources(__tflite_kernels_internal_legacy_types PRIVATE //tflite/kernels/internal:legacy_types.h)
+target_link_libraries(__tflite_kernels_internal_legacy_types __tflite_kernels_internal_types)
+
+add_executable(__tflite_kernels_internal_log_quantized_test //tflite/kernels/internal:log_quantized_test.cc)
+add_test(NAME __tflite_kernels_internal_log_quantized_test COMMAND __tflite_kernels_internal_log_quantized_test)
+
+add_executable(__tflite_kernels_internal_logsoftmax_quantized_test //tflite/kernels/internal:logsoftmax_quantized_test.cc)
+add_test(NAME __tflite_kernels_internal_logsoftmax_quantized_test COMMAND __tflite_kernels_internal_logsoftmax_quantized_test)
+
+add_executable(__tflite_kernels_internal_maxpool_quantized_test //tflite/kernels/internal:maxpool_quantized_test.cc)
+add_test(NAME __tflite_kernels_internal_maxpool_quantized_test COMMAND __tflite_kernels_internal_maxpool_quantized_test)
+
+add_library(__tflite_kernels_internal_neon_tensor_utils)
+  //tflite/kernels/internal:optimized/neon_tensor_utils.cc
+target_sources(__tflite_kernels_internal_neon_tensor_utils PRIVATE //tflite/kernels/internal:optimized/neon_tensor_utils.h //tflite/kernels/internal:optimized/neon_tensor_utils_impl.h)
+target_link_libraries(__tflite_kernels_internal_neon_tensor_utils __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath __tflite_kernels_internal_cpu_check __tflite_kernels_internal_portable_tensor_utils __tflite_kernels_cpu_backend_context __tflite_kernels_cpu_backend_gemm _ruy__ruy_ruy)
+
+# Unsupported rule filegroup for //tflite/kernels/internal:nnapi_external_headers
+
+# Unsupported rule _transitive_hdrs for //tflite/kernels/internal:nnapi_external_headers_gather
+
+add_executable(__tflite_kernels_internal_non_max_suppression_test //tflite/kernels/internal:non_max_suppression_test.cc)
+add_test(NAME __tflite_kernels_internal_non_max_suppression_test COMMAND __tflite_kernels_internal_non_max_suppression_test)
+
+add_library(__tflite_kernels_internal_opaque_tensor_ctypes)
+  //tflite/kernels/internal:opaque_tensor_ctypes.cc
+target_sources(__tflite_kernels_internal_opaque_tensor_ctypes PRIVATE //tflite/kernels/internal:opaque_tensor_ctypes.h)
+target_link_libraries(__tflite_kernels_internal_opaque_tensor_ctypes __tflite_kernels_internal_types __tflite_core_macros __tflite_c_c_api_experimental_without_op_resolver __tflite_namespace)
+
+add_library(__tflite_kernels_internal_optimized_4bit)
+  //tflite/kernels/internal:optimized/4bit/sse_fully_connected.cc //tflite/kernels/internal:optimized/4bit/neon_fully_connected.cc //tflite/kernels/internal:optimized/4bit/neon_fully_connected_aarch64_nosdot.cc //tflite/kernels/internal:optimized/4bit/neon_fully_connected_aarch64_sdot.cc //tflite/kernels/internal:optimized/4bit/neon_fully_connected_impl.h //tflite/kernels/internal:optimized/4bit/neon_fully_connected_arm32.cc //tflite/kernels/internal:optimized/4bit/fully_connected_common.h //tflite/kernels/internal:optimized/4bit/fully_connected_reference.cc //tflite/kernels/internal:optimized/4bit/fully_connected_reference_impl.h
+target_sources(__tflite_kernels_internal_optimized_4bit PRIVATE //tflite/kernels/internal:optimized/4bit/fully_connected_reference.h //tflite/kernels/internal:optimized/fully_connected_4bit.h //tflite/kernels/internal:optimized/4bit/sse_fully_connected.h //tflite/kernels/internal:optimized/4bit/sse_fully_connected_impl.h //tflite/kernels/internal:optimized/4bit/neon_fully_connected.h)
+target_link_libraries(__tflite_kernels_internal_optimized_4bit __tflite_kernels_internal_cppmath __tflite_kernels_internal_cpu_check _cpuinfo___cpuinfo_with_unstripped_include_path)
+
+add_executable(__tflite_kernels_internal_optimized_4bit_test //tflite/kernels/internal:optimized/optimized_4bit_test.cc)
+add_test(NAME __tflite_kernels_internal_optimized_4bit_test COMMAND __tflite_kernels_internal_optimized_4bit_test)
+
+add_library(__tflite_kernels_internal_optimized_base)
+target_sources(__tflite_kernels_internal_optimized_base PRIVATE //tflite/kernels/internal:optimized/depthwiseconv_3x3_filter_common.h //tflite/kernels/internal:optimized/depthwiseconv_float.h //tflite/kernels/internal:optimized/depthwiseconv_multithread.h //tflite/kernels/internal:optimized/depthwiseconv_uint8.h //tflite/kernels/internal:optimized/depthwiseconv_uint8_3x3_filter.h //tflite/kernels/internal:optimized/fully_connected_4bit.h //tflite/kernels/internal:optimized/im2col_utils.h //tflite/kernels/internal:optimized/integer_ops/add.h //tflite/kernels/internal:optimized/integer_ops/conv.h //tflite/kernels/internal:optimized/integer_ops/depthwise_conv.h //tflite/kernels/internal:optimized/integer_ops/depthwise_conv_3x3_filter.h //tflite/kernels/internal:optimized/integer_ops/depthwise_conv_hybrid.h //tflite/kernels/internal:optimized/integer_ops/depthwise_conv_hybrid_3x3_filter.h //tflite/kernels/internal:optimized/integer_ops/fully_connected.h //tflite/kernels/internal:optimized/integer_ops/leaky_relu.h //tflite/kernels/internal:optimized/integer_ops/lut.h //tflite/kernels/internal:optimized/integer_ops/mean.h //tflite/kernels/internal:optimized/integer_ops/mul.h //tflite/kernels/internal:optimized/integer_ops/pooling.h //tflite/kernels/internal:optimized/integer_ops/sub.h //tflite/kernels/internal:optimized/integer_ops/transpose_conv.h //tflite/kernels/internal:optimized/optimized_ops.h //tflite/kernels/internal:optimized/optimized_ops_utils.h //tflite/kernels/internal:optimized/reduce.h //tflite/kernels/internal:optimized/resize_bilinear.h //tflite/kernels/internal:optimized/sparse_ops/fully_connected.h //tflite/kernels/internal:reduce_common.h)
+target_link_libraries(__tflite_kernels_internal_optimized_base __tflite_kernels_internal_avx2_quantization_utils __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath __tflite_kernels_internal_cpu_check __tflite_kernels_internal_optimized_4bit __tflite_kernels_internal_quantization_util __tflite_kernels_internal_reduce_utils __tflite_kernels_internal_reference_base __tflite_kernels_internal_strided_slice_logic __tflite_kernels_internal_tensor __tflite_kernels_internal_tensor_utils __tflite_kernels_internal_transpose_utils __tflite_kernels_internal_types __tflite_macros __tflite_core_c_common __tflite_kernels_cpu_backend_context __tflite_kernels_cpu_backend_gemm __tflite_kernels_cpu_backend_threadpool __tflite_kernels_kernel_util _eigen_archive___eigen3 _gemmlowp___fixedpoint _ruy__ruy_profiler_instrumentation)
+
+add_library(__tflite_kernels_internal_optimized_eigen)
+target_sources(__tflite_kernels_internal_optimized_eigen PRIVATE //tflite/kernels/internal:optimized/eigen_spatial_convolutions.h //tflite/kernels/internal:optimized/multithreaded_conv.h)
+target_link_libraries(__tflite_kernels_internal_optimized_eigen __tflite_kernels_internal_common __tflite_kernels_internal_optimized_base __tflite_kernels_internal_types __tflite_core_c_common _eigen_archive___eigen3 _local_xla__xla_tsl_framework_convolution_eigen_spatial_convolutions_inl)
+
+# Unsupported rule filegroup for //tflite/kernels/internal:optimized_op_headers
+
+add_executable(__tflite_kernels_internal_per_channel_dequantize_test //tflite/kernels/internal:per_channel_dequantize_test.cc)
+add_test(NAME __tflite_kernels_internal_per_channel_dequantize_test COMMAND __tflite_kernels_internal_per_channel_dequantize_test)
+
+add_executable(__tflite_kernels_internal_per_channel_quantize_test //tflite/kernels/internal:per_channel_quantize_test.cc)
+add_test(NAME __tflite_kernels_internal_per_channel_quantize_test COMMAND __tflite_kernels_internal_per_channel_quantize_test)
+
+add_library(__tflite_kernels_internal_portable_tensor_utils)
+  //tflite/kernels/internal:reference/portable_tensor_utils.cc
+target_sources(__tflite_kernels_internal_portable_tensor_utils PRIVATE //tflite/kernels/internal:reference/portable_tensor_utils.h //tflite/kernels/internal:reference/portable_tensor_utils_impl.h)
+target_link_libraries(__tflite_kernels_internal_portable_tensor_utils __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath _gemmlowp___fixedpoint)
+
+add_library(__tflite_kernels_internal_quantization_util)
+  //tflite/kernels/internal:quantization_util.cc
+target_sources(__tflite_kernels_internal_quantization_util PRIVATE //tflite/kernels/internal:quantization_util.h)
+target_link_libraries(__tflite_kernels_internal_quantization_util __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath __tflite_kernels_internal_types)
+
+add_library(__tflite_kernels_internal_quantization_util_single_rounding)
+  //tflite/kernels/internal:quantization_util.cc
+target_sources(__tflite_kernels_internal_quantization_util_single_rounding PRIVATE //tflite/kernels/internal:quantization_util.h)
+target_link_libraries(__tflite_kernels_internal_quantization_util_single_rounding __tflite_kernels_internal_compatibility __tflite_kernels_internal_cppmath __tflite_kernels_internal_types)
+
+add_executable(__tflite_kernels_internal_quantization_util_test //tflite/kernels/internal:quantization_util_test.cc)
+add_test(NAME __tflite_kernels_internal_quantization_util_test COMMAND __tflite_kernels_internal_quantization_util_test)
+
+add_executable(__tflite_kernels_internal_quantization_util_test_single_rounding //tflite/kernels/internal:quantization_util_test.cc)
+add_test(NAME __tflite_kernels_internal_quantization_util_test_single_rounding COMMAND __tflite_kernels_internal_quantization_util_test_single_rounding)
+
+add_library(__tflite_kernels_internal_reduce_utils)
+target_sources(__tflite_kernels_internal_reduce_utils PRIVATE //tflite/kernels/internal:optimized/reduce_utils.h)
+
+add_executable(__tflite_kernels_internal_reduce_utils_test //tflite/kernels/internal:optimized/reduce_utils_test.cc)
+add_test(NAME __tflite_kernels_internal_reduce_utils_test COMMAND __tflite_kernels_internal_reduce_utils_test)
+
+add_library(__tflite_kernels_internal_reference)
+target_sources(__tflite_kernels_internal_reference PRIVATE //tflite/kernels/internal:portable_tensor.h //tflite/kernels/internal:tensor_ctypes.h //tflite/kernels/internal:tensor.h)
+target_link_libraries(__tflite_kernels_internal_reference __tflite_kernels_internal_tensor_ctypes __tflite_kernels_internal_types __tflite_macros __tflite_string_util __tflite_core_c_common)
+
+add_library(__tflite_kernels_internal_reference_base)
+target_sources(__tflite_kernels_internal_reference_base PRIVATE //tflite/kernels/internal:reduce_common.h //tflite/kernels/internal:reference/add.h //tflite/kernels/internal:reference/add_n.h //tflite/kernels/internal:reference/arg_min_max.h //tflite/kernels/internal:reference/batch_matmul.h //tflite/kernels/internal:reference/batch_to_space_nd.h //tflite/kernels/internal:reference/binary_function.h //tflite/kernels/internal:reference/broadcast_args.h //tflite/kernels/internal:reference/broadcast_to.h //tflite/kernels/internal:reference/cast.h //tflite/kernels/internal:reference/ceil.h //tflite/kernels/internal:reference/comparisons.h //tflite/kernels/internal:reference/concatenation.h //tflite/kernels/internal:reference/conv.h //tflite/kernels/internal:reference/conv3d.h //tflite/kernels/internal:reference/conv3d_transpose.h //tflite/kernels/internal:reference/cumsum.h //tflite/kernels/internal:reference/densify.h //tflite/kernels/internal:reference/depth_to_space.h //tflite/kernels/internal:reference/depthwiseconv_float.h //tflite/kernels/internal:reference/depthwiseconv_uint8.h //tflite/kernels/internal:reference/dequantize.h //tflite/kernels/internal:reference/div.h //tflite/kernels/internal:reference/elu.h //tflite/kernels/internal:reference/exp.h //tflite/kernels/internal:reference/fill.h //tflite/kernels/internal:reference/floor.h //tflite/kernels/internal:reference/floor_div.h //tflite/kernels/internal:reference/floor_mod.h //tflite/kernels/internal:reference/fully_connected.h //tflite/kernels/internal:reference/gather.h //tflite/kernels/internal:reference/gelu.h //tflite/kernels/internal:reference/hard_swish.h //tflite/kernels/internal:reference/integer_ops/add.h //tflite/kernels/internal:reference/integer_ops/conv.h //tflite/kernels/internal:reference/integer_ops/depthwise_conv.h //tflite/kernels/internal:reference/integer_ops/fully_connected.h //tflite/kernels/internal:reference/integer_ops/l2normalization.h //tflite/kernels/internal:reference/integer_ops/logistic.h //tflite/kernels/internal:reference/integer_ops/lut.h //tflite/kernels/internal:reference/integer_ops/mean.h //tflite/kernels/internal:reference/integer_ops/mul.h //tflite/kernels/internal:reference/integer_ops/pooling.h //tflite/kernels/internal:reference/integer_ops/tanh.h //tflite/kernels/internal:reference/integer_ops/transpose_conv.h //tflite/kernels/internal:reference/l2normalization.h //tflite/kernels/internal:reference/leaky_relu.h //tflite/kernels/internal:reference/log_softmax.h //tflite/kernels/internal:reference/logistic.h //tflite/kernels/internal:reference/lstm_cell.h //tflite/kernels/internal:reference/maximum_minimum.h //tflite/kernels/internal:reference/mul.h //tflite/kernels/internal:reference/neg.h //tflite/kernels/internal:reference/non_max_suppression.h //tflite/kernels/internal:reference/pad.h //tflite/kernels/internal:reference/pooling.h //tflite/kernels/internal:reference/prelu.h //tflite/kernels/internal:reference/process_broadcast_shapes.h //tflite/kernels/internal:reference/quantize.h //tflite/kernels/internal:reference/reduce.h //tflite/kernels/internal:reference/requantize.h //tflite/kernels/internal:reference/resize_bilinear.h //tflite/kernels/internal:reference/resize_nearest_neighbor.h //tflite/kernels/internal:reference/reverse.h //tflite/kernels/internal:reference/round.h //tflite/kernels/internal:reference/select.h //tflite/kernels/internal:reference/slice.h //tflite/kernels/internal:reference/softmax.h //tflite/kernels/internal:reference/space_to_batch_nd.h //tflite/kernels/internal:reference/space_to_depth.h //tflite/kernels/internal:reference/strided_slice.h //tflite/kernels/internal:reference/sub.h //tflite/kernels/internal:reference/svdf.h //tflite/kernels/internal:reference/tanh.h //tflite/kernels/internal:reference/transpose.h //tflite/kernels/internal:reference/transpose_conv.h //tflite/kernels/internal:reference/integer_ops/dequantize.h //tflite/kernels/internal:reference/integer_ops/log_softmax.h //tflite/kernels/internal:reference/reference_ops.h //tflite/kernels/internal:reference/sparse_ops/fully_connected.h //tflite/kernels/internal:reference/string_comparisons.h)
+target_link_libraries(__tflite_kernels_internal_reference_base __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_constants __tflite_kernels_internal_cppmath __tflite_kernels_internal_quantization_util __tflite_kernels_internal_reference_comparisons __tflite_kernels_internal_strided_slice_logic __tflite_kernels_internal_tensor __tflite_kernels_internal_tensor_utils __tflite_kernels_internal_types __tflite_macros __tflite_string_util __tflite_core_c_c_api_types __tflite_core_c_common __tflite_kernels_kernel_util __tflite_kernels_op_macros __tflite_kernels_internal_utils_sparsity_format_converter _eigen_archive___eigen3 _gemmlowp___fixedpoint _ruy__ruy_profiler_instrumentation)
+
+add_library(__tflite_kernels_internal_reference_comparisons)
+  //tflite/kernels/internal:reference/comparisons.cc
+target_sources(__tflite_kernels_internal_reference_comparisons PRIVATE //tflite/kernels/internal:reference/comparisons.h)
+target_link_libraries(__tflite_kernels_internal_reference_comparisons __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_types __tflite_macros __tflite_core_c_common)
+
+# Unsupported rule filegroup for //tflite/kernels/internal:reference_op_headers
+
+add_executable(__tflite_kernels_internal_resize_bilinear_test //tflite/kernels/internal:resize_bilinear_test.cc)
+add_test(NAME __tflite_kernels_internal_resize_bilinear_test COMMAND __tflite_kernels_internal_resize_bilinear_test)
+
+add_executable(__tflite_kernels_internal_resize_bilinear_test_single_rounding //tflite/kernels/internal:resize_bilinear_test.cc)
+add_test(NAME __tflite_kernels_internal_resize_bilinear_test_single_rounding COMMAND __tflite_kernels_internal_resize_bilinear_test_single_rounding)
+
+add_executable(__tflite_kernels_internal_resize_nearest_neighbor_test //tflite/kernels/internal:resize_nearest_neighbor_test.cc)
+add_test(NAME __tflite_kernels_internal_resize_nearest_neighbor_test COMMAND __tflite_kernels_internal_resize_nearest_neighbor_test)
+
+add_library(__tflite_kernels_internal_runtime_shape)
+  //tflite/kernels/internal:runtime_shape.cc
+target_sources(__tflite_kernels_internal_runtime_shape PRIVATE //tflite/kernels/internal:runtime_shape.h)
+target_link_libraries(__tflite_kernels_internal_runtime_shape __tflite_kernels_internal_compatibility)
+
+add_executable(__tflite_kernels_internal_runtime_shape_test //tflite/kernels/internal:runtime_shape_test.cc)
+add_test(NAME __tflite_kernels_internal_runtime_shape_test COMMAND __tflite_kernels_internal_runtime_shape_test)
+
+add_executable(__tflite_kernels_internal_softmax_quantized_test //tflite/kernels/internal:softmax_quantized_test.cc)
+add_test(NAME __tflite_kernels_internal_softmax_quantized_test COMMAND __tflite_kernels_internal_softmax_quantized_test)
+
+add_library(__tflite_kernels_internal_sse_tensor_utils)
+  //tflite/kernels/internal:compatibility.h //tflite/kernels/internal:optimized/sse_tensor_utils.cc
+target_sources(__tflite_kernels_internal_sse_tensor_utils PRIVATE //tflite/kernels/internal:optimized/sse_tensor_utils.h //tflite/kernels/internal:optimized/sse_tensor_utils_impl.h)
+target_link_libraries(__tflite_kernels_internal_sse_tensor_utils __tflite_kernels_internal_cpu_check __tflite_kernels_internal_neon_tensor_utils __tflite_kernels_internal_portable_tensor_utils __tflite_core_c_common __tflite_kernels_cpu_backend_context __tflite_kernels_cpu_backend_gemm __tflite_kernels_op_macros _com_google_absl__absl_base_prefetch _ruy__ruy_profiler_instrumentation)
+
+add_library(__tflite_kernels_internal_strided_slice_logic)
+target_sources(__tflite_kernels_internal_strided_slice_logic PRIVATE //tflite/kernels/internal:strided_slice_logic.h)
+target_link_libraries(__tflite_kernels_internal_strided_slice_logic __tflite_kernels_internal_compatibility __tflite_kernels_internal_types)
+
+add_executable(__tflite_kernels_internal_strided_slice_logic_test //tflite/kernels/internal:strided_slice_logic_test.cc)
+add_test(NAME __tflite_kernels_internal_strided_slice_logic_test COMMAND __tflite_kernels_internal_strided_slice_logic_test)
+
+add_library(__tflite_kernels_internal_tensor)
+target_sources(__tflite_kernels_internal_tensor PRIVATE //tflite/kernels/internal:portable_tensor.h //tflite/kernels/internal:tensor_ctypes.h //tflite/kernels/internal:tensor.h)
+target_link_libraries(__tflite_kernels_internal_tensor __tflite_kernels_internal_tensor_ctypes __tflite_kernels_internal_types __tflite_macros __tflite_string_util __tflite_core_c_common)
+
+add_library(__tflite_kernels_internal_tensor_ctypes)
+  //tflite/kernels/internal:tensor_ctypes.cc
+target_sources(__tflite_kernels_internal_tensor_ctypes PRIVATE //tflite/kernels/internal:tensor_ctypes.h)
+target_link_libraries(__tflite_kernels_internal_tensor_ctypes __tflite_kernels_internal_types __tflite_core_macros __tflite_core_c_common)
+
+add_executable(__tflite_kernels_internal_tensor_test //tflite/kernels/internal:tensor_test.cc)
+add_test(NAME __tflite_kernels_internal_tensor_test COMMAND __tflite_kernels_internal_tensor_test)
+
+add_library(__tflite_kernels_internal_tensor_utils)
+  //tflite/kernels/internal:tensor_utils.cc
+target_sources(__tflite_kernels_internal_tensor_utils PRIVATE //tflite/kernels/internal:portable_tensor_utils.h //tflite/kernels/internal:tensor_utils.h)
+target_link_libraries(__tflite_kernels_internal_tensor_utils __tflite_kernels_internal_cpu_check __tflite_kernels_internal_tensor_utils_no_eigen __tflite_core_c_common _eigen_archive___eigen3 __tflite_kernels_internal_neon_tensor_utils __tflite_kernels_internal_portable_tensor_utils __tflite_kernels_internal_sse_tensor_utils)
+
+add_library(__tflite_kernels_internal_tensor_utils_no_eigen)
+  //tflite/kernels/internal:portable_tensor_utils.cc
+target_sources(__tflite_kernels_internal_tensor_utils_no_eigen PRIVATE //tflite/kernels/internal:portable_tensor_utils.h)
+target_link_libraries(__tflite_kernels_internal_tensor_utils_no_eigen __tflite_kernels_internal_cpu_check __tflite_core_c_common __tflite_kernels_internal_neon_tensor_utils __tflite_kernels_internal_portable_tensor_utils __tflite_kernels_internal_sse_tensor_utils)
+
+add_executable(__tflite_kernels_internal_tensor_utils_test //tflite/kernels/internal:tensor_utils_test.cc)
+add_test(NAME __tflite_kernels_internal_tensor_utils_test COMMAND __tflite_kernels_internal_tensor_utils_test)
+
+add_library(__tflite_kernels_internal_test_util)
+  //tflite/kernels/internal:test_util.cc
+target_sources(__tflite_kernels_internal_test_util PRIVATE //tflite/kernels/internal:test_util.h)
+target_link_libraries(__tflite_kernels_internal_test_util __tflite_kernels_internal_types)
+
+# Unsupported rule filegroup for //tflite/kernels/internal:tflite_internal_cc_3p_api_deps_src
+
+add_library(__tflite_kernels_internal_transpose_utils)
+  //tflite/kernels/internal:transpose_utils.cc
+target_sources(__tflite_kernels_internal_transpose_utils PRIVATE //tflite/kernels/internal:transpose_utils.h)
+target_link_libraries(__tflite_kernels_internal_transpose_utils __tflite_kernels_internal_types)
+
+add_executable(__tflite_kernels_internal_transpose_utils_test //tflite/kernels/internal:transpose_utils_test.cc)
+add_test(NAME __tflite_kernels_internal_transpose_utils_test COMMAND __tflite_kernels_internal_transpose_utils_test)
+
+add_library(__tflite_kernels_internal_types)
+target_sources(__tflite_kernels_internal_types PRIVATE //tflite/kernels/internal:runtime_shape.h //tflite/kernels/internal:types.h)
+target_link_libraries(__tflite_kernels_internal_types __tflite_kernels_internal_compatibility __tflite_kernels_internal_runtime_shape)
+
+# Unsupported rule config_setting for //tflite/kernels/internal:x86
+
+# Unsupported rule config_setting for //tflite/kernels/internal:x86_32_any
+
+# Unsupported rule config_setting for //tflite/kernels/internal:x86_64
+
+# Unsupported rule config_setting for //tflite/kernels/internal:x86_64_any
+
+# Unsupported rule alias for //tflite/kernels/internal:x86_any
+

@@ -1,0 +1,835 @@
+../../Code/LiteRT/
+├── bazel-bin -> /private/var/tmp/_bazel_totero/49a2fddd087c4ee91c21673061521dd4/execroot/litert/bazel-out/darwin_arm64-opt/bin
+├── bazel-LiteRT -> /private/var/tmp/_bazel_totero/49a2fddd087c4ee91c21673061521dd4/execroot/litert
+├── bazel-out -> /private/var/tmp/_bazel_totero/49a2fddd087c4ee91c21673061521dd4/execroot/litert/bazel-out
+├── bazel-testlogs -> /private/var/tmp/_bazel_totero/49a2fddd087c4ee91c21673061521dd4/execroot/litert/bazel-out/darwin_arm64-opt/testlogs
+├── ci
+│   └── tools
+│       └── python
+│           ├── vendor_sdk
+│           │   ├── mediatek
+│           │   │   └── ai_edge_litert_sdk_mediatek
+│           │   └── qualcomm
+│           │       └── ai_edge_litert_sdk_qualcomm
+│           └── wheel
+│               └── utils
+├── docker_build
+├── docs
+│   └── sources
+├── litert
+│   ├── ats
+│   ├── build_common
+│   │   └── config
+│   ├── c
+│   │   ├── internal
+│   │   └── options
+│   ├── cc
+│   │   ├── dynamic_runtime
+│   │   │   └── options
+│   │   ├── internal
+│   │   └── options
+│   ├── compiler
+│   │   └── plugin
+│   ├── core
+│   │   ├── cache
+│   │   ├── model
+│   │   └── util
+│   ├── experimental
+│   │   └── mlir
+│   ├── integration_test
+│   │   ├── models
+│   │   │   └── single_op
+│   │   └── smoketests
+│   ├── js
+│   │   ├── apps
+│   │   │   └── model_tester
+│   │   │       ├── scripts
+│   │   │       ├── src
+│   │   │       └── static
+│   │   ├── demos
+│   │   │   ├── efficientvit_segmentation
+│   │   │   │   ├── src
+│   │   │   │   └── static
+│   │   │   ├── mobilenetv2
+│   │   │   │   ├── src
+│   │   │   │   └── static
+│   │   │   └── real_esrgan
+│   │   │       └── src
+│   │   └── packages
+│   │       ├── core
+│   │       │   ├── spec
+│   │       │   │   └── support
+│   │       │   ├── src
+│   │       │   └── testdata
+│   │       ├── eslint_config
+│   │       ├── tfjs_interop
+│   │       │   └── src
+│   │       ├── tsconfig
+│   │       └── wasm_utils
+│   │           └── src
+│   ├── kotlin
+│   │   └── src
+│   │       └── main
+│   │           ├── jni
+│   │           └── kotlin
+│   │               └── com
+│   │                   └── google
+│   │                       └── ai
+│   │                           └── edge
+│   │                               └── litert
+│   │                                   └── deployment
+│   ├── python
+│   │   ├── aot
+│   │   │   ├── ai_pack
+│   │   │   ├── core
+│   │   │   └── vendors
+│   │   │       ├── example
+│   │   │       ├── google_tensor
+│   │   │       ├── mediatek
+│   │   │       └── qualcomm
+│   │   ├── internal
+│   │   └── litert_wrapper
+│   │       ├── common
+│   │       ├── compiled_model_wrapper
+│   │       └── tensor_buffer_wrapper
+│   ├── runtime
+│   │   ├── accelerators
+│   │   │   ├── dispatch
+│   │   │   └── xnnpack
+│   │   ├── compiler
+│   │   └── dispatch
+│   ├── samples
+│   │   ├── async_segmentation
+│   │   │   ├── models
+│   │   │   ├── shaders
+│   │   │   └── test_images
+│   │   └── semantic_similarity
+│   │       └── libs
+│   ├── sdk_util
+│   ├── test
+│   │   ├── generators
+│   │   └── testdata
+│   ├── tools
+│   │   ├── culprit_finder
+│   │   └── flags
+│   │       └── vendors
+│   └── vendors
+│       ├── c
+│       ├── cc
+│       ├── examples
+│       ├── google_tensor
+│       │   ├── compiler
+│       │   └── dispatch
+│       ├── intel_openvino
+│       │   ├── compiler
+│       │   └── dispatch
+│       ├── mediatek
+│       │   ├── compiler
+│       │   │   └── legalizations
+│       │   ├── dispatch
+│       │   └── schema
+│       └── qualcomm
+│           ├── compiler
+│           ├── core
+│           │   ├── backends
+│           │   ├── builders
+│           │   ├── dump
+│           │   ├── schema
+│           │   ├── transformation
+│           │   ├── utils
+│           │   └── wrappers
+│           │       └── tests
+│           ├── debugger
+│           │   └── optrace_profiling
+│           │       └── assets
+│           ├── dispatch
+│           ├── qnn_backend_test
+│           └── tools
+├── tflite
+│   ├── acceleration
+│   │   └── configuration
+│   │       ├── c
+│   │       └── testdata
+│   ├── async
+│   │   ├── c
+│   │   ├── interop
+│   │   │   └── c
+│   │   └── testing
+│   ├── c
+│   │   └── jni
+│   ├── cmake
+│   ├── converter
+│   │   ├── common
+│   │   ├── core
+│   │   │   ├── api
+│   │   │   └── c
+│   │   ├── debug
+│   │   ├── delegates
+│   │   │   └── flex
+│   │   ├── experimental
+│   │   │   ├── common
+│   │   │   ├── remat
+│   │   │   └── tac
+│   │   │       ├── common
+│   │   │       ├── examples
+│   │   │       ├── g3doc
+│   │   │       │   └── images
+│   │   │       ├── hardwares
+│   │   │       ├── py_wrapper
+│   │   │       ├── tests
+│   │   │       │   └── e2e
+│   │   │       ├── transforms
+│   │   │       └── utils
+│   │   ├── integrations
+│   │   │   └── python
+│   │   │       └── mlir
+│   │   │           └── _mlir_libs
+│   │   ├── ir
+│   │   ├── kernels
+│   │   │   └── internal
+│   │   │       ├── optimized
+│   │   │       └── utils
+│   │   ├── metrics
+│   │   │   └── testdata
+│   │   ├── python
+│   │   │   └── interpreter_wrapper
+│   │   ├── quantization
+│   │   │   ├── common
+│   │   │   │   └── quantization_lib
+│   │   │   ├── ir
+│   │   │   ├── lite
+│   │   │   │   ├── testdata
+│   │   │   │   └── toco_legacy
+│   │   │   ├── tensorflow
+│   │   │   │   └── tests
+│   │   │   ├── tests
+│   │   │   └── tools
+│   │   ├── schema
+│   │   ├── sparsity
+│   │   │   └── testdata
+│   │   ├── stablehlo
+│   │   │   ├── odml_converter
+│   │   │   │   ├── tests
+│   │   │   │   └── transforms
+│   │   │   ├── tests
+│   │   │   └── transforms
+│   │   │       ├── legalize_hlo_conversions
+│   │   │       ├── mhlo_passes
+│   │   │       └── torch
+│   │   ├── testdata
+│   │   ├── tests
+│   │   │   ├── debuginfo
+│   │   │   ├── end2end
+│   │   │   ├── flatbuffer2mlir
+│   │   │   └── mlir2flatbuffer
+│   │   ├── tools
+│   │   │   ├── optimize
+│   │   │   └── versioning
+│   │   ├── transforms
+│   │   │   ├── quantization
+│   │   │   ├── tf_legalizations
+│   │   │   └── tflite_passes
+│   │   └── utils
+│   ├── core
+│   │   ├── acceleration
+│   │   │   └── configuration
+│   │   │       └── c
+│   │   ├── api
+│   │   ├── async
+│   │   │   ├── c
+│   │   │   ├── interop
+│   │   │   │   └── c
+│   │   │   └── testing
+│   │   ├── c
+│   │   ├── experimental
+│   │   │   └── acceleration
+│   │   │       ├── configuration
+│   │   │       │   └── c
+│   │   │       └── mini_benchmark
+│   │   │           └── c
+│   │   ├── kernels
+│   │   ├── shims
+│   │   └── tools
+│   ├── delegates
+│   │   ├── coreml
+│   │   │   └── builders
+│   │   ├── external
+│   │   ├── flex
+│   │   │   ├── java
+│   │   │   │   └── src
+│   │   │   │       └── main
+│   │   │   │           ├── java
+│   │   │   │           │   └── org
+│   │   │   │           │       └── tensorflow
+│   │   │   │           │           └── lite
+│   │   │   │           │               └── flex
+│   │   │   │           └── native
+│   │   │   └── test
+│   │   ├── gpu
+│   │   │   ├── cl
+│   │   │   │   ├── default
+│   │   │   │   ├── kernels
+│   │   │   │   └── testing
+│   │   │   ├── common
+│   │   │   │   ├── default
+│   │   │   │   ├── google
+│   │   │   │   ├── memory_management
+│   │   │   │   ├── selectors
+│   │   │   │   │   └── default
+│   │   │   │   ├── task
+│   │   │   │   ├── tasks
+│   │   │   │   │   └── special
+│   │   │   │   ├── testing
+│   │   │   │   │   └── feature_parity
+│   │   │   │   │       └── generators
+│   │   │   │   └── transformations
+│   │   │   ├── gl
+│   │   │   │   ├── compiler
+│   │   │   │   ├── converters
+│   │   │   │   ├── kernels
+│   │   │   │   ├── runtime
+│   │   │   │   └── workgroups
+│   │   │   ├── java
+│   │   │   │   └── src
+│   │   │   │       └── main
+│   │   │   │           ├── java
+│   │   │   │           │   └── org
+│   │   │   │           │       └── tensorflow
+│   │   │   │           │           └── lite
+│   │   │   │           │               └── gpu
+│   │   │   │           └── native
+│   │   │   └── metal
+│   │   │       ├── benchmarking
+│   │   │       │   ├── Benchmark.tulsiproj
+│   │   │       │   │   └── Configs
+│   │   │       │   └── models
+│   │   │       ├── ComponentsTests.tulsiproj
+│   │   │       │   └── Configs
+│   │   │       └── kernels
+│   │   ├── hexagon
+│   │   │   ├── builders
+│   │   │   │   └── tests
+│   │   │   ├── hexagon_nn
+│   │   │   └── java
+│   │   │       └── src
+│   │   │           └── main
+│   │   │               ├── java
+│   │   │               │   └── org
+│   │   │               │       └── tensorflow
+│   │   │               │           └── lite
+│   │   │               └── native
+│   │   ├── nnapi
+│   │   │   └── java
+│   │   │       └── src
+│   │   │           └── main
+│   │   │               ├── java
+│   │   │               │   └── org
+│   │   │               │       └── tensorflow
+│   │   │               │           └── lite
+│   │   │               │               └── nnapi
+│   │   │               └── native
+│   │   ├── utils
+│   │   │   ├── dummy_delegate
+│   │   │   └── experimental
+│   │   │       ├── sample_stable_delegate
+│   │   │       └── stable_delegate
+│   │   └── xnnpack
+│   ├── examples
+│   │   ├── android
+│   │   │   └── app
+│   │   ├── experimental_new_converter
+│   │   ├── ios
+│   │   │   └── simple
+│   │   │       ├── data
+│   │   │       └── simple.xcodeproj
+│   │   ├── label_image
+│   │   │   └── testdata
+│   │   ├── minimal
+│   │   └── python
+│   ├── experimental
+│   │   ├── acceleration
+│   │   │   ├── compatibility
+│   │   │   ├── configuration
+│   │   │   │   └── c
+│   │   │   └── mini_benchmark
+│   │   │       ├── c
+│   │   │       ├── data
+│   │   │       ├── metrics
+│   │   │       ├── model_modifier
+│   │   │       └── models
+│   │   ├── examples
+│   │   │   └── unity
+│   │   │       └── TensorFlowLitePlugin
+│   │   │           ├── Assets
+│   │   │           │   └── TensorFlowLite
+│   │   │           │       ├── Examples
+│   │   │           │       │   └── HelloTFLite
+│   │   │           │       │       ├── Scenes
+│   │   │           │       │       └── Scripts
+│   │   │           │       └── SDK
+│   │   │           │           └── Scripts
+│   │   │           ├── ProjectSettings
+│   │   │           └── UnityPackageManager
+│   │   ├── genai
+│   │   ├── microfrontend
+│   │   │   ├── lib
+│   │   │   ├── ops
+│   │   │   └── python
+│   │   │       ├── kernel_tests
+│   │   │       └── ops
+│   │   ├── ml_adjacent
+│   │   │   ├── algo
+│   │   │   ├── data
+│   │   │   └── tflite
+│   │   ├── resource
+│   │   └── shlo
+│   │       ├── legacy
+│   │       │   ├── bench
+│   │       │   ├── include
+│   │       │   ├── src
+│   │       │   └── test
+│   │       └── ops
+│   ├── g3doc
+│   │   ├── android
+│   │   │   ├── delegates
+│   │   │   └── tutorials
+│   │   ├── api_docs
+│   │   │   ├── c
+│   │   │   │   ├── group
+│   │   │   │   ├── struct
+│   │   │   │   └── union
+│   │   │   ├── cc
+│   │   │   │   ├── class
+│   │   │   │   │   └── tflite
+│   │   │   │   │       └── impl
+│   │   │   │   ├── namespace
+│   │   │   │   │   └── tflite
+│   │   │   │   └── struct
+│   │   │   │       └── tflite
+│   │   │   │           └── op-resolver-hasher
+│   │   │   │               └── value-hasher-tflite
+│   │   │   ├── java
+│   │   │   │   └── org
+│   │   │   │       └── tensorflow
+│   │   │   │           └── lite
+│   │   │   │               ├── acceleration
+│   │   │   │               ├── gpu
+│   │   │   │               ├── support
+│   │   │   │               │   ├── audio
+│   │   │   │               │   ├── common
+│   │   │   │               │   │   └── ops
+│   │   │   │               │   ├── image
+│   │   │   │               │   │   └── ops
+│   │   │   │               │   ├── label
+│   │   │   │               │   │   └── ops
+│   │   │   │               │   ├── metadata
+│   │   │   │               │   ├── model
+│   │   │   │               │   └── tensorbuffer
+│   │   │   │               └── task
+│   │   │   │                   ├── audio
+│   │   │   │                   │   └── classifier
+│   │   │   │                   ├── core
+│   │   │   │                   │   └── vision
+│   │   │   │                   ├── gms
+│   │   │   │                   │   ├── audio
+│   │   │   │                   │   └── text
+│   │   │   │                   ├── processor
+│   │   │   │                   ├── text
+│   │   │   │                   │   ├── bertclu
+│   │   │   │                   │   ├── nlclassifier
+│   │   │   │                   │   ├── qa
+│   │   │   │                   │   └── searcher
+│   │   │   │                   └── vision
+│   │   │   │                       ├── classifier
+│   │   │   │                       ├── core
+│   │   │   │                       ├── detector
+│   │   │   │                       ├── searcher
+│   │   │   │                       └── segmenter
+│   │   │   ├── python
+│   │   │   │   ├── tf
+│   │   │   │   │   └── lite
+│   │   │   │   │       └── experimental
+│   │   │   │   │           └── authoring
+│   │   │   │   ├── tflite_model_maker
+│   │   │   │   │   ├── audio_classifier
+│   │   │   │   │   ├── config
+│   │   │   │   │   ├── image_classifier
+│   │   │   │   │   ├── model_spec
+│   │   │   │   │   ├── object_detector
+│   │   │   │   │   ├── question_answer
+│   │   │   │   │   ├── recommendation
+│   │   │   │   │   │   └── spec
+│   │   │   │   │   ├── searcher
+│   │   │   │   │   └── text_classifier
+│   │   │   │   └── tflite_support
+│   │   │   │       ├── metadata
+│   │   │   │       ├── metadata_schema_py_generated
+│   │   │   │       ├── metadata_writers
+│   │   │   │       │   ├── audio_classifier
+│   │   │   │       │   │   └── metadata_writer
+│   │   │   │       │   ├── bert_nl_classifier
+│   │   │   │       │   ├── image_classifier
+│   │   │   │       │   ├── image_segmenter
+│   │   │   │       │   ├── metadata_info
+│   │   │   │       │   ├── nl_classifier
+│   │   │   │       │   ├── object_detector
+│   │   │   │       │   └── writer_utils
+│   │   │   │       └── task
+│   │   │   │           ├── audio
+│   │   │   │           ├── core
+│   │   │   │           ├── processor
+│   │   │   │           ├── text
+│   │   │   │           └── vision
+│   │   │   └── swift
+│   │   │       ├── Classes
+│   │   │       │   ├── CoreMLDelegate
+│   │   │       │   ├── Interpreter
+│   │   │       │   └── MetalDelegate
+│   │   │       ├── css
+│   │   │       ├── Enums
+│   │   │       ├── Protocols
+│   │   │       └── Structs
+│   │   │           └── Tensor
+│   │   ├── examples
+│   │   │   ├── audio_classification
+│   │   │   │   └── images
+│   │   │   ├── auto_complete
+│   │   │   │   └── images
+│   │   │   ├── bert_qa
+│   │   │   │   └── images
+│   │   │   ├── image_classification
+│   │   │   │   └── images
+│   │   │   ├── images
+│   │   │   ├── jax_conversion
+│   │   │   ├── keras
+│   │   │   ├── object_detection
+│   │   │   │   └── images
+│   │   │   ├── on_device_training
+│   │   │   ├── optical_character_recognition
+│   │   │   │   └── images
+│   │   │   ├── pose_estimation
+│   │   │   ├── recommendation
+│   │   │   │   └── images
+│   │   │   ├── reinforcement_learning
+│   │   │   │   └── images
+│   │   │   ├── segmentation
+│   │   │   │   └── images
+│   │   │   ├── smart_reply
+│   │   │   │   └── images
+│   │   │   ├── style_transfer
+│   │   │   ├── super_resolution
+│   │   │   ├── text_classification
+│   │   │   │   └── images
+│   │   │   └── video_classification
+│   │   ├── guide
+│   │   ├── images
+│   │   │   ├── acceleration
+│   │   │   ├── build
+│   │   │   ├── convert
+│   │   │   ├── ios
+│   │   │   ├── landing-page
+│   │   │   └── performance
+│   │   ├── inference_with_metadata
+│   │   │   └── task_library
+│   │   │       └── images
+│   │   ├── ios
+│   │   │   └── delegates
+│   │   ├── microcontrollers
+│   │   ├── models
+│   │   │   ├── build
+│   │   │   ├── convert
+│   │   │   ├── modify
+│   │   │   │   └── model_maker
+│   │   │   └── trained
+│   │   ├── performance
+│   │   │   └── images
+│   │   ├── r1
+│   │   │   ├── convert
+│   │   │   └── images
+│   │   │       └── convert
+│   │   ├── tools
+│   │   └── tutorials
+│   ├── internal
+│   ├── ios
+│   │   └── testdata
+│   │       ├── duplicate_names
+│   │       ├── extended_filename
+│   │       ├── odd_bytes
+│   │       ├── simple
+│   │       └── skip_same_file
+│   ├── java
+│   │   ├── demo
+│   │   │   ├── app
+│   │   │   │   └── src
+│   │   │   │       └── main
+│   │   │   │           ├── assets
+│   │   │   │           ├── java
+│   │   │   │           │   └── com
+│   │   │   │           │       └── example
+│   │   │   │           │           └── android
+│   │   │   │           │               └── tflitecamerademo
+│   │   │   │           └── res
+│   │   │   │               ├── drawable
+│   │   │   │               ├── drawable-hdpi
+│   │   │   │               ├── drawable-mdpi
+│   │   │   │               ├── drawable-xhdpi
+│   │   │   │               ├── drawable-xxhdpi
+│   │   │   │               ├── layout
+│   │   │   │               ├── layout-land
+│   │   │   │               ├── layout-v26
+│   │   │   │               ├── values
+│   │   │   │               ├── values-sw600dp
+│   │   │   │               ├── values-v11
+│   │   │   │               └── values-v21
+│   │   │   └── gradle
+│   │   │       └── wrapper
+│   │   ├── jni
+│   │   ├── ovic
+│   │   │   ├── demo
+│   │   │   │   ├── app
+│   │   │   │   │   └── res
+│   │   │   │   │       ├── drawable
+│   │   │   │   │       ├── drawable-mdpi
+│   │   │   │   │       ├── drawable-xhdpi
+│   │   │   │   │       ├── layout
+│   │   │   │   │       └── values
+│   │   │   │   └── gradle
+│   │   │   │       └── wrapper
+│   │   │   └── src
+│   │   │       ├── main
+│   │   │       │   └── java
+│   │   │       │       └── org
+│   │   │       │           └── tensorflow
+│   │   │       │               └── ovic
+│   │   │       ├── test
+│   │   │       │   └── java
+│   │   │       │       └── org
+│   │   │       │           └── tensorflow
+│   │   │       │               └── ovic
+│   │   │       └── testdata
+│   │   └── src
+│   │       ├── main
+│   │       │   ├── java
+│   │       │   │   └── org
+│   │       │   │       └── tensorflow
+│   │       │   │           └── lite
+│   │       │   │               ├── acceleration
+│   │       │   │               └── annotations
+│   │       │   └── native
+│   │       ├── test
+│   │       │   ├── java
+│   │       │   │   └── org
+│   │       │   │       └── tensorflow
+│   │       │   │           └── lite
+│   │       │   │               ├── gpu
+│   │       │   │               └── nnapi
+│   │       │   └── native
+│   │       ├── testdata
+│   │       └── testhelper
+│   │           └── java
+│   │               └── org
+│   │                   └── tensorflow
+│   │                       └── lite
+│   ├── kernels
+│   │   ├── ctc
+│   │   ├── gradient
+│   │   ├── internal
+│   │   │   ├── optimized
+│   │   │   │   ├── 4bit
+│   │   │   │   ├── integer_ops
+│   │   │   │   └── sparse_ops
+│   │   │   ├── reference
+│   │   │   │   ├── integer_ops
+│   │   │   │   └── sparse_ops
+│   │   │   └── utils
+│   │   ├── parse_example
+│   │   ├── perception
+│   │   ├── shim
+│   │   │   └── test_op
+│   │   └── variants
+│   │       ├── list_kernels
+│   │       └── py
+│   ├── lib_package
+│   ├── micro
+│   ├── nnapi
+│   │   └── sl
+│   │       ├── include
+│   │       └── public
+│   ├── objc
+│   │   ├── apis
+│   │   ├── apps
+│   │   │   └── TestApp
+│   │   │       ├── TestApp
+│   │   │       │   ├── Assets.xcassets
+│   │   │       │   │   └── AppIcon.appiconset
+│   │   │       │   └── Base.lproj
+│   │   │       └── TestApp.xcodeproj
+│   │   ├── sources
+│   │   ├── TensorFlowLite.tulsiproj
+│   │   │   └── Configs
+│   │   └── tests
+│   ├── profiling
+│   │   ├── proto
+│   │   └── telemetry
+│   │       └── c
+│   ├── python
+│   │   ├── analyzer_wrapper
+│   │   ├── authoring
+│   │   ├── interpreter_wrapper
+│   │   ├── kernel_tests
+│   │   │   └── signal
+│   │   ├── metrics
+│   │   │   └── wrapper
+│   │   ├── optimize
+│   │   │   └── test_data
+│   │   └── testdata
+│   │       └── control_flow_v1_saved_model
+│   ├── schema
+│   │   ├── builtin_ops_header
+│   │   └── builtin_ops_list
+│   ├── stablehlo
+│   │   └── schema
+│   ├── swift
+│   │   ├── docsgen
+│   │   │   └── TensorFlowLiteSwift
+│   │   │       ├── scripts
+│   │   │       ├── TensorFlowLiteSwift
+│   │   │       └── TensorFlowLiteSwift.xcodeproj
+│   │   │           └── project.xcworkspace
+│   │   │               └── xcshareddata
+│   │   ├── Sources
+│   │   ├── TensorFlowLite.tulsiproj
+│   │   │   └── Configs
+│   │   ├── TestApp
+│   │   └── Tests
+│   ├── testdata
+│   │   └── src
+│   ├── testing
+│   │   ├── kernel_test
+│   │   │   └── testdata
+│   │   └── op_tests
+│   ├── toco
+│   │   ├── g3doc
+│   │   ├── graph_transformations
+│   │   │   └── tests
+│   │   ├── logging
+│   │   │   └── testdata
+│   │   ├── python
+│   │   ├── runtime
+│   │   ├── tensorflow_graph_matching
+│   │   └── tflite
+│   ├── tools
+│   │   ├── benchmark
+│   │   │   ├── android
+│   │   │   │   ├── jni
+│   │   │   │   └── src
+│   │   │   │       └── org
+│   │   │   │           └── tensorflow
+│   │   │   │               └── lite
+│   │   │   │                   └── benchmark
+│   │   │   ├── experimental
+│   │   │   │   ├── c
+│   │   │   │   ├── delegate_performance
+│   │   │   │   │   └── android
+│   │   │   │   │       ├── models
+│   │   │   │   │       ├── proto
+│   │   │   │   │       └── src
+│   │   │   │   │           ├── main
+│   │   │   │   │           │   ├── java
+│   │   │   │   │           │   │   └── org
+│   │   │   │   │           │   │       └── tensorflow
+│   │   │   │   │           │   │           └── lite
+│   │   │   │   │           │   │               └── benchmark
+│   │   │   │   │           │   │                   └── delegateperformance
+│   │   │   │   │           │   └── native
+│   │   │   │   │           └── test
+│   │   │   │   │               └── native
+│   │   │   │   ├── firebase
+│   │   │   │   │   └── android
+│   │   │   │   │       ├── jni
+│   │   │   │   │       └── src
+│   │   │   │   │           └── org
+│   │   │   │   │               └── tensorflow
+│   │   │   │   │                   └── lite
+│   │   │   │   │                       └── benchmark
+│   │   │   │   │                           └── firebase
+│   │   │   │   └── ios
+│   │   │   ├── ios
+│   │   │   │   └── TFLiteBenchmark
+│   │   │   │       ├── TFLiteBenchmark
+│   │   │   │       │   ├── Assets.xcassets
+│   │   │   │       │   │   └── AppIcon.appiconset
+│   │   │   │       │   ├── Base.lproj
+│   │   │   │       │   ├── benchmark_data
+│   │   │   │       │   └── Frameworks
+│   │   │   │       └── TFLiteBenchmark.xcodeproj
+│   │   │   └── proto
+│   │   ├── cmake
+│   │   │   ├── modules
+│   │   │   │   ├── farmhash
+│   │   │   │   ├── fft2d
+│   │   │   │   ├── ml_dtypes
+│   │   │   │   └── xnnpack
+│   │   │   ├── native_tools
+│   │   │   │   └── flatbuffers
+│   │   │   └── test_utils
+│   │   ├── delegates
+│   │   │   ├── compatibility
+│   │   │   │   ├── common
+│   │   │   │   ├── gpu
+│   │   │   │   ├── nnapi
+│   │   │   │   └── protos
+│   │   │   └── experimental
+│   │   │       └── stable_delegate
+│   │   ├── evaluation
+│   │   │   ├── proto
+│   │   │   ├── stages
+│   │   │   │   ├── testdata
+│   │   │   │   └── utils
+│   │   │   ├── tasks
+│   │   │   │   ├── coco_object_detection
+│   │   │   │   ├── imagenet_image_classification
+│   │   │   │   ├── inference_diff
+│   │   │   │   └── ios
+│   │   │   │       └── TFLiteEvaluation
+│   │   │   │           ├── TFLiteEvaluation
+│   │   │   │           │   ├── Assets.xcassets
+│   │   │   │           │   │   ├── AccentColor.colorset
+│   │   │   │           │   │   └── AppIcon.appiconset
+│   │   │   │           │   ├── Base.lproj
+│   │   │   │           │   └── evaluation_data
+│   │   │   │           └── TFLiteEvaluation.xcodeproj
+│   │   │   └── testdata
+│   │   ├── make
+│   │   ├── optimize
+│   │   │   ├── calibration
+│   │   │   │   ├── builtin_logging_ops
+│   │   │   │   └── custom_logging_ops
+│   │   │   ├── debugging
+│   │   │   │   └── python
+│   │   │   ├── g3doc
+│   │   │   ├── python
+│   │   │   └── sparsity
+│   │   ├── pip_package
+│   │   │   └── debian
+│   │   ├── serialization
+│   │   ├── signature
+│   │   ├── strip_buffers
+│   │   └── versioning
+│   └── tutorials
+└── third_party
+    ├── coremltools
+    ├── dawn
+    ├── google_tensor
+    ├── intel_openvino
+    ├── jinja2
+    ├── litert_gpu
+    ├── markupsafe
+    ├── models
+    ├── neuro_pilot
+    ├── qairt
+    ├── stblib
+    ├── tensorflow
+    └── tqdm
+
+833 directories

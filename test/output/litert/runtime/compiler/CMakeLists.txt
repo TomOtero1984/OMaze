@@ -1,0 +1,8 @@
+# Auto-generated CMake for package litert/runtime/compiler
+
+add_executable(__litert_runtime_compiler__jit_compilation_mediatek_test //litert/runtime/compiler:jit_compilation_mediatek_test.cc)
+add_test(NAME __litert_runtime_compiler__jit_compilation_mediatek_test COMMAND __litert_runtime_compiler__jit_compilation_mediatek_test)
+
+add_executable(__litert_runtime_compiler__jit_compilation_qualcomm_test //litert/runtime/compiler:jit_compilation_qualcomm_test.cc)
+add_test(NAME __litert_runtime_compiler__jit_compilation_qualcomm_test COMMAND __litert_runtime_compiler__jit_compilation_qualcomm_test)
+

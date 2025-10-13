@@ -1,0 +1,12 @@
+# Auto-generated CMake for package tflite/toco/logging
+
+add_library(__tflite_toco_logging_conversion_log_util)
+  //tflite/toco/logging:conversion_log_util.cc
+target_sources(__tflite_toco_logging_conversion_log_util PRIVATE //tflite/toco/logging:conversion_log_util.h)
+target_link_libraries(__tflite_toco_logging_conversion_log_util __tflite_toco_logging_toco_conversion_log_proto_cc __tflite_version __tflite_toco_model __tflite_toco_tooling_util __tflite_toco_tflite_export __tflite_toco_tflite_operator _com_google_absl__absl_strings_strings _com_google_absl__absl_time_time _org_tensorflow__tensorflow_core_protos_all_cc)
+
+add_executable(__tflite_toco_logging_conversion_log_util_test //tflite/toco/logging:conversion_log_util_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_logging_conversion_log_util_test COMMAND __tflite_toco_logging_conversion_log_util_test)
+
+# Unsupported rule cc_proto_library for //tflite/toco/logging:toco_conversion_log_proto_cc
+

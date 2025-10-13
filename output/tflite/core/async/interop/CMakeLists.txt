@@ -1,0 +1,20 @@
+# Auto-generated CMake for package tflite/core/async/interop
+
+add_library(__tflite_core_async_interop_attribute_map_internal)
+  //tflite/core/async/interop:attribute_map_internal.cc //tflite/core/async/interop:reconcile_fns.cc
+target_sources(__tflite_core_async_interop_attribute_map_internal PRIVATE //tflite/core/async/interop:attribute_map_internal.h //tflite/core/async/interop:reconcile_fns.h)
+target_link_libraries(__tflite_core_async_interop_attribute_map_internal __tflite_core_async_interop_variant __tflite_core_async_interop_c_types)
+
+add_executable(__tflite_core_async_interop_attribute_map_internal_test //tflite/core/async/interop:attribute_map_internal_test.cc)
+add_test(NAME __tflite_core_async_interop_attribute_map_internal_test COMMAND __tflite_core_async_interop_attribute_map_internal_test)
+
+add_executable(__tflite_core_async_interop_reconcile_fns_test //tflite/core/async/interop:reconcile_fns_test.cc)
+add_test(NAME __tflite_core_async_interop_reconcile_fns_test COMMAND __tflite_core_async_interop_reconcile_fns_test)
+
+add_library(__tflite_core_async_interop_variant)
+  //tflite/core/async/interop:variant.cc
+target_sources(__tflite_core_async_interop_variant PRIVATE //tflite/core/async/interop:variant.h)
+
+add_executable(__tflite_core_async_interop_variant_test //tflite/core/async/interop:variant_test.cc)
+add_test(NAME __tflite_core_async_interop_variant_test COMMAND __tflite_core_async_interop_variant_test)
+

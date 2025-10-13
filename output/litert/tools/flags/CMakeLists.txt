@@ -1,0 +1,20 @@
+# Auto-generated CMake for package litert/tools/flags
+
+add_library(__litert_tools_flags_apply_plugin_flags)
+  //litert/tools/flags:apply_plugin_flags.cc
+target_sources(__litert_tools_flags_apply_plugin_flags PRIVATE //litert/tools/flags:apply_plugin_flags.h)
+target_link_libraries(__litert_tools_flags_apply_plugin_flags __litert_tools_flags_flag_types _com_google_absl__absl_flags_flag)
+
+add_library(__litert_tools_flags_common_flags)
+  //litert/tools/flags:common_flags.cc
+target_sources(__litert_tools_flags_common_flags PRIVATE //litert/tools/flags:common_flags.h)
+target_link_libraries(__litert_tools_flags_common_flags _com_google_absl__absl_flags_flag)
+
+add_library(__litert_tools_flags_flag_types)
+  //litert/tools/flags:flag_types.cc
+target_sources(__litert_tools_flags_flag_types PRIVATE //litert/tools/flags:flag_types.h)
+target_link_libraries(__litert_tools_flags_flag_types _com_google_absl__absl_flags_marshalling _com_google_absl__absl_strings_strings _com_google_absl__absl_strings_string_view)
+
+add_executable(__litert_tools_flags_flag_types_test //litert/tools/flags:flag_types_test.cc)
+add_test(NAME __litert_tools_flags_flag_types_test COMMAND __litert_tools_flags_flag_types_test)
+

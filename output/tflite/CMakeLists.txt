@@ -1,0 +1,688 @@
+# Auto-generated CMake for package tflite
+
+add_library(__tflite_allocation)
+target_sources(__tflite_allocation PRIVATE //tflite:allocation.h //tflite/converter:allocation.h)
+target_link_libraries(__tflite_allocation __tflite_converter_allocation __tflite_converter_core_api_error_reporter)
+
+# Unsupported rule _empty_test for //tflite:allocation_build_test
+
+# Unsupported rule genrule for //tflite:allocation_build_test_0__deps
+
+add_executable(__tflite_allocation_test //tflite:allocation_test.cc)
+add_test(NAME __tflite_allocation_test COMMAND __tflite_allocation_test)
+
+add_executable(__tflite_allocation_test_shared_lib )
+target_link_libraries(__tflite_allocation_test_shared_lib __tflite_allocation)
+
+add_library(__tflite_arena_planner)
+  //tflite:arena_planner.cc
+target_sources(__tflite_arena_planner PRIVATE //tflite:arena_planner.h)
+target_link_libraries(__tflite_arena_planner __tflite_graph_info __tflite_memory_planner __tflite_simple_memory_arena __tflite_util __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:arena_planner_build_test
+
+# Unsupported rule genrule for //tflite:arena_planner_build_test_0__deps
+
+add_executable(__tflite_arena_planner_subgraph_test //tflite:arena_planner_subgraph_test.cc)
+add_test(NAME __tflite_arena_planner_subgraph_test COMMAND __tflite_arena_planner_subgraph_test)
+
+add_executable(__tflite_arena_planner_test //tflite:arena_planner_test.cc)
+add_test(NAME __tflite_arena_planner_test COMMAND __tflite_arena_planner_test)
+
+add_executable(__tflite_arena_planner_test_shared_lib )
+target_link_libraries(__tflite_arena_planner_test_shared_lib __tflite_arena_planner)
+
+add_library(__tflite_arena_planner_with_profiler)
+  //tflite:arena_planner.cc
+target_sources(__tflite_arena_planner_with_profiler PRIVATE //tflite:arena_planner.h)
+target_link_libraries(__tflite_arena_planner_with_profiler __tflite_graph_info __tflite_memory_planner __tflite_simple_memory_arena_with_profiler __tflite_util __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:arena_planner_with_profiler_build_test
+
+# Unsupported rule genrule for //tflite:arena_planner_with_profiler_build_test_0__deps
+
+add_executable(__tflite_arena_planner_with_profiler_test_shared_lib )
+target_link_libraries(__tflite_arena_planner_with_profiler_test_shared_lib __tflite_arena_planner_with_profiler)
+
+add_library(__tflite_array)
+  //tflite:array.cc
+target_sources(__tflite_array PRIVATE //tflite:array.h)
+target_link_libraries(__tflite_array __tflite_c_common __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:array_build_test
+
+# Unsupported rule genrule for //tflite:array_build_test_0__deps
+
+add_executable(__tflite_array_test //tflite:array_test.cc)
+add_test(NAME __tflite_array_test COMMAND __tflite_array_test)
+
+add_executable(__tflite_array_test_shared_lib )
+target_link_libraries(__tflite_array_test_shared_lib __tflite_array)
+
+# Unsupported rule bzl_library for //tflite:build_def_bzl
+
+add_library(__tflite_builtin_op_data)
+target_sources(__tflite_builtin_op_data PRIVATE //tflite:builtin_op_data.h)
+target_link_libraries(__tflite_builtin_op_data __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:builtin_op_data_build_test
+
+# Unsupported rule genrule for //tflite:builtin_op_data_build_test_0__deps
+
+add_executable(__tflite_builtin_op_data_test_shared_lib )
+target_link_libraries(__tflite_builtin_op_data_test_shared_lib __tflite_builtin_op_data)
+
+add_library(__tflite_builtin_ops)
+target_sources(__tflite_builtin_ops PRIVATE //tflite:builtin_ops.h)
+
+# Unsupported rule _empty_test for //tflite:builtin_ops_build_test
+
+# Unsupported rule genrule for //tflite:builtin_ops_build_test_0__deps
+
+add_executable(__tflite_builtin_ops_test_shared_lib )
+target_link_libraries(__tflite_builtin_ops_test_shared_lib __tflite_builtin_ops)
+
+add_library(__tflite_cc_api_experimental)
+target_sources(__tflite_cc_api_experimental PRIVATE //tflite:graph_info.h //tflite:interpreter.h //tflite:interpreter_builder.h //tflite:interpreter_options.h //tflite:logger.h //tflite:model.h //tflite:model_builder.h //tflite:signature_runner.h //tflite/core:subgraph.h)
+target_link_libraries(__tflite_cc_api_experimental __tflite_allocation __tflite_array __tflite_builtin_ops __tflite_external_cpu_backend_context __tflite_macros __tflite_memory_planner __tflite_minimal_logging __tflite_mutable_op_resolver __tflite_stderr_reporter __tflite_string __tflite_type_to_tflitetype __tflite_util __tflite_c_common_internal __tflite_core_cc_api_experimental __tflite_core_api_api __tflite_core_api_verifier __tflite_core_c_c_api_types __tflite_core_c_common __tflite_experimental_resource_resource __tflite_internal_signature_def __tflite_profiling_root_profiler __tflite_schema_schema_fbs _flatbuffers___runtime_cc _ruy__ruy_denormal __tflite_cc_api_stable)
+
+# Unsupported rule _empty_test for //tflite:cc_api_experimental_build_test
+
+# Unsupported rule genrule for //tflite:cc_api_experimental_build_test_0__deps
+
+add_library(__tflite_cc_api_experimental_opaque_delegate)
+target_sources(__tflite_cc_api_experimental_opaque_delegate PRIVATE //tflite:graph_info.h //tflite:interpreter.h //tflite:interpreter_builder.h //tflite:interpreter_options.h //tflite:logger.h //tflite:model.h //tflite:model_builder.h //tflite:signature_runner.h //tflite/core:subgraph.h)
+target_link_libraries(__tflite_cc_api_experimental_opaque_delegate __tflite_allocation __tflite_array __tflite_builtin_ops __tflite_external_cpu_backend_context __tflite_macros __tflite_memory_planner __tflite_minimal_logging __tflite_mutable_op_resolver __tflite_stderr_reporter __tflite_string __tflite_type_to_tflitetype __tflite_util __tflite_c_common_internal __tflite_core_cc_api_experimental __tflite_core_api_api __tflite_core_api_verifier __tflite_core_c_c_api_types __tflite_core_c_common __tflite_experimental_resource_resource __tflite_internal_signature_def __tflite_profiling_root_profiler __tflite_schema_schema_fbs _flatbuffers___runtime_cc _ruy__ruy_denormal __tflite_cc_api_stable_opaque_delegate __tflite_core_shims_tflite_use_opaque_delegate)
+
+# Unsupported rule _empty_test for //tflite:cc_api_experimental_opaque_delegate_build_test
+
+# Unsupported rule genrule for //tflite:cc_api_experimental_opaque_delegate_build_test_0__deps
+
+add_executable(__tflite_cc_api_experimental_opaque_delegate_test_shared_lib )
+target_link_libraries(__tflite_cc_api_experimental_opaque_delegate_test_shared_lib __tflite_cc_api_experimental_opaque_delegate)
+
+add_executable(__tflite_cc_api_experimental_test_shared_lib )
+target_link_libraries(__tflite_cc_api_experimental_test_shared_lib __tflite_cc_api_experimental)
+
+add_library(__tflite_cc_api_stable)
+  //tflite/core:subgraph.h
+target_sources(__tflite_cc_api_stable PRIVATE //tflite:interpreter.h //tflite:interpreter_builder.h //tflite:interpreter_options.h //tflite:model.h //tflite:model_builder.h //tflite:signature_runner.h)
+target_link_libraries(__tflite_cc_api_stable __tflite_allocation __tflite_array __tflite_external_cpu_backend_context __tflite_graph_info __tflite_logger __tflite_macros __tflite_memory_planner __tflite_minimal_logging __tflite_mutable_op_resolver __tflite_shared_library __tflite_simple_memory_arena __tflite_stderr_reporter __tflite_string __tflite_tensorflow_profiler_logger_shim __tflite_type_to_tflitetype __tflite_util __tflite_version __tflite_c_common_internal __tflite_core_cc_api_stable __tflite_core_model_builder __tflite_core_subgraph __tflite_core_api_api __tflite_core_api_verifier __tflite_core_c_c_api_types __tflite_core_c_common __tflite_delegates_telemetry __tflite_delegates_xnnpack_tflite_with_xnnpack_qs8 __tflite_delegates_xnnpack_tflite_with_xnnpack_qu8 __tflite_experimental_resource_resource __tflite_internal_signature_def __tflite_kernels_internal_compatibility __tflite_profiling_platform_profiler __tflite_profiling_root_profiler __tflite_schema_schema_fbs __tflite_schema_schema_utils _flatbuffers___runtime_cc _ruy__ruy_denormal)
+
+# Unsupported rule _empty_test for //tflite:cc_api_stable_build_test
+
+# Unsupported rule genrule for //tflite:cc_api_stable_build_test_0__deps
+
+add_library(__tflite_cc_api_stable_opaque_delegate)
+  //tflite/core:subgraph.h
+target_sources(__tflite_cc_api_stable_opaque_delegate PRIVATE //tflite:interpreter.h //tflite:interpreter_builder.h //tflite:interpreter_options.h //tflite:model.h //tflite:model_builder.h //tflite:signature_runner.h)
+target_link_libraries(__tflite_cc_api_stable_opaque_delegate __tflite_allocation __tflite_array __tflite_external_cpu_backend_context __tflite_graph_info __tflite_logger __tflite_macros __tflite_memory_planner __tflite_minimal_logging __tflite_mutable_op_resolver __tflite_shared_library __tflite_simple_memory_arena __tflite_stderr_reporter __tflite_string __tflite_tensorflow_profiler_logger_shim __tflite_type_to_tflitetype __tflite_util __tflite_version __tflite_c_common_internal __tflite_core_cc_api_stable __tflite_core_model_builder __tflite_core_subgraph __tflite_core_api_api __tflite_core_api_verifier __tflite_core_c_c_api_types __tflite_core_c_common __tflite_delegates_telemetry __tflite_delegates_xnnpack_tflite_with_xnnpack_qs8 __tflite_delegates_xnnpack_tflite_with_xnnpack_qu8 __tflite_experimental_resource_resource __tflite_internal_signature_def __tflite_kernels_internal_compatibility __tflite_profiling_platform_profiler __tflite_profiling_root_profiler __tflite_schema_schema_fbs __tflite_schema_schema_utils _flatbuffers___runtime_cc _ruy__ruy_denormal __tflite_core_shims_tflite_use_opaque_delegate)
+
+# Unsupported rule _empty_test for //tflite:cc_api_stable_opaque_delegate_build_test
+
+# Unsupported rule genrule for //tflite:cc_api_stable_opaque_delegate_build_test_0__deps
+
+add_executable(__tflite_cc_api_stable_opaque_delegate_test_shared_lib )
+target_link_libraries(__tflite_cc_api_stable_opaque_delegate_test_shared_lib __tflite_cc_api_stable_opaque_delegate)
+
+add_executable(__tflite_cc_api_stable_test_shared_lib )
+target_link_libraries(__tflite_cc_api_stable_test_shared_lib __tflite_cc_api_stable)
+
+add_library(__tflite_context)
+target_sources(__tflite_context PRIVATE //tflite:context.h)
+target_link_libraries(__tflite_context __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:context_build_test
+
+# Unsupported rule genrule for //tflite:context_build_test_0__deps
+
+add_executable(__tflite_context_test_shared_lib )
+target_link_libraries(__tflite_context_test_shared_lib __tflite_context)
+
+add_library(__tflite_create_op_resolver_header)
+target_sources(__tflite_create_op_resolver_header PRIVATE //tflite:create_op_resolver.h)
+target_link_libraries(__tflite_create_op_resolver_header __tflite_core_create_op_resolver_header)
+
+# Unsupported rule _empty_test for //tflite:create_op_resolver_header_build_test
+
+# Unsupported rule genrule for //tflite:create_op_resolver_header_build_test_0__deps
+
+add_executable(__tflite_create_op_resolver_header_test_shared_lib )
+target_link_libraries(__tflite_create_op_resolver_header_test_shared_lib __tflite_create_op_resolver_header)
+
+add_library(__tflite_create_op_resolver_with_builtin_ops)
+target_sources(__tflite_create_op_resolver_with_builtin_ops PRIVATE //tflite:create_op_resolver.h)
+target_link_libraries(__tflite_create_op_resolver_with_builtin_ops __tflite_core_create_op_resolver_with_builtin_ops)
+
+# Unsupported rule _empty_test for //tflite:create_op_resolver_with_builtin_ops_build_test
+
+# Unsupported rule genrule for //tflite:create_op_resolver_with_builtin_ops_build_test_0__deps
+
+add_executable(__tflite_create_op_resolver_with_builtin_ops_test_shared_lib )
+target_link_libraries(__tflite_create_op_resolver_with_builtin_ops_test_shared_lib __tflite_create_op_resolver_with_builtin_ops)
+
+add_library(__tflite_create_op_resolver_with_selected_ops)
+  //tflite:create_op_resolver_with_selected_ops.cc
+target_sources(__tflite_create_op_resolver_with_selected_ops PRIVATE //tflite:create_op_resolver.h)
+target_link_libraries(__tflite_create_op_resolver_with_selected_ops __tflite_mutable_op_resolver __tflite_op_resolver __tflite_core_create_op_resolver_header __tflite_kernels_builtin_ops)
+
+# Unsupported rule bool_flag for //tflite:enable_fuchsia_mmap
+
+add_library(__tflite_error_reporter)
+target_sources(__tflite_error_reporter PRIVATE //tflite:error_reporter.h)
+target_link_libraries(__tflite_error_reporter __tflite_stderr_reporter __tflite_core_api_error_reporter)
+
+# Unsupported rule _empty_test for //tflite:error_reporter_build_test
+
+# Unsupported rule genrule for //tflite:error_reporter_build_test_0__deps
+
+add_executable(__tflite_error_reporter_test_shared_lib )
+target_link_libraries(__tflite_error_reporter_test_shared_lib __tflite_error_reporter)
+
+add_library(__tflite_external_cpu_backend_context)
+  //tflite:external_cpu_backend_context.cc
+target_sources(__tflite_external_cpu_backend_context PRIVATE //tflite:external_cpu_backend_context.h)
+target_link_libraries(__tflite_external_cpu_backend_context __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:external_cpu_backend_context_build_test
+
+# Unsupported rule genrule for //tflite:external_cpu_backend_context_build_test_0__deps
+
+add_executable(__tflite_external_cpu_backend_context_test_shared_lib )
+target_link_libraries(__tflite_external_cpu_backend_context_test_shared_lib __tflite_external_cpu_backend_context)
+
+# Unsupported rule alias for //tflite:framework
+
+add_library(__tflite_framework_experimental)
+target_sources(__tflite_framework_experimental PRIVATE //tflite:allocation.h //tflite:context.h //tflite:context_util.h //tflite:error_reporter.h //tflite:graph_info.h //tflite:interpreter.h //tflite:interpreter_builder.h //tflite:interpreter_options.h //tflite:logger.h //tflite:model.h //tflite:model_builder.h //tflite:mutable_op_resolver.h //tflite:op_resolver.h //tflite:optional_debug_tools.h //tflite:signature_runner.h //tflite:stderr_reporter.h //tflite/core:macros.h //tflite/core:subgraph.h)
+target_link_libraries(__tflite_framework_experimental __tflite_allocation __tflite_array __tflite_external_cpu_backend_context __tflite_graph_info __tflite_kernel_api __tflite_macros __tflite_memory_planner __tflite_mutable_op_resolver __tflite_optional_debug_tools __tflite_stderr_reporter __tflite_string __tflite_type_to_tflitetype __tflite_util __tflite_c_common_internal __tflite_core_cc_api_stable __tflite_core_framework_experimental __tflite_core_model_builder __tflite_core_signature_runner __tflite_core_subgraph __tflite_core_api_api __tflite_core_api_verifier __tflite_core_c_common __tflite_experimental_resource_resource __tflite_internal_signature_def __tflite_profiling_root_profiler __tflite_schema_schema_fbs _flatbuffers___runtime_cc __tflite_cc_api_experimental)
+
+# Unsupported rule _empty_test for //tflite:framework_experimental_build_test
+
+# Unsupported rule genrule for //tflite:framework_experimental_build_test_0__deps
+
+add_executable(__tflite_framework_experimental_test_shared_lib )
+target_link_libraries(__tflite_framework_experimental_test_shared_lib __tflite_framework_experimental)
+
+# Unsupported rule alias for //tflite:framework_lib
+
+add_library(__tflite_framework_stable)
+  //tflite/core:subgraph.h
+target_sources(__tflite_framework_stable PRIVATE //tflite:allocation.h //tflite:context_util.h //tflite:error_reporter.h //tflite:interpreter.h //tflite:interpreter_builder.h //tflite:model.h //tflite:model_builder.h //tflite:mutable_op_resolver.h //tflite:op_resolver.h //tflite:signature_runner.h //tflite:stderr_reporter.h //tflite/core:macros.h)
+target_link_libraries(__tflite_framework_stable __tflite_allocation __tflite_array __tflite_external_cpu_backend_context __tflite_graph_info __tflite_kernel_api __tflite_macros __tflite_memory_planner __tflite_mutable_op_resolver __tflite_stderr_reporter __tflite_string __tflite_type_to_tflitetype __tflite_util __tflite_c_common_internal __tflite_core_cc_api_stable __tflite_core_framework_stable __tflite_core_signature_runner __tflite_core_subgraph __tflite_core_api_api __tflite_core_api_verifier __tflite_core_c_common __tflite_experimental_resource_resource __tflite_internal_signature_def __tflite_profiling_root_profiler __tflite_schema_schema_fbs _flatbuffers___runtime_cc __tflite_cc_api_stable)
+
+# Unsupported rule _empty_test for //tflite:framework_stable_build_test
+
+# Unsupported rule genrule for //tflite:framework_stable_build_test_0__deps
+
+add_executable(__tflite_framework_stable_test_shared_lib )
+target_link_libraries(__tflite_framework_stable_test_shared_lib __tflite_framework_stable)
+
+# Unsupported rule config_setting for //tflite:fuchsia_mmap_disabled
+
+# Unsupported rule config_setting for //tflite:gemmlowp_profiling
+
+add_library(__tflite_graph_info)
+  //tflite:graph_info.cc
+target_sources(__tflite_graph_info PRIVATE //tflite:graph_info.h)
+target_link_libraries(__tflite_graph_info __tflite_kernel_api __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:graph_info_build_test
+
+# Unsupported rule genrule for //tflite:graph_info_build_test_0__deps
+
+add_executable(__tflite_graph_info_test //tflite:graph_info_test.cc)
+add_test(NAME __tflite_graph_info_test COMMAND __tflite_graph_info_test)
+
+add_executable(__tflite_graph_info_test_shared_lib )
+target_link_libraries(__tflite_graph_info_test_shared_lib __tflite_graph_info)
+
+add_library(__tflite_interpreter_options_header)
+target_sources(__tflite_interpreter_options_header PRIVATE //tflite:interpreter_options.h)
+
+# Unsupported rule _empty_test for //tflite:interpreter_options_header_build_test
+
+# Unsupported rule genrule for //tflite:interpreter_options_header_build_test_0__deps
+
+add_executable(__tflite_interpreter_options_header_test_shared_lib )
+target_link_libraries(__tflite_interpreter_options_header_test_shared_lib __tflite_interpreter_options_header)
+
+add_executable(__tflite_interpreter_test //tflite:interpreter_test.cc)
+add_test(NAME __tflite_interpreter_test COMMAND __tflite_interpreter_test)
+
+add_library(__tflite_interpreter_test_util)
+target_sources(__tflite_interpreter_test_util PRIVATE //tflite:interpreter_test_util.h)
+target_link_libraries(__tflite_interpreter_test_util __tflite_builtin_op_data __tflite_external_cpu_backend_context __tflite_framework __tflite_string_util __tflite_version __tflite_core_framework_stable __tflite_core_api_api __tflite_core_c_common __tflite_internal_signature_def __tflite_kernels_builtin_ops __tflite_kernels_cpu_backend_context __tflite_kernels_kernel_util __tflite_kernels_internal_compatibility __tflite_schema_schema_fbs __tflite_testing_util _com_google_googletest___gtest _eigen_archive___eigen3)
+
+# Unsupported rule _empty_test for //tflite:interpreter_test_util_build_test
+
+# Unsupported rule genrule for //tflite:interpreter_test_util_build_test_0__deps
+
+add_executable(__tflite_interpreter_test_util_test_shared_lib )
+target_link_libraries(__tflite_interpreter_test_util_test_shared_lib __tflite_interpreter_test_util)
+
+add_library(__tflite_kernel_api)
+target_sources(__tflite_kernel_api PRIVATE //tflite:builtin_op_data.h //tflite:builtin_ops.h //tflite:context_util.h)
+target_link_libraries(__tflite_kernel_api __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:kernel_api_build_test
+
+# Unsupported rule genrule for //tflite:kernel_api_build_test_0__deps
+
+add_executable(__tflite_kernel_api_test_shared_lib )
+target_link_libraries(__tflite_kernel_api_test_shared_lib __tflite_kernel_api)
+
+add_executable(__tflite_libtensorflowlite.dylib )
+target_link_libraries(__tflite_libtensorflowlite.dylib __tflite_framework __tflite_tflite_exported_symbols.lds __tflite_tflite_version_script.lds __tflite_kernels_builtin_ops_all_linked)
+
+add_executable(__tflite_libtensorflowlite.so )
+target_link_libraries(__tflite_libtensorflowlite.so __tflite_framework __tflite_tflite_exported_symbols.lds __tflite_tflite_version_script.lds __tflite_kernels_builtin_ops_all_linked)
+
+add_library(__tflite_logger)
+  //tflite:logger.cc
+target_sources(__tflite_logger PRIVATE //tflite:logger.h)
+target_link_libraries(__tflite_logger __tflite_minimal_logging)
+
+# Unsupported rule _empty_test for //tflite:logger_build_test
+
+# Unsupported rule genrule for //tflite:logger_build_test_0__deps
+
+add_executable(__tflite_logger_test_shared_lib )
+target_link_libraries(__tflite_logger_test_shared_lib __tflite_logger)
+
+add_library(__tflite_macros)
+target_sources(__tflite_macros PRIVATE //tflite/core:macros.h)
+
+# Unsupported rule _empty_test for //tflite:macros_build_test
+
+# Unsupported rule genrule for //tflite:macros_build_test_0__deps
+
+add_executable(__tflite_macros_test_shared_lib )
+target_link_libraries(__tflite_macros_test_shared_lib __tflite_macros)
+
+add_library(__tflite_memory_planner)
+target_sources(__tflite_memory_planner PRIVATE //tflite:memory_planner.h)
+target_link_libraries(__tflite_memory_planner __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:memory_planner_build_test
+
+# Unsupported rule genrule for //tflite:memory_planner_build_test_0__deps
+
+add_executable(__tflite_memory_planner_test_shared_lib )
+target_link_libraries(__tflite_memory_planner_test_shared_lib __tflite_memory_planner)
+
+add_library(__tflite_minimal_logging)
+  //tflite:minimal_logging.cc //tflite:minimal_logging_android.cc //tflite:minimal_logging_ios.cc //tflite:minimal_logging_default.cc
+target_sources(__tflite_minimal_logging PRIVATE //tflite:logger.h //tflite:minimal_logging.h)
+
+# Unsupported rule _empty_test for //tflite:minimal_logging_build_test
+
+# Unsupported rule genrule for //tflite:minimal_logging_build_test_0__deps
+
+add_executable(__tflite_minimal_logging_test //tflite:minimal_logging_test.cc)
+add_test(NAME __tflite_minimal_logging_test COMMAND __tflite_minimal_logging_test)
+
+add_executable(__tflite_minimal_logging_test_shared_lib )
+target_link_libraries(__tflite_minimal_logging_test_shared_lib __tflite_minimal_logging)
+
+add_library(__tflite_model_builder)
+target_sources(__tflite_model_builder PRIVATE //tflite:model_builder.h)
+target_link_libraries(__tflite_model_builder __tflite_core_model_builder)
+
+# Unsupported rule _empty_test for //tflite:model_builder_build_test
+
+# Unsupported rule genrule for //tflite:model_builder_build_test_0__deps
+
+add_executable(__tflite_model_builder_test_shared_lib )
+target_link_libraries(__tflite_model_builder_test_shared_lib __tflite_model_builder)
+
+add_executable(__tflite_model_flex_test //tflite:model_flex_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_model_flex_test COMMAND __tflite_model_flex_test)
+
+add_executable(__tflite_model_xnnpack_test //tflite:model_xnnpack_test.cc)
+add_test(NAME __tflite_model_xnnpack_test COMMAND __tflite_model_xnnpack_test)
+
+add_library(__tflite_mutable_op_resolver)
+  //tflite:mutable_op_resolver.cc
+target_sources(__tflite_mutable_op_resolver PRIVATE //tflite:mutable_op_resolver.h)
+target_link_libraries(__tflite_mutable_op_resolver __tflite_util __tflite_core_api_op_resolver __tflite_core_api_op_resolver_internal __tflite_core_c_common __tflite_schema_schema_fbs)
+
+# Unsupported rule _empty_test for //tflite:mutable_op_resolver_build_test
+
+# Unsupported rule genrule for //tflite:mutable_op_resolver_build_test_0__deps
+
+add_executable(__tflite_mutable_op_resolver_test //tflite:mutable_op_resolver_test.cc)
+add_test(NAME __tflite_mutable_op_resolver_test COMMAND __tflite_mutable_op_resolver_test)
+
+add_executable(__tflite_mutable_op_resolver_test_shared_lib )
+target_link_libraries(__tflite_mutable_op_resolver_test_shared_lib __tflite_mutable_op_resolver)
+
+add_library(__tflite_mutable_op_resolver_utils)
+  //tflite:mutable_op_resolver_utils.cc
+target_sources(__tflite_mutable_op_resolver_utils PRIVATE //tflite:mutable_op_resolver_utils.h)
+target_link_libraries(__tflite_mutable_op_resolver_utils __tflite_builtin_ops __tflite_mutable_op_resolver __tflite_schema_schema_fbs __tflite_c_c_api __tflite_c_c_api_opaque __tflite_c_common)
+
+# Unsupported rule _empty_test for //tflite:mutable_op_resolver_utils_build_test
+
+# Unsupported rule genrule for //tflite:mutable_op_resolver_utils_build_test_0__deps
+
+add_executable(__tflite_mutable_op_resolver_utils_test //tflite:mutable_op_resolver_utils_test.cc)
+add_test(NAME __tflite_mutable_op_resolver_utils_test COMMAND __tflite_mutable_op_resolver_utils_test)
+
+add_executable(__tflite_mutable_op_resolver_utils_test_shared_lib )
+target_link_libraries(__tflite_mutable_op_resolver_utils_test_shared_lib __tflite_mutable_op_resolver_utils)
+
+add_library(__tflite_namespace)
+target_sources(__tflite_namespace PRIVATE //tflite:namespace.h)
+
+# Unsupported rule _empty_test for //tflite:namespace_build_test
+
+# Unsupported rule genrule for //tflite:namespace_build_test_0__deps
+
+add_executable(__tflite_namespace_test_shared_lib )
+target_link_libraries(__tflite_namespace_test_shared_lib __tflite_namespace)
+
+add_library(__tflite_op_resolver)
+target_sources(__tflite_op_resolver PRIVATE //tflite:op_resolver.h)
+target_link_libraries(__tflite_op_resolver __tflite_mutable_op_resolver __tflite_core_api_op_resolver)
+
+# Unsupported rule _empty_test for //tflite:op_resolver_build_test
+
+# Unsupported rule genrule for //tflite:op_resolver_build_test_0__deps
+
+add_executable(__tflite_op_resolver_test_shared_lib )
+target_link_libraries(__tflite_op_resolver_test_shared_lib __tflite_op_resolver)
+
+add_library(__tflite_optional_debug_tools)
+  //tflite:optional_debug_tools.cc
+target_sources(__tflite_optional_debug_tools PRIVATE //tflite:optional_debug_tools.h)
+target_link_libraries(__tflite_optional_debug_tools __tflite_kernel_api __tflite_macros __tflite_core_cc_api_experimental __tflite_core_framework_stable __tflite_core_c_common __tflite_schema_schema_fbs)
+
+# Unsupported rule _empty_test for //tflite:optional_debug_tools_build_test
+
+# Unsupported rule genrule for //tflite:optional_debug_tools_build_test_0__deps
+
+add_executable(__tflite_optional_debug_tools_test //tflite:optional_debug_tools_test.cc)
+add_test(NAME __tflite_optional_debug_tools_test COMMAND __tflite_optional_debug_tools_test)
+
+add_executable(__tflite_optional_debug_tools_test_shared_lib )
+target_link_libraries(__tflite_optional_debug_tools_test_shared_lib __tflite_optional_debug_tools)
+
+# Unsupported rule alias for //tflite:schema_fbs_version
+
+# Unsupported rule test_suite for //tflite:self_contained_libs_test_suite
+
+add_library(__tflite_shared_library)
+target_sources(__tflite_shared_library PRIVATE //tflite:shared_library.h)
+
+# Unsupported rule _empty_test for //tflite:shared_library_build_test
+
+# Unsupported rule genrule for //tflite:shared_library_build_test_0__deps
+
+add_executable(__tflite_shared_library_test_shared_lib )
+target_link_libraries(__tflite_shared_library_test_shared_lib __tflite_shared_library)
+
+add_library(__tflite_signature_runner)
+target_sources(__tflite_signature_runner PRIVATE //tflite:signature_runner.h)
+target_link_libraries(__tflite_signature_runner __tflite_core_signature_runner)
+
+# Unsupported rule _empty_test for //tflite:signature_runner_build_test
+
+# Unsupported rule genrule for //tflite:signature_runner_build_test_0__deps
+
+add_executable(__tflite_signature_runner_test_shared_lib )
+target_link_libraries(__tflite_signature_runner_test_shared_lib __tflite_signature_runner)
+
+add_library(__tflite_simple_memory_arena)
+  //tflite:simple_memory_arena.cc
+target_sources(__tflite_simple_memory_arena PRIVATE //tflite:simple_memory_arena.h)
+target_link_libraries(__tflite_simple_memory_arena __tflite_macros __tflite_tensorflow_profiler_logger_shim __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:simple_memory_arena_build_test
+
+# Unsupported rule genrule for //tflite:simple_memory_arena_build_test_0__deps
+
+add_library(__tflite_simple_memory_arena_debug_dump)
+  //tflite:simple_memory_arena_debug_dump.cc
+target_link_libraries(__tflite_simple_memory_arena_debug_dump __tflite_simple_memory_arena)
+
+# Unsupported rule _empty_test for //tflite:simple_memory_arena_debug_dump_build_test
+
+# Unsupported rule genrule for //tflite:simple_memory_arena_debug_dump_build_test_0__deps
+
+add_executable(__tflite_simple_memory_arena_debug_dump_test_shared_lib )
+target_link_libraries(__tflite_simple_memory_arena_debug_dump_test_shared_lib __tflite_simple_memory_arena_debug_dump)
+
+add_executable(__tflite_simple_memory_arena_test //tflite:simple_memory_arena_test.cc)
+add_test(NAME __tflite_simple_memory_arena_test COMMAND __tflite_simple_memory_arena_test)
+
+add_executable(__tflite_simple_memory_arena_test_shared_lib )
+target_link_libraries(__tflite_simple_memory_arena_test_shared_lib __tflite_simple_memory_arena)
+
+add_library(__tflite_simple_memory_arena_with_profiler)
+  //tflite:simple_memory_arena.cc
+target_sources(__tflite_simple_memory_arena_with_profiler PRIVATE //tflite:simple_memory_arena.h)
+target_link_libraries(__tflite_simple_memory_arena_with_profiler __tflite_macros __tflite_tensorflow_profiler_logger_shim __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:simple_memory_arena_with_profiler_build_test
+
+# Unsupported rule genrule for //tflite:simple_memory_arena_with_profiler_build_test_0__deps
+
+add_executable(__tflite_simple_memory_arena_with_profiler_test_shared_lib )
+target_link_libraries(__tflite_simple_memory_arena_with_profiler_test_shared_lib __tflite_simple_memory_arena_with_profiler)
+
+add_library(__tflite_simple_planner)
+  //tflite:simple_planner.cc
+target_sources(__tflite_simple_planner PRIVATE //tflite:simple_planner.h)
+target_link_libraries(__tflite_simple_planner __tflite_graph_info __tflite_memory_planner __tflite_util __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:simple_planner_build_test
+
+# Unsupported rule genrule for //tflite:simple_planner_build_test_0__deps
+
+add_executable(__tflite_simple_planner_test //tflite:simple_planner_test.cc)
+add_test(NAME __tflite_simple_planner_test COMMAND __tflite_simple_planner_test)
+
+add_executable(__tflite_simple_planner_test_shared_lib )
+target_link_libraries(__tflite_simple_planner_test_shared_lib __tflite_simple_planner)
+
+# Unsupported rule bzl_library for //tflite:special_rules_bzl
+
+add_library(__tflite_stateful_error_reporter)
+target_sources(__tflite_stateful_error_reporter PRIVATE //tflite:stateful_error_reporter.h)
+target_link_libraries(__tflite_stateful_error_reporter __tflite_core_api_error_reporter)
+
+# Unsupported rule _empty_test for //tflite:stateful_error_reporter_build_test
+
+# Unsupported rule genrule for //tflite:stateful_error_reporter_build_test_0__deps
+
+add_executable(__tflite_stateful_error_reporter_test_shared_lib )
+target_link_libraries(__tflite_stateful_error_reporter_test_shared_lib __tflite_stateful_error_reporter)
+
+add_library(__tflite_stderr_reporter)
+  //tflite:stderr_reporter.cc
+target_sources(__tflite_stderr_reporter PRIVATE //tflite:stderr_reporter.h)
+target_link_libraries(__tflite_stderr_reporter __tflite_minimal_logging __tflite_core_api_error_reporter)
+
+# Unsupported rule _empty_test for //tflite:stderr_reporter_build_test
+
+# Unsupported rule genrule for //tflite:stderr_reporter_build_test_0__deps
+
+add_executable(__tflite_stderr_reporter_test //tflite:stderr_reporter_test.cc)
+add_test(NAME __tflite_stderr_reporter_test COMMAND __tflite_stderr_reporter_test)
+
+add_executable(__tflite_stderr_reporter_test_shared_lib )
+target_link_libraries(__tflite_stderr_reporter_test_shared_lib __tflite_stderr_reporter)
+
+add_library(__tflite_string)
+target_sources(__tflite_string PRIVATE //tflite:string_type.h)
+
+# Unsupported rule _empty_test for //tflite:string_build_test
+
+# Unsupported rule genrule for //tflite:string_build_test_0__deps
+
+add_executable(__tflite_string_test_shared_lib )
+target_link_libraries(__tflite_string_test_shared_lib __tflite_string)
+
+add_library(__tflite_string_util)
+  //tflite:string_util.cc
+target_sources(__tflite_string_util PRIVATE //tflite:string_util.h)
+target_link_libraries(__tflite_string_util __tflite_string __tflite_converter_string_utils __tflite_core_c_c_api_types __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:string_util_build_test
+
+# Unsupported rule genrule for //tflite:string_util_build_test_0__deps
+
+add_executable(__tflite_string_util_test //tflite:string_util_test.cc)
+add_test(NAME __tflite_string_util_test COMMAND __tflite_string_util_test)
+
+add_executable(__tflite_string_util_test_shared_lib )
+target_link_libraries(__tflite_string_util_test_shared_lib __tflite_string_util)
+
+# Unsupported rule config_setting for //tflite:tensorflow_profiler_config
+
+add_library(__tflite_tensorflow_profiler_logger_shim)
+  //tflite:tensorflow_profiler_logger_shim.cc
+target_sources(__tflite_tensorflow_profiler_logger_shim PRIVATE //tflite:tensorflow_profiler_logger.h)
+target_link_libraries(__tflite_tensorflow_profiler_logger_shim __tflite_macros)
+
+# Unsupported rule _empty_test for //tflite:tensorflow_profiler_logger_shim_build_test
+
+# Unsupported rule genrule for //tflite:tensorflow_profiler_logger_shim_build_test_0__deps
+
+add_executable(__tflite_tensorflow_profiler_logger_shim_test_shared_lib )
+target_link_libraries(__tflite_tensorflow_profiler_logger_shim_test_shared_lib __tflite_tensorflow_profiler_logger_shim)
+
+# Unsupported rule filegroup for //tflite:tensorflowlite
+
+add_executable(__tflite_tensorflowlite.dll )
+target_link_libraries(__tflite_tensorflowlite.dll __tflite_framework __tflite_tflite_exported_symbols.lds __tflite_tflite_version_script.lds __tflite_kernels_builtin_ops_all_linked)
+
+add_library(__tflite_test_util)
+target_sources(__tflite_test_util PRIVATE //tflite:test_util.h)
+target_link_libraries(__tflite_test_util __tflite_array _com_google_absl__absl_strings_strings _com_google_absl__absl_strings_str_format _com_google_googletest___gtest __tflite_c_test_util)
+
+# Unsupported rule _empty_test for //tflite:test_util_build_test
+
+# Unsupported rule genrule for //tflite:test_util_build_test_0__deps
+
+add_executable(__tflite_test_util_test //tflite:test_util_test.cc)
+add_test(NAME __tflite_test_util_test COMMAND __tflite_test_util_test)
+
+add_executable(__tflite_test_util_test_shared_lib )
+target_link_libraries(__tflite_test_util_test_shared_lib __tflite_test_util)
+
+# Unsupported rule config_setting for //tflite:tf_lite_static_memory
+
+# Unsupported rule filegroup for //tflite:tflite_internal_cc_3p_api_deps_src
+
+# Unsupported rule filegroup for //tflite:tflite_internal_cc_3p_api_deps_src_all
+
+# Unsupported rule config_setting for //tflite:tflite_keep_symbols
+
+# Unsupported rule config_setting for //tflite:tflite_kernel_use_xnnpack_false
+
+add_library(__tflite_tflite_kernel_use_xnnpack_optional)
+
+# Unsupported rule _empty_test for //tflite:tflite_kernel_use_xnnpack_optional_build_test
+
+# Unsupported rule genrule for //tflite:tflite_kernel_use_xnnpack_optional_build_test_0__deps
+
+add_executable(__tflite_tflite_kernel_use_xnnpack_optional_test_shared_lib )
+target_link_libraries(__tflite_tflite_kernel_use_xnnpack_optional_test_shared_lib __tflite_tflite_kernel_use_xnnpack_optional)
+
+# Unsupported rule alias for //tflite:tflite_mmap_disabled
+
+# Unsupported rule alias for //tflite:tflite_mmap_disabled_2
+
+# Unsupported rule config_setting for //tflite:tflite_mmap_disabled_true
+
+# Unsupported rule config_setting for //tflite:tflite_use_simple_memory_planner
+
+add_library(__tflite_tflite_with_xnnpack)
+  //tflite:tflite_with_xnnpack.cc
+target_link_libraries(__tflite_tflite_with_xnnpack __tflite_core_c_common __tflite_delegates_xnnpack_xnnpack_delegate)
+
+# Unsupported rule _empty_test for //tflite:tflite_with_xnnpack_build_test
+
+# Unsupported rule genrule for //tflite:tflite_with_xnnpack_build_test_0__deps
+
+add_library(__tflite_tflite_with_xnnpack_default)
+target_link_libraries(__tflite_tflite_with_xnnpack_default __tflite_tflite_with_xnnpack_enabled)
+
+# Unsupported rule _empty_test for //tflite:tflite_with_xnnpack_default_build_test
+
+# Unsupported rule genrule for //tflite:tflite_with_xnnpack_default_build_test_0__deps
+
+add_executable(__tflite_tflite_with_xnnpack_default_test_shared_lib )
+target_link_libraries(__tflite_tflite_with_xnnpack_default_test_shared_lib __tflite_tflite_with_xnnpack_default)
+
+add_library(__tflite_tflite_with_xnnpack_enabled)
+target_link_libraries(__tflite_tflite_with_xnnpack_enabled __tflite_delegates_xnnpack_xnnpack_delegate)
+
+# Unsupported rule _empty_test for //tflite:tflite_with_xnnpack_enabled_build_test
+
+# Unsupported rule genrule for //tflite:tflite_with_xnnpack_enabled_build_test_0__deps
+
+add_executable(__tflite_tflite_with_xnnpack_enabled_test_shared_lib )
+target_link_libraries(__tflite_tflite_with_xnnpack_enabled_test_shared_lib __tflite_tflite_with_xnnpack_enabled)
+
+# Unsupported rule config_setting for //tflite:tflite_with_xnnpack_explicit_false
+
+# Unsupported rule config_setting for //tflite:tflite_with_xnnpack_explicit_true
+
+add_library(__tflite_tflite_with_xnnpack_optional)
+  //tflite:tflite_with_xnnpack_optional.cc
+target_sources(__tflite_tflite_with_xnnpack_optional PRIVATE //tflite:tflite_with_xnnpack_optional.h //tflite/core:macros.h)
+target_link_libraries(__tflite_tflite_with_xnnpack_optional __tflite_core_c_common __tflite_tflite_with_xnnpack_enabled __tflite_delegates_xnnpack_xnnpack_delegate_hdrs_only __tflite_tflite_with_xnnpack_default)
+
+# Unsupported rule _empty_test for //tflite:tflite_with_xnnpack_optional_build_test
+
+# Unsupported rule genrule for //tflite:tflite_with_xnnpack_optional_build_test_0__deps
+
+add_executable(__tflite_tflite_with_xnnpack_optional_test_shared_lib )
+target_link_libraries(__tflite_tflite_with_xnnpack_optional_test_shared_lib __tflite_tflite_with_xnnpack_optional)
+
+add_executable(__tflite_tflite_with_xnnpack_test_shared_lib )
+target_link_libraries(__tflite_tflite_with_xnnpack_test_shared_lib __tflite_tflite_with_xnnpack)
+
+add_library(__tflite_type_to_tflitetype)
+target_sources(__tflite_type_to_tflitetype PRIVATE //tflite:portable_type_to_tflitetype.h //tflite:type_to_tflitetype.h)
+target_link_libraries(__tflite_type_to_tflitetype __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite:type_to_tflitetype_build_test
+
+# Unsupported rule genrule for //tflite:type_to_tflitetype_build_test_0__deps
+
+add_executable(__tflite_type_to_tflitetype_test //tflite:type_to_tflitetype_test.cc)
+add_test(NAME __tflite_type_to_tflitetype_test COMMAND __tflite_type_to_tflitetype_test)
+
+add_executable(__tflite_type_to_tflitetype_test_shared_lib )
+target_link_libraries(__tflite_type_to_tflitetype_test_shared_lib __tflite_type_to_tflitetype)
+
+add_library(__tflite_util)
+  //tflite:util.cc
+target_sources(__tflite_util PRIVATE //tflite:util.h)
+target_link_libraries(__tflite_util __tflite_array __tflite_kernel_api __tflite_macros __tflite_core_c_common __tflite_schema_schema_fbs)
+
+# Unsupported rule _empty_test for //tflite:util_build_test
+
+# Unsupported rule genrule for //tflite:util_build_test_0__deps
+
+add_executable(__tflite_util_test //tflite:util_test.cc)
+add_test(NAME __tflite_util_test COMMAND __tflite_util_test)
+
+add_executable(__tflite_util_test_shared_lib )
+target_link_libraries(__tflite_util_test_shared_lib __tflite_util)
+
+add_library(__tflite_version)
+target_sources(__tflite_version PRIVATE //tflite:version.h)
+target_link_libraries(__tflite_version _org_tensorflow__tensorflow_core_public_release_version)
+
+# Unsupported rule _empty_test for //tflite:version_build_test
+
+# Unsupported rule genrule for //tflite:version_build_test_0__deps
+
+add_executable(__tflite_version_test_shared_lib )
+target_link_libraries(__tflite_version_test_shared_lib __tflite_version)
+

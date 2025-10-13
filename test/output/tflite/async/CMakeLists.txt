@@ -1,0 +1,10 @@
+# Auto-generated CMake for package tflite/async
+
+add_library(__tflite_async_backend_async_kernel_interface)
+  //tflite/async:backend_async_kernel_interface.cc
+target_sources(__tflite_async_backend_async_kernel_interface PRIVATE //tflite/async:backend_async_kernel_interface.h)
+target_link_libraries(__tflite_async_backend_async_kernel_interface __tflite_async_c_async_kernel __tflite_async_c_types __tflite_c_c_api_types __tflite_c_common)
+
+add_executable(__tflite_async_backend_async_kernel_interface_test //tflite/async:backend_async_kernel_interface_test.cc)
+add_test(NAME __tflite_async_backend_async_kernel_interface_test COMMAND __tflite_async_backend_async_kernel_interface_test)
+

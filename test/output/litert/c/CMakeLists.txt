@@ -1,0 +1,218 @@
+# Auto-generated CMake for package litert/c
+
+add_executable(__litert_c_libLiteRtRuntimeCApi )
+target_link_libraries(__litert_c_libLiteRtRuntimeCApi __litert_c_litert_any __litert_c_litert_common __litert_c_litert_compiled_model __litert_c_litert_custom_tensor_buffer __litert_c_litert_options __litert_c_litert_event __litert_c_litert_environment __litert_c_litert_layout __litert_c_litert_logging __litert_c_litert_metrics __litert_c_litert_model __litert_c_litert_model_types __litert_c_litert_op_code __litert_c_litert_op_options __litert_c_litert_opaque_options __litert_c_litert_profiler __litert_c_litert_rewriter __litert_c_litert_tensor_buffer __litert_c_internal_litert_accelerator_registration __litert_c_internal_litert_accelerator __litert_c_internal_litert_dispatch_delegate __litert_c_internal_litert_external_litert_buffer_context __litert_c_internal_litert_tensor_buffer_registry __litert_c_options_litert_cpu_options __litert_c_options_litert_darwinn_runtime_options __litert_c_options_litert_google_tensor_options_type __litert_c_options_litert_google_tensor_options __litert_c_options_litert_gpu_options __litert_c_options_litert_mediatek_options __litert_c_options_litert_qualcomm_options __litert_c_options_litert_runtime_options)
+
+add_library(__litert_c_litert_any)
+target_sources(__litert_c_litert_any PRIVATE //litert/c:litert_any.h)
+
+add_executable(__litert_c_litert_c_api_common_test //litert/c:litert_c_api_common_test.c)
+add_test(NAME __litert_c_litert_c_api_common_test COMMAND __litert_c_litert_c_api_common_test)
+
+add_library(__litert_c_litert_common)
+  //litert/c:litert_common.cc
+target_sources(__litert_c_litert_common PRIVATE //litert/c:litert_common.h)
+target_link_libraries(__litert_c_litert_common __litert_build_common_build_config)
+
+add_executable(__litert_c_litert_common_test //litert/c:litert_common_test.cc)
+add_test(NAME __litert_c_litert_common_test COMMAND __litert_c_litert_common_test)
+
+add_library(__litert_c_litert_compiled_model)
+  //litert/c:litert_compiled_model.cc
+target_sources(__litert_c_litert_compiled_model PRIVATE //litert/c:litert_compiled_model.h)
+target_link_libraries(__litert_c_litert_compiled_model __litert_c_litert_common __litert_c_litert_environment __litert_c_litert_layout __litert_c_litert_logging __litert_c_litert_metrics __litert_c_litert_model __litert_c_litert_options __litert_c_litert_tensor_buffer __litert_cc_litert_macros __litert_runtime_compiled_model __tflite_c_c_api_types _com_google_absl__absl_types_span)
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_compiled_model_cpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_compiled_model_gpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_compiled_model_npu
+
+add_executable(__litert_c_litert_compiled_model_shared_lib_test //litert/c:litert_compiled_model_test.cc)
+add_test(NAME __litert_c_litert_compiled_model_shared_lib_test COMMAND __litert_c_litert_compiled_model_shared_lib_test)
+
+add_executable(__litert_c_litert_compiled_model_test //litert/c:litert_compiled_model_test.cc)
+add_test(NAME __litert_c_litert_compiled_model_test COMMAND __litert_c_litert_compiled_model_test)
+
+add_library(__litert_c_litert_custom_op_kernel)
+target_sources(__litert_c_litert_custom_op_kernel PRIVATE //litert/c:litert_custom_op_kernel.h)
+target_link_libraries(__litert_c_litert_custom_op_kernel __litert_c_litert_common __litert_c_litert_layout)
+
+add_executable(__litert_c_litert_custom_op_test //litert/c:litert_custom_op_test.cc)
+add_test(NAME __litert_c_litert_custom_op_test COMMAND __litert_c_litert_custom_op_test)
+
+add_library(__litert_c_litert_custom_tensor_buffer)
+target_sources(__litert_c_litert_custom_tensor_buffer PRIVATE //litert/c:litert_custom_tensor_buffer.h)
+target_link_libraries(__litert_c_litert_custom_tensor_buffer __litert_c_litert_common __litert_c_litert_model_types __litert_c_litert_tensor_buffer_types)
+
+add_library(__litert_c_litert_environment)
+  //litert/c:litert_environment.cc
+target_sources(__litert_c_litert_environment PRIVATE //litert/c:litert_environment.h)
+target_link_libraries(__litert_c_litert_environment __litert_c_litert_common __litert_c_litert_environment_options __litert_cc_litert_macros __litert_core_environment __litert_runtime_accelerators_auto_registration _com_google_absl__absl_types_span __litert_runtime_gpu_environment)
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_environment_cpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_environment_gpu
+
+add_library(__litert_c_litert_environment_header)
+target_sources(__litert_c_litert_environment_header PRIVATE //litert/c:litert_environment.h)
+target_link_libraries(__litert_c_litert_environment_header __litert_c_litert_common __litert_c_litert_environment_options)
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_environment_npu
+
+add_library(__litert_c_litert_environment_options)
+  //litert/c:litert_environment_options.cc
+target_sources(__litert_c_litert_environment_options PRIVATE //litert/c:litert_environment_options.h)
+target_link_libraries(__litert_c_litert_environment_options __litert_c_litert_any __litert_c_litert_common __litert_cc_litert_macros __litert_core_environment_options)
+
+add_library(__litert_c_litert_environment_options_header)
+target_sources(__litert_c_litert_environment_options_header PRIVATE //litert/c:litert_environment_options.h)
+target_link_libraries(__litert_c_litert_environment_options_header __litert_c_litert_any __litert_c_litert_common)
+
+add_executable(__litert_c_litert_environment_options_test //litert/c:litert_environment_options_test.cc)
+add_test(NAME __litert_c_litert_environment_options_test COMMAND __litert_c_litert_environment_options_test)
+
+add_library(__litert_c_litert_event)
+  //litert/c:litert_event.cc
+target_sources(__litert_c_litert_event PRIVATE //litert/c:litert_event.h)
+target_link_libraries(__litert_c_litert_event __litert_c_litert_common __litert_c_litert_event_type __litert_c_litert_logging __litert_cc_litert_macros __litert_runtime_event __tflite_delegates_gpu_cl_opencl_wrapper _opencl_headers___opencl_headers)
+
+add_library(__litert_c_litert_event_type)
+target_sources(__litert_c_litert_event_type PRIVATE //litert/c:litert_event_type.h)
+
+add_library(__litert_c_litert_gl_types)
+target_sources(__litert_c_litert_gl_types PRIVATE //litert/c:litert_gl_types.h)
+
+add_library(__litert_c_litert_layout)
+  //litert/c:litert_layout.cc
+target_sources(__litert_c_litert_layout PRIVATE //litert/c:litert_layout.h)
+target_link_libraries(__litert_c_litert_layout __litert_c_litert_common)
+
+add_library(__litert_c_litert_logging)
+  //litert/c:litert_logging.cc
+target_sources(__litert_c_litert_logging PRIVATE //litert/c:litert_logging.h)
+target_link_libraries(__litert_c_litert_logging __litert_c_litert_common __tflite_minimal_logging __tflite_core_c_private_common _com_google_absl__absl_strings_string_view)
+
+add_executable(__litert_c_litert_logging_test //litert/c:litert_logging_test.cc)
+add_test(NAME __litert_c_litert_logging_test COMMAND __litert_c_litert_logging_test)
+
+add_library(__litert_c_litert_metrics)
+  //litert/c:litert_metrics.cc
+target_sources(__litert_c_litert_metrics PRIVATE //litert/c:litert_metrics.h)
+target_link_libraries(__litert_c_litert_metrics __litert_c_litert_any __litert_c_litert_common __litert_runtime_metrics)
+
+add_library(__litert_c_litert_model)
+  //litert/c:litert_model.cc
+target_sources(__litert_c_litert_model PRIVATE //litert/c:litert_model.h)
+target_link_libraries(__litert_c_litert_model __litert_c_litert_common __litert_c_litert_layout __litert_c_litert_model_types __litert_c_litert_op_code __litert_build_common_build_config __litert_cc_litert_buffer_ref __litert_cc_litert_macros __litert_core_model_model __litert_core_model_model_load __tflite_core_c_private_c_api_types _com_google_absl__absl_strings_string_view __litert_core_model_model_serialize)
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_model_cpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_model_gpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_model_npu
+
+add_executable(__litert_c_litert_model_test //litert/c:litert_model_test.cc)
+add_test(NAME __litert_c_litert_model_test COMMAND __litert_c_litert_model_test)
+
+add_library(__litert_c_litert_model_types)
+target_sources(__litert_c_litert_model_types PRIVATE //litert/c:litert_model_types.h)
+target_link_libraries(__litert_c_litert_model_types __litert_c_litert_common __litert_c_litert_layout __litert_c_litert_op_code)
+
+add_library(__litert_c_litert_op_code)
+target_sources(__litert_c_litert_op_code PRIVATE //litert/c:litert_op_code.h)
+target_link_libraries(__litert_c_litert_op_code __tflite_builtin_ops)
+
+add_library(__litert_c_litert_op_options)
+  //litert/c:litert_op_options.cc
+target_sources(__litert_c_litert_op_options PRIVATE //litert/c:litert_op_options.h)
+target_link_libraries(__litert_c_litert_op_options __litert_c_litert_common __litert_c_litert_layout __litert_c_litert_logging __litert_c_litert_op_code __litert_cc_litert_macros __litert_core_model_model __tflite_c_c_api_types __tflite_converter_core_model_builder_base __tflite_schema_schema_fbs)
+
+add_executable(__litert_c_litert_op_options_test //litert/c:litert_op_options_test.cc)
+add_test(NAME __litert_c_litert_op_options_test COMMAND __litert_c_litert_op_options_test)
+
+add_library(__litert_c_litert_opaque_options)
+  //litert/c:litert_opaque_options.cc
+target_sources(__litert_c_litert_opaque_options PRIVATE //litert/c:litert_opaque_options.h)
+target_link_libraries(__litert_c_litert_opaque_options __litert_c_litert_common)
+
+add_executable(__litert_c_litert_opaque_options_test //litert/c:litert_opaque_options_test.cc)
+add_test(NAME __litert_c_litert_opaque_options_test COMMAND __litert_c_litert_opaque_options_test)
+
+add_library(__litert_c_litert_options)
+  //litert/c:litert_options.cc
+target_sources(__litert_c_litert_options PRIVATE //litert/c:litert_options.h)
+target_link_libraries(__litert_c_litert_options __litert_c_litert_common __litert_c_litert_logging __litert_c_litert_opaque_options __litert_cc_litert_handle __litert_cc_litert_macros __litert_core_options)
+
+add_executable(__litert_c_litert_options_test //litert/c:litert_options_test.cc)
+add_test(NAME __litert_c_litert_options_test COMMAND __litert_c_litert_options_test)
+
+add_library(__litert_c_litert_platform_support)
+target_sources(__litert_c_litert_platform_support PRIVATE //litert/c:litert_platform_support.h)
+target_link_libraries(__litert_c_litert_platform_support __litert_c_litert_common)
+
+add_library(__litert_c_litert_profiler)
+  //litert/c:litert_profiler.cc
+target_sources(__litert_c_litert_profiler PRIVATE //litert/c:litert_profiler.h)
+target_link_libraries(__litert_c_litert_profiler __litert_c_litert_common __litert_c_litert_profiler_event __litert_cc_litert_macros __litert_runtime_profiler)
+
+add_library(__litert_c_litert_profiler_event)
+target_sources(__litert_c_litert_profiler_event PRIVATE //litert/c:litert_profiler_event.h)
+target_link_libraries(__litert_c_litert_profiler_event __tflite_core_api_api __tflite_profiling_memory_info)
+
+add_executable(__litert_c_litert_profiler_test //litert/c:litert_profiler_test.cc)
+add_test(NAME __litert_c_litert_profiler_test COMMAND __litert_c_litert_profiler_test)
+
+add_library(__litert_c_litert_rewriter)
+  //litert/c:litert_rewriter.cc
+target_sources(__litert_c_litert_rewriter PRIVATE //litert/c:litert_rewriter.h)
+target_link_libraries(__litert_c_litert_rewriter __litert_c_litert_common __litert_c_litert_model __litert_c_litert_op_code __litert_core_model_model __litert_core_model_buffer_manager)
+
+add_executable(__litert_c_litert_rewriter_test //litert/c:litert_rewriter_test.cc)
+add_test(NAME __litert_c_litert_rewriter_test COMMAND __litert_c_litert_rewriter_test)
+
+# Unsupported rule cc_import for //litert/c:litert_runtime_c_api_dll_import
+
+# Unsupported rule cc_import for //litert/c:litert_runtime_c_api_exe_import
+
+add_library(__litert_c_litert_runtime_c_api_shared_lib)
+  //litert/c:litert_runtime_c_api_dylib //litert/c:litert_runtime_c_api_so
+target_sources(__litert_c_litert_runtime_c_api_shared_lib PRIVATE //litert/c:c_api_headers //litert/c/internal:internal_headers //litert/c/options:options_headers //tflite:builtin_ops.h //tflite/c:tensorflowlite_c_api_hdrs_filegroup //tflite/core/c:headers_filegroup)
+target_link_libraries(__litert_c_litert_runtime_c_api_shared_lib _com_google_absl__absl_types_span _opencl_headers___opencl_headers __litert_vendors_c_litert_dispatch_c_api __tflite_core_api_api __tflite_profiling_memory_info __tflite_profiling_profile_buffer __litert_build_common_build_config __litert_c_litert_runtime_c_api_import)
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_runtime_c_api_shared_lib_cpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_runtime_c_api_shared_lib_gpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_runtime_c_api_shared_lib_npu
+
+# Unsupported rule cc_shared_library for //litert/c:litert_runtime_c_api_so
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_runtime_c_api_so_cpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_runtime_c_api_so_gpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_runtime_c_api_so_npu
+
+add_library(__litert_c_litert_tensor_buffer)
+  //litert/c:litert_tensor_buffer.cc //litert/c:litert_tensor_buffer_requirements.cc
+target_sources(__litert_c_litert_tensor_buffer PRIVATE //litert/c:litert_tensor_buffer.h //litert/c:litert_tensor_buffer_requirements.h)
+target_link_libraries(__litert_c_litert_tensor_buffer __litert_c_litert_common __litert_c_litert_custom_tensor_buffer __litert_c_litert_event __litert_c_litert_gl_types __litert_c_litert_logging __litert_c_litert_model_types __litert_c_litert_tensor_buffer_types __litert_cc_litert_expected __litert_cc_litert_macros __litert_runtime_tensor_buffer _com_google_absl__absl_types_span _opencl_headers___opencl_headers)
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_tensor_buffer_cpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_tensor_buffer_gpu
+
+# Unsupported rule flavored_cc_alias for //litert/c:litert_tensor_buffer_npu
+
+add_executable(__litert_c_litert_tensor_buffer_requirements_test //litert/c:litert_tensor_buffer_requirements_test.cc)
+add_test(NAME __litert_c_litert_tensor_buffer_requirements_test COMMAND __litert_c_litert_tensor_buffer_requirements_test)
+
+add_executable(__litert_c_litert_tensor_buffer_test //litert/c:litert_tensor_buffer_test.cc)
+add_test(NAME __litert_c_litert_tensor_buffer_test COMMAND __litert_c_litert_tensor_buffer_test)
+
+add_library(__litert_c_litert_tensor_buffer_types)
+target_sources(__litert_c_litert_tensor_buffer_types PRIVATE //litert/c:litert_tensor_buffer_types.h)
+
+# Unsupported rule cc_shared_library for //litert/c:litert_tflite_runtime_c_api_so
+

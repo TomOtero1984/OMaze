@@ -1,0 +1,26 @@
+# Auto-generated CMake for package litert/vendors/qualcomm/core/utils
+
+add_library(__litert_vendors_qualcomm_core_utils_log)
+  //litert/vendors/qualcomm/core/utils:log_android.cc //litert/vendors/qualcomm/core/utils:log_default.cc
+target_sources(__litert_vendors_qualcomm_core_utils_log PRIVATE //litert/vendors/qualcomm/core/utils:log.h)
+target_link_libraries(__litert_vendors_qualcomm_core_utils_log __litert_vendors_qualcomm_core_common)
+
+add_library(__litert_vendors_qualcomm_core_utils_miscs)
+  //litert/vendors/qualcomm/core/utils:miscs.cc
+target_sources(__litert_vendors_qualcomm_core_utils_miscs PRIVATE //litert/vendors/qualcomm/core/utils:miscs.h)
+target_link_libraries(__litert_vendors_qualcomm_core_utils_miscs __litert_vendors_qualcomm_core_utils_log __litert_vendors_qualcomm_core_schema_soc_table _com_google_absl__absl_types_span _qairt___qnn_lib_headers)
+
+add_library(__litert_vendors_qualcomm_core_utils_qnn_model)
+  //litert/vendors/qualcomm/core/utils:qnn_model.cc
+target_sources(__litert_vendors_qualcomm_core_utils_qnn_model PRIVATE //litert/vendors/qualcomm/core/utils:qnn_model.h)
+target_link_libraries(__litert_vendors_qualcomm_core_utils_qnn_model __litert_vendors_qualcomm_core_utils_log __litert_vendors_qualcomm_core_wrappers_op_wrapper __litert_vendors_qualcomm_core_wrappers_tensor_wrapper _com_google_absl__absl_container_flat_hash_set _com_google_absl__absl_types_span _qairt___qnn_lib_headers)
+
+# Unsupported rule sh_binary for //litert/vendors/qualcomm/core/utils:utils_device_test_adb
+
+# Unsupported rule expand_template for //litert/vendors/qualcomm/core/utils:utils_device_test_expanded_template
+
+# Unsupported rule filegroup for //litert/vendors/qualcomm/core/utils:utils_device_test_host_runfiles
+
+add_executable(__litert_vendors_qualcomm_core_utils_utils_test //litert/vendors/qualcomm/core/utils:utils_test.cc)
+add_test(NAME __litert_vendors_qualcomm_core_utils_utils_test COMMAND __litert_vendors_qualcomm_core_utils_utils_test)
+

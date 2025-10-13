@@ -1,0 +1,14 @@
+# Auto-generated CMake for package tflite/async/interop/c
+
+add_library(__tflite_async_interop_c_attribute_map)
+target_sources(__tflite_async_interop_c_attribute_map PRIVATE //tflite/async/interop/c:attribute_map.h)
+target_link_libraries(__tflite_async_interop_c_attribute_map __tflite_core_async_interop_c_attribute_map)
+
+add_library(__tflite_async_interop_c_constants)
+target_sources(__tflite_async_interop_c_constants PRIVATE //tflite/async/interop/c:constants.h)
+target_link_libraries(__tflite_async_interop_c_constants __tflite_core_async_interop_c_constants)
+
+add_library(__tflite_async_interop_c_types)
+target_sources(__tflite_async_interop_c_types PRIVATE //tflite/async/interop/c:types.h)
+target_link_libraries(__tflite_async_interop_c_types __tflite_core_async_interop_c_types)
+

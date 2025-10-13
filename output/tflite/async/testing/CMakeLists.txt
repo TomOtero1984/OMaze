@@ -1,0 +1,6 @@
+# Auto-generated CMake for package tflite/async/testing
+
+add_library(__tflite_async_testing_mock_async_kernel)
+target_sources(__tflite_async_testing_mock_async_kernel PRIVATE //tflite/async/testing:mock_async_kernel.h)
+target_link_libraries(__tflite_async_testing_mock_async_kernel _com_google_googletest___gtest __tflite_async_backend_async_kernel_interface __tflite_async_c_types)
+

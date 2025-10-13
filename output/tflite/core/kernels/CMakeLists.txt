@@ -1,0 +1,31 @@
+# Auto-generated CMake for package tflite/core/kernels
+
+add_library(__tflite_core_kernels_builtin_ops)
+  //tflite/core/kernels:register.cc
+target_sources(__tflite_core_kernels_builtin_ops PRIVATE //tflite/core/kernels:builtin_op_kernels.h //tflite/core/kernels:register.h)
+target_link_libraries(__tflite_core_kernels_builtin_ops __tflite_mutable_op_resolver __tflite_tflite_with_xnnpack_optional __tflite_core_cc_api_stable __tflite_core_c_common __tflite_kernels_builtin_op_kernels __tflite_schema_schema_fbs)
+
+add_library(__tflite_core_kernels_builtin_ops_all_linked)
+  //tflite/core/kernels:register.cc
+target_sources(__tflite_core_kernels_builtin_ops_all_linked PRIVATE //tflite/core/kernels:builtin_op_kernels.h //tflite/core/kernels:register.h)
+target_link_libraries(__tflite_core_kernels_builtin_ops_all_linked __tflite_framework_stable __tflite_tflite_with_xnnpack_optional __tflite_core_cc_api_stable __tflite_core_c_common __tflite_kernels_builtin_op_kernels __tflite_schema_schema_fbs)
+
+# Unsupported rule _empty_test for //tflite/core/kernels:builtin_ops_all_linked_build_test
+
+# Unsupported rule genrule for //tflite/core/kernels:builtin_ops_all_linked_build_test_0__deps
+
+add_executable(__tflite_core_kernels_builtin_ops_all_linked_test_shared_lib )
+target_link_libraries(__tflite_core_kernels_builtin_ops_all_linked_test_shared_lib __tflite_core_kernels_builtin_ops_all_linked)
+
+# Unsupported rule _empty_test for //tflite/core/kernels:builtin_ops_build_test
+
+# Unsupported rule genrule for //tflite/core/kernels:builtin_ops_build_test_0__deps
+
+add_executable(__tflite_core_kernels_builtin_ops_test //tflite/core/kernels:register_test.cc)
+add_test(NAME __tflite_core_kernels_builtin_ops_test COMMAND __tflite_core_kernels_builtin_ops_test)
+
+add_executable(__tflite_core_kernels_builtin_ops_test_shared_lib )
+target_link_libraries(__tflite_core_kernels_builtin_ops_test_shared_lib __tflite_core_kernels_builtin_ops)
+
+# Unsupported rule test_suite for //tflite/core/kernels:self_contained_libs_test_suite
+

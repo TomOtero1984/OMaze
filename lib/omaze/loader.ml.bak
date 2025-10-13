@@ -1,0 +1,70 @@
+open Yojson.Basic.Util
+open Ir
+
+let kind_of_string = function
+  | "cc_library" -> CC_Library
+  | "cc_binary"  -> CC_Binary
+  | "cc_test"    -> CC_Test
+  | other -> Other other
+
+(* derive package path from label like "//runtime/core:engine" -> "runtime/core" *)
+let package_of_label label =
+  match String.index_opt label ':' with
+  | Some idx ->
+      let prefix = String.sub label 0 idx in
+      (* strip leading // or @repo// *)
+      let p =
+        if String.length prefix >= 2 && String.sub prefix 0 2 = "//" then
+          String.sub prefix 2 (String.length prefix - 2)
+        else if String.contains prefix '/' then
+          (* may be @repo//pkg/... *)
+          let pos = String.index prefix '/' in
+          if pos + 2 < String.length prefix && String.sub prefix (pos+2) 2 = "//" then
+            String.sub prefix (pos+3) (String.length prefix - (pos+3))
+          else prefix
+        else prefix
+      in
+      p
+  | None -> "."  (* fallback *)
+
+let list_of_opt_strings json_field =
+  match json_field with
+  | `Null -> []
+  | `List l -> List.filter_map (function `String s -> Some s | _ -> None) l
+  | `String s -> [s]
+  | _ -> []
+
+let parse_target ~label json =
+  (* let rule = json |> member "rule" |> to_string_option |> Option.value ~default:"" in *)
+  let name =
+    match json |> member "name" |> to_string_option with
+    | Some s -> s
+    | None ->
+        (* fallback to label short name after ':' or last '/' *)
+        (match String.rindex_opt label ':' with
+         | Some i -> String.sub label (i+1) (String.length label - (i+1))
+         | None -> label)
+  in
+  let srcs = json |> member "srcs" |> (function `Null -> [] | v -> list_of_opt_strings v) in
+  let hdrs = json |> member "hdrs" |> (function `Null -> [] | v -> list_of_opt_strings v) in
+  let deps  = json |> member "deps"  |> (function `Null -> [] | v -> list_of_opt_strings v) in
+  let kind = json |> member "rule" |> to_string_option |> Option.map kind_of_string |> Option.value ~default:(Other "") in
+  {
+    label;
+    name;
+    kind;
+    srcs;
+    hdrs;
+    deps;
+    package = package_of_label label;
+  }
+
+let load_from_file path : project =
+  let json = Yojson.Basic.from_file path in
+  (* Expecting top-level { "targets": { "<label>": { ... }, ... } } *)
+  let targets_json = json |> member "targets" in
+  match targets_json with
+  | `Assoc pairs ->
+      let targets = pairs |> List.map (fun (label, tjson) -> parse_target ~label tjson) in
+      { targets }
+  | _ -> { targets = [] }

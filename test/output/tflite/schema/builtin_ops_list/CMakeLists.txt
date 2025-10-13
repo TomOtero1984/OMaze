@@ -1,0 +1,16 @@
+# Auto-generated CMake for package tflite/schema/builtin_ops_list
+
+add_executable(__tflite_schema_builtin_ops_list_consistency_test //tflite/schema/builtin_ops_list:consistency_test.cc)
+add_test(NAME __tflite_schema_builtin_ops_list_consistency_test COMMAND __tflite_schema_builtin_ops_list_consistency_test)
+
+add_executable(__tflite_schema_builtin_ops_list_generate //tflite/schema/builtin_ops_list:generate.cc)
+target_link_libraries(__tflite_schema_builtin_ops_list_generate __tflite_schema_builtin_ops_list_generator _rules_cc___link_extra_lib)
+
+add_library(__tflite_schema_builtin_ops_list_generator)
+  //tflite/schema/builtin_ops_list:generator.cc
+target_sources(__tflite_schema_builtin_ops_list_generator PRIVATE //tflite/schema/builtin_ops_list:generator.h)
+target_link_libraries(__tflite_schema_builtin_ops_list_generator __tflite_schema_schema_fbs)
+
+add_executable(__tflite_schema_builtin_ops_list_generator_test //tflite/schema/builtin_ops_list:generator_test.cc)
+add_test(NAME __tflite_schema_builtin_ops_list_generator_test COMMAND __tflite_schema_builtin_ops_list_generator_test)
+

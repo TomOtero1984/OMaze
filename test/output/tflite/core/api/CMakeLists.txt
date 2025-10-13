@@ -1,0 +1,33 @@
+# Auto-generated CMake for package tflite/core/api
+
+add_library(__tflite_core_api_api)
+  //tflite/core/api:flatbuffer_conversions.cc //tflite/core/api:tensor_utils.cc
+target_sources(__tflite_core_api_api PRIVATE //tflite/core/api:error_reporter.h //tflite/core/api:flatbuffer_conversions.h //tflite/core/api:op_resolver.h //tflite/core/api:profiler.h //tflite/core/api:tensor_utils.h)
+target_link_libraries(__tflite_core_api_api __tflite_core_api_error_reporter __tflite_core_api_op_resolver _flatbuffers___runtime_cc __tflite_core_c_common __tflite_kernels_internal_compatibility __tflite_schema_schema_fbs)
+
+add_library(__tflite_core_api_error_reporter)
+target_sources(__tflite_core_api_error_reporter PRIVATE //tflite/converter/core/api:error_reporter.h //tflite/core/api:error_reporter.h)
+target_link_libraries(__tflite_core_api_error_reporter __tflite_converter_core_api_error_reporter)
+
+add_executable(__tflite_core_api_flatbuffer_conversions_test //tflite/core/api:flatbuffer_conversions_test.cc)
+add_test(NAME __tflite_core_api_flatbuffer_conversions_test COMMAND __tflite_core_api_flatbuffer_conversions_test)
+
+add_library(__tflite_core_api_op_resolver)
+  //tflite/core/api:op_resolver.cc
+target_sources(__tflite_core_api_op_resolver PRIVATE //tflite/core/api:op_resolver.h)
+target_link_libraries(__tflite_core_api_op_resolver __tflite_core_api_error_reporter __tflite_converter_schema_schema_utils __tflite_core_c_common __tflite_schema_schema_fbs)
+
+add_library(__tflite_core_api_op_resolver_internal)
+target_sources(__tflite_core_api_op_resolver_internal PRIVATE //tflite/core/api:op_resolver_internal.h)
+target_link_libraries(__tflite_core_api_op_resolver_internal __tflite_core_api_op_resolver)
+
+add_executable(__tflite_core_api_op_resolver_internal_test //tflite/core/api:op_resolver_internal_test.cc)
+add_test(NAME __tflite_core_api_op_resolver_internal_test COMMAND __tflite_core_api_op_resolver_internal_test)
+
+add_executable(__tflite_core_api_op_resolver_test //tflite/core/api:op_resolver_test.cc)
+add_test(NAME __tflite_core_api_op_resolver_test COMMAND __tflite_core_api_op_resolver_test)
+
+add_library(__tflite_core_api_verifier)
+target_sources(__tflite_core_api_verifier PRIVATE //tflite/converter/core/api:verifier.h //tflite/core/api:verifier.h)
+target_link_libraries(__tflite_core_api_verifier __tflite_converter_core_api_error_reporter __tflite_converter_core_api_verifier)
+

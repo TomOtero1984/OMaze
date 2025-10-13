@@ -1,4 +1,5 @@
 (library
   (name omaze)
   (public_name OMaze)
-  (modules ir parser graph cmake_gen))
+  (libraries yojson unix)
+  (modules ir cmake_gen loader io_utils))
