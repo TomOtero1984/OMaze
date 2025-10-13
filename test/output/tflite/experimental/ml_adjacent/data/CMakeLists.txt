@@ -1,0 +1,10 @@
+# Auto-generated CMake for package tflite/experimental/ml_adjacent/data
+
+add_library(__tflite_experimental_ml_adjacent_data_owning_vector_ref)
+  //tflite/experimental/ml_adjacent/data:owning_vector_ref.cc
+target_sources(__tflite_experimental_ml_adjacent_data_owning_vector_ref PRIVATE //tflite/experimental/ml_adjacent/data:owning_vector_ref.h)
+target_link_libraries(__tflite_experimental_ml_adjacent_data_owning_vector_ref __tflite_experimental_ml_adjacent_lib)
+
+add_executable(__tflite_experimental_ml_adjacent_data_owning_vector_ref_test //tflite/experimental/ml_adjacent/data:owning_vector_ref_test.cc)
+add_test(NAME __tflite_experimental_ml_adjacent_data_owning_vector_ref_test COMMAND __tflite_experimental_ml_adjacent_data_owning_vector_ref_test)
+

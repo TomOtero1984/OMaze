@@ -1,0 +1,6 @@
+# Auto-generated CMake for package tflite/converter/kernels
+
+add_library(__tflite_converter_kernels_padding)
+target_sources(__tflite_converter_kernels_padding PRIVATE //tflite/converter/kernels:padding.h)
+target_link_libraries(__tflite_converter_kernels_padding __tflite_converter_core_c_tflite_common)
+

@@ -1,0 +1,6 @@
+# Auto-generated CMake for package tflite/delegates/gpu/gl/runtime
+
+add_library(__tflite_delegates_gpu_gl_runtime_shared_buffer)
+target_sources(__tflite_delegates_gpu_gl_runtime_shared_buffer PRIVATE //tflite/delegates/gpu/gl/runtime:shared_buffer.h)
+target_link_libraries(__tflite_delegates_gpu_gl_runtime_shared_buffer __tflite_delegates_gpu_common_status __tflite_delegates_gpu_common_util __tflite_delegates_gpu_gl_gl_buffer __tflite_delegates_gpu_gl_object __tflite_delegates_gpu_gl_portable)
+

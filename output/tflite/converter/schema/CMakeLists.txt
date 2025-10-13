@@ -1,0 +1,62 @@
+# Auto-generated CMake for package tflite/converter/schema
+
+add_library(__tflite_converter_schema_debug_metadata_fbs)
+  //tflite/converter/schema:debug_metadata_generated.h
+target_sources(__tflite_converter_schema_debug_metadata_fbs PRIVATE //tflite/converter/schema:debug_metadata_generated.h)
+target_link_libraries(__tflite_converter_schema_debug_metadata_fbs _flatbuffers___runtime_cc)
+
+# Unsupported rule filegroup for //tflite/converter/schema:debug_metadata_fbs_includes
+
+# Unsupported rule genrule for //tflite/converter/schema:debug_metadata_fbs_srcs
+
+add_library(__tflite_converter_schema_debug_metadata_fbs_with_mutable)
+  //tflite/converter/schema:mutable/debug_metadata_generated.h
+target_sources(__tflite_converter_schema_debug_metadata_fbs_with_mutable PRIVATE //tflite/converter/schema:mutable/debug_metadata_generated.h)
+target_link_libraries(__tflite_converter_schema_debug_metadata_fbs_with_mutable _flatbuffers___runtime_cc)
+
+# Unsupported rule filegroup for //tflite/converter/schema:debug_metadata_fbs_with_mutable_includes
+
+# Unsupported rule genrule for //tflite/converter/schema:debug_metadata_fbs_with_mutable_srcs
+
+add_executable(__tflite_converter_schema_flatbuffer_compatibility_test //tflite/converter/schema:flatbuffer_compatibility_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_converter_schema_flatbuffer_compatibility_test COMMAND __tflite_converter_schema_flatbuffer_compatibility_test)
+
+add_library(__tflite_converter_schema_schema_conversion_utils)
+  //tflite/converter/schema:schema_conversion_utils.cc
+target_sources(__tflite_converter_schema_schema_conversion_utils PRIVATE //tflite/converter/schema:schema_conversion_utils.h)
+target_link_libraries(__tflite_converter_schema_schema_conversion_utils __tflite_converter_schema_schema_fbs _flatbuffers___flatbuffers)
+
+add_library(__tflite_converter_schema_schema_fbs)
+  //tflite/converter/schema:schema_generated.h
+target_sources(__tflite_converter_schema_schema_fbs PRIVATE //tflite/converter/schema:schema_generated.h)
+target_link_libraries(__tflite_converter_schema_schema_fbs _flatbuffers___runtime_cc)
+
+# Unsupported rule filegroup for //tflite/converter/schema:schema_fbs_includes
+
+# Unsupported rule genrule for //tflite/converter/schema:schema_fbs_srcs
+
+add_library(__tflite_converter_schema_schema_fbs_with_mutable)
+  //tflite/converter/schema:mutable/schema_generated.h
+target_sources(__tflite_converter_schema_schema_fbs_with_mutable PRIVATE //tflite/converter/schema:mutable/schema_generated.h)
+target_link_libraries(__tflite_converter_schema_schema_fbs_with_mutable _flatbuffers___runtime_cc)
+
+# Unsupported rule filegroup for //tflite/converter/schema:schema_fbs_with_mutable_includes
+
+# Unsupported rule genrule for //tflite/converter/schema:schema_fbs_with_mutable_srcs
+
+add_library(__tflite_converter_schema_schema_fbs_with_reflection)
+  //tflite/converter/schema:reflection/schema_generated.h
+target_sources(__tflite_converter_schema_schema_fbs_with_reflection PRIVATE //tflite/converter/schema:reflection/schema_generated.h)
+target_link_libraries(__tflite_converter_schema_schema_fbs_with_reflection _flatbuffers___runtime_cc)
+
+# Unsupported rule filegroup for //tflite/converter/schema:schema_fbs_with_reflection_includes
+
+# Unsupported rule genrule for //tflite/converter/schema:schema_fbs_with_reflection_srcs
+
+add_library(__tflite_converter_schema_schema_utils)
+  //tflite/converter/schema:schema_utils.cc
+target_sources(__tflite_converter_schema_schema_utils PRIVATE //tflite/converter/schema:schema_utils.h)
+target_link_libraries(__tflite_converter_schema_schema_utils __tflite_converter_schema_schema_fbs __tflite_converter_kernels_internal_compatibility_macros _flatbuffers___runtime_cc)
+
+# Unsupported rule filegroup for //tflite/converter/schema:tflite_internal_cc_3p_api_deps_src
+

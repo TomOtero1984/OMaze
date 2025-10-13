@@ -1,0 +1,115 @@
+# Auto-generated CMake for package tflite/toco
+
+add_library(__tflite_toco_graph_transformations)
+  //tflite/toco:graph_transformations/convert_expanddims_to_reshape.cc //tflite/toco:graph_transformations/convert_matrix_diag_v2_or_v3_to_v1.cc //tflite/toco:graph_transformations/convert_matrix_set_diag_v2_or_v3_to_v1.cc //tflite/toco:graph_transformations/convert_pure_conv_to_depthwise.cc //tflite/toco:graph_transformations/convert_reorder_axes.cc //tflite/toco:graph_transformations/convert_squeeze_to_reshape.cc //tflite/toco:graph_transformations/convert_trivial_addn_to_add.cc //tflite/toco:graph_transformations/convert_trivial_pack_to_reshape.cc //tflite/toco:graph_transformations/convert_trivial_tile_to_concat.cc //tflite/toco:graph_transformations/convert_trivial_transpose_to_reshape.cc //tflite/toco:graph_transformations/create_im2col_arrays.cc //tflite/toco:graph_transformations/dequantize.cc //tflite/toco:graph_transformations/drop_fake_quant.cc //tflite/toco:graph_transformations/drop_im2col_arrays.cc //tflite/toco:graph_transformations/ensure_bias_vectors.cc //tflite/toco:graph_transformations/ensure_uint8_weights_safe_for_fast_int8_kernels.cc //tflite/toco:graph_transformations/fuse_activation_functions.cc //tflite/toco:graph_transformations/fuse_binary_into_following_affine.cc //tflite/toco:graph_transformations/fuse_binary_into_preceding_affine.cc //tflite/toco:graph_transformations/fuse_broadcast_into_following_binary.cc //tflite/toco:graph_transformations/graph_transformations.cc //tflite/toco:graph_transformations/group_bidirectional_sequence_ops.cc //tflite/toco:graph_transformations/hardcode_min_max.cc //tflite/toco:graph_transformations/identify_dilated_conv.cc //tflite/toco:graph_transformations/identify_hardswish.cc //tflite/toco:graph_transformations/identify_l2_normalization.cc //tflite/toco:graph_transformations/identify_l2_pool.cc //tflite/toco:graph_transformations/identify_lstm.cc //tflite/toco:graph_transformations/identify_lstm_merge_inputs.cc //tflite/toco:graph_transformations/identify_lstm_split_inputs.cc //tflite/toco:graph_transformations/identify_nearest_upsample.cc //tflite/toco:graph_transformations/identify_prelu.cc //tflite/toco:graph_transformations/identify_relu1.cc //tflite/toco:graph_transformations/identify_util.cc //tflite/toco:graph_transformations/lstm_utils.cc //tflite/toco:graph_transformations/make_initial_dequantize_operator.cc //tflite/toco:graph_transformations/merge_reshape_into_preceding_transpose.cc //tflite/toco:graph_transformations/move_binary_operator_before_reshape.cc //tflite/toco:graph_transformations/propagate_activation_function_into_constants.cc //tflite/toco:graph_transformations/propagate_array_data_types.cc //tflite/toco:graph_transformations/propagate_default_min_max.cc //tflite/toco:graph_transformations/propagate_fake_quant_num_bits.cc //tflite/toco:graph_transformations/propagate_fixed_sizes.cc //tflite/toco:graph_transformations/quantization_util.cc //tflite/toco:graph_transformations/quantization_util.h //tflite/toco:graph_transformations/quantize.cc //tflite/toco:graph_transformations/read_array_minmax_and_narrow_range_from_fake_quant.cc //tflite/toco:graph_transformations/remove_final_dequantize_op.cc //tflite/toco:graph_transformations/remove_successive_transpose.cc //tflite/toco:graph_transformations/remove_tensorflow_assert.cc //tflite/toco:graph_transformations/remove_tensorflow_identity.cc //tflite/toco:graph_transformations/remove_trivial_binary.cc //tflite/toco:graph_transformations/remove_trivial_concatenation.cc //tflite/toco:graph_transformations/remove_trivial_concatenation_input.cc //tflite/toco:graph_transformations/remove_trivial_fake_quant.cc //tflite/toco:graph_transformations/remove_trivial_passthrough.cc //tflite/toco:graph_transformations/remove_trivial_passthrough.h //tflite/toco:graph_transformations/remove_trivial_quantized_activation_func.cc //tflite/toco:graph_transformations/remove_trivial_quantized_min_max.cc //tflite/toco:graph_transformations/remove_trivial_reshape.cc //tflite/toco:graph_transformations/remove_trivial_slice.cc //tflite/toco:graph_transformations/remove_unused_op.cc //tflite/toco:graph_transformations/reorder_elementwise_unary.cc //tflite/toco:graph_transformations/reorder_reshape_transpose.cc //tflite/toco:graph_transformations/resolve_batch_normalization.cc //tflite/toco:graph_transformations/resolve_batch_to_space_nd_attributes.cc //tflite/toco:graph_transformations/resolve_constant_binary.cc //tflite/toco:graph_transformations/resolve_constant_concatenation.cc //tflite/toco:graph_transformations/resolve_constant_fake_quant.cc //tflite/toco:graph_transformations/resolve_constant_fill.cc //tflite/toco:graph_transformations/resolve_constant_gather.cc //tflite/toco:graph_transformations/resolve_constant_pack.cc //tflite/toco:graph_transformations/resolve_constant_random_uniform.cc //tflite/toco:graph_transformations/resolve_constant_range.cc //tflite/toco:graph_transformations/resolve_constant_reshape.cc //tflite/toco:graph_transformations/resolve_constant_select.cc //tflite/toco:graph_transformations/resolve_constant_shape_or_rank.cc //tflite/toco:graph_transformations/resolve_constant_slice.cc //tflite/toco:graph_transformations/resolve_constant_strided_slice.cc //tflite/toco:graph_transformations/resolve_constant_tile.cc //tflite/toco:graph_transformations/resolve_constant_transpose.cc //tflite/toco:graph_transformations/resolve_constant_unary.cc //tflite/toco:graph_transformations/resolve_fake_quant_args_from_vars.cc //tflite/toco:graph_transformations/resolve_gather_attributes.cc //tflite/toco:graph_transformations/resolve_multiply_by_zero.cc //tflite/toco:graph_transformations/resolve_pad_attributes.cc //tflite/toco:graph_transformations/resolve_padv2_attributes.cc //tflite/toco:graph_transformations/resolve_reduce_attributes.cc //tflite/toco:graph_transformations/resolve_reorder_axes.cc //tflite/toco:graph_transformations/resolve_reshape_attributes.cc //tflite/toco:graph_transformations/resolve_slice_attributes.cc //tflite/toco:graph_transformations/resolve_space_to_batch_nd_attributes.cc //tflite/toco:graph_transformations/resolve_squeeze_attributes.cc //tflite/toco:graph_transformations/resolve_strided_slice_attributes.cc //tflite/toco:graph_transformations/resolve_tensorflow_concat.cc //tflite/toco:graph_transformations/resolve_tensorflow_matmul.cc //tflite/toco:graph_transformations/resolve_tensorflow_merge.cc //tflite/toco:graph_transformations/resolve_tensorflow_switch.cc //tflite/toco:graph_transformations/resolve_transpose_attributes.cc //tflite/toco:graph_transformations/shuffle_fc_weights.cc //tflite/toco:graph_transformations/unfuse_activation_functions.cc //tflite/toco:graph_transformations/unpartition_embedding_lookup.cc //tflite/toco:graph_transformations/unroll_batch_matmul.cc
+target_sources(__tflite_toco_graph_transformations PRIVATE //tflite/toco:graph_transformations/graph_transformations.h //tflite/toco:graph_transformations/identify_util.h //tflite/toco:graph_transformations/lstm_utils.h)
+target_link_libraries(__tflite_toco_graph_transformations __tflite_toco_model __tflite_toco_model_flags_proto_cc __tflite_toco_runtime __tflite_toco_toco_port __tflite_toco_tooling_util __tflite_kernels_internal_quantization_util __tflite_kernels_internal_strided_slice_logic _com_google_absl__absl_container_inlined_vector _com_google_absl__absl_log_log _com_google_absl__absl_log_check _com_google_absl__absl_status_status _com_google_absl__absl_strings_strings _org_tensorflow__tensorflow_core_framework _org_tensorflow__tensorflow_core_lib)
+
+add_executable(__tflite_toco_import_tensorflow_test //tflite/toco:import_tensorflow_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_import_tensorflow_test COMMAND __tflite_toco_import_tensorflow_test)
+
+add_library(__tflite_toco_model)
+target_sources(__tflite_toco_model PRIVATE //tflite/toco:model.h)
+target_link_libraries(__tflite_toco_model __tflite_toco_model_flags_proto_cc __tflite_toco_runtime __tflite_toco_toco_port _com_google_absl__absl_types_optional _org_tensorflow__tensorflow_core_lib)
+
+add_library(__tflite_toco_model_cmdline_flags)
+  //tflite/toco:args.cc //tflite/toco:model_cmdline_flags.cc
+target_sources(__tflite_toco_model_cmdline_flags PRIVATE //tflite/toco:args.h //tflite/toco:model_cmdline_flags.h)
+target_link_libraries(__tflite_toco_model_cmdline_flags __tflite_toco_model_flags_proto_cc __tflite_toco_toco_graphviz_dump_options __tflite_toco_toco_port __tflite_toco_types_proto_cc _com_google_absl__absl_log_log _com_google_absl__absl_log_check _com_google_absl__absl_strings_strings _org_tensorflow__tensorflow_core_framework_internal _org_tensorflow__tensorflow_core_lib)
+
+add_executable(__tflite_toco_model_cmdline_flags_test //tflite/toco:model_cmdline_flags_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_model_cmdline_flags_test COMMAND __tflite_toco_model_cmdline_flags_test)
+
+# Unsupported rule proto_library for //tflite/toco:model_flags_proto
+
+# Unsupported rule cc_proto_library for //tflite/toco:model_flags_proto_cc
+
+# Unsupported rule alias for //tflite/toco:model_flags_proto_cc_headers_only
+
+# Unsupported rule alias for //tflite/toco:model_flags_proto_cc_impl
+
+# Unsupported rule filegroup for //tflite/toco:model_flags_proto_proto_srcs
+
+# Unsupported rule py_library for //tflite/toco:model_flags_proto_py
+
+# Unsupported rule py_proto_library for //tflite/toco:model_flags_proto_py_proto
+
+add_library(__tflite_toco_runtime)
+target_sources(__tflite_toco_runtime PRIVATE //tflite/toco:runtime/common.h //tflite/toco:runtime/types.h)
+target_link_libraries(__tflite_toco_runtime __tflite_kernels_internal_common __tflite_kernels_internal_compatibility __tflite_kernels_internal_reference_base __tflite_kernels_internal_types)
+
+add_library(__tflite_toco_tensorflow_core_cc_protos_all)
+target_link_libraries(__tflite_toco_tensorflow_core_cc_protos_all _org_tensorflow__tensorflow_core_protos_all_cc)
+
+add_executable(__tflite_toco_toco //tflite/toco:toco.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+target_link_libraries(__tflite_toco_toco __tflite_toco_model __tflite_toco_model_cmdline_flags __tflite_toco_model_flags_proto_cc __tflite_toco_toco_cmdline_flags __tflite_toco_toco_convert __tflite_toco_toco_flags_proto_cc __tflite_toco_toco_port __tflite_toco_toco_tooling __tflite_toco_types_proto_cc _com_google_absl__absl_status_status _com_google_absl__absl_strings_strings _org_tensorflow__tensorflow_core_lib _org_tensorflow__tensorflow_core_ops _local_xla__xla_tsl_mkl_intel_binary_blob _org_tensorflow__tensorflow_libtensorflow_framework_import_lib)
+
+add_library(__tflite_toco_toco_cmdline_flags)
+  //tflite/toco:toco_cmdline_flags.cc
+target_sources(__tflite_toco_toco_cmdline_flags PRIVATE //tflite/toco:toco_cmdline_flags.h)
+target_link_libraries(__tflite_toco_toco_cmdline_flags __tflite_toco_model_cmdline_flags __tflite_toco_toco_flags_proto_cc __tflite_toco_toco_port __tflite_toco_types_proto_cc _com_google_absl__absl_log_log _com_google_absl__absl_log_check _com_google_absl__absl_strings_strings _com_google_absl__absl_types_optional _org_tensorflow__tensorflow_core_framework_internal _org_tensorflow__tensorflow_core_lib)
+
+add_executable(__tflite_toco_toco_cmdline_flags_test //tflite/toco:toco_cmdline_flags_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_toco_cmdline_flags_test COMMAND __tflite_toco_toco_cmdline_flags_test)
+
+add_library(__tflite_toco_toco_convert)
+  //tflite/toco:toco_convert.cc
+target_sources(__tflite_toco_toco_convert PRIVATE //tflite/toco:toco_convert.h)
+target_link_libraries(__tflite_toco_toco_convert __tflite_toco_model __tflite_toco_model_cmdline_flags __tflite_toco_model_flags_proto_cc __tflite_toco_toco_cmdline_flags __tflite_toco_toco_flags_proto_cc __tflite_toco_toco_port __tflite_toco_toco_tooling __tflite_toco_types_proto_cc _com_google_absl__absl_log_check _com_google_absl__absl_status_status _com_google_absl__absl_strings_strings _org_tensorflow__tensorflow_core_lib _org_tensorflow__tensorflow_core_ops)
+
+add_executable(__tflite_toco_toco_convert_test //tflite/toco:toco_convert_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_toco_convert_test COMMAND __tflite_toco_toco_convert_test)
+
+# Unsupported rule proto_library for //tflite/toco:toco_flags_proto
+
+# Unsupported rule cc_proto_library for //tflite/toco:toco_flags_proto_cc
+
+# Unsupported rule alias for //tflite/toco:toco_flags_proto_cc_headers_only
+
+# Unsupported rule alias for //tflite/toco:toco_flags_proto_cc_impl
+
+# Unsupported rule filegroup for //tflite/toco:toco_flags_proto_proto_srcs
+
+# Unsupported rule py_library for //tflite/toco:toco_flags_proto_py
+
+# Unsupported rule py_proto_library for //tflite/toco:toco_flags_proto_py_proto
+
+add_library(__tflite_toco_toco_graphviz_dump_options)
+  //tflite/toco:toco_graphviz_dump_options.cc
+target_sources(__tflite_toco_toco_graphviz_dump_options PRIVATE //tflite/toco:toco_graphviz_dump_options.h)
+
+add_library(__tflite_toco_toco_port)
+  //tflite/toco:toco_port.cc
+target_sources(__tflite_toco_toco_port PRIVATE //tflite/toco:format_port.h //tflite/toco:toco_port.h //tflite/toco:toco_types.h)
+target_link_libraries(__tflite_toco_toco_port _com_google_absl__absl_status_status _com_google_protobuf___protobuf_headers _org_tensorflow__tensorflow_core_framework_lite _org_tensorflow__tensorflow_core_lib _org_tensorflow__tensorflow_core_lib_internal)
+
+add_executable(__tflite_toco_toco_port_test //tflite/toco:toco_port_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_toco_port_test COMMAND __tflite_toco_toco_port_test)
+
+add_library(__tflite_toco_toco_tooling)
+  //tflite/toco:allocate_transient_arrays.cc //tflite/toco:export_tensorflow.cc //tflite/toco:import_tensorflow.cc //tflite/toco:tensorflow_util.cc //tflite/toco:toco_tooling.cc
+target_sources(__tflite_toco_toco_tooling PRIVATE //tflite/toco:allocate_transient_arrays.h //tflite/toco:export_tensorflow.h //tflite/toco:import_tensorflow.h //tflite/toco:tensorflow_util.h //tflite/toco:toco_tooling.h)
+target_link_libraries(__tflite_toco_toco_tooling __tflite_toco_graph_transformations __tflite_toco_model __tflite_toco_model_flags_proto_cc __tflite_toco_runtime __tflite_toco_toco_flags_proto_cc __tflite_toco_toco_graphviz_dump_options __tflite_toco_toco_port __tflite_toco_tooling_util __tflite_toco_types_proto_cc __tflite_toco_tensorflow_graph_matching_resolve_cluster __tflite_toco_tflite_export __tflite_toco_tflite_import _com_google_absl__absl_log_log _com_google_absl__absl_log_check _com_google_absl__absl_memory_memory _com_google_absl__absl_status_status _com_google_absl__absl_strings_strings _com_google_protobuf___protobuf_headers _org_tensorflow__tensorflow_core_core_cpu_lib _org_tensorflow__tensorflow_core_framework _org_tensorflow__tensorflow_core_lib _org_tensorflow__tensorflow_core_protos_all_cc)
+
+add_library(__tflite_toco_tooling_util)
+  //tflite/toco:dump_graphviz.cc //tflite/toco:tooling_util.cc
+target_sources(__tflite_toco_tooling_util PRIVATE //tflite/toco:dump_graphviz.h //tflite/toco:tooling_util.h)
+target_link_libraries(__tflite_toco_tooling_util __tflite_toco_model __tflite_toco_model_flags_proto_cc __tflite_toco_runtime __tflite_toco_toco_flags_proto_cc __tflite_toco_toco_graphviz_dump_options __tflite_toco_toco_port __tflite_toco_types_proto_cc __tflite_kernels_internal_types _com_google_absl__absl_log_log _com_google_absl__absl_log_check _com_google_absl__absl_memory_memory _com_google_absl__absl_status_status _com_google_absl__absl_strings_strings _com_googlesource_code_re2___re2 _org_tensorflow__tensorflow_core_lib)
+
+add_executable(__tflite_toco_tooling_util_test //tflite/toco:tooling_util_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_toco_tooling_util_test COMMAND __tflite_toco_tooling_util_test)
+
+# Unsupported rule proto_library for //tflite/toco:types_proto
+
+# Unsupported rule cc_proto_library for //tflite/toco:types_proto_cc
+
+# Unsupported rule alias for //tflite/toco:types_proto_cc_headers_only
+
+# Unsupported rule alias for //tflite/toco:types_proto_cc_impl
+
+# Unsupported rule filegroup for //tflite/toco:types_proto_proto_srcs
+
+# Unsupported rule py_library for //tflite/toco:types_proto_py
+
+# Unsupported rule py_proto_library for //tflite/toco:types_proto_py_proto
+

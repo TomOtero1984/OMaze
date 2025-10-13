@@ -1,0 +1,6 @@
+# Auto-generated CMake for package tflite/delegates/flex/java/src/main/native
+
+add_library(__tflite_delegates_flex_java_src_main_native_native)
+  //tflite/delegates/flex/java/src/main/native:flex_delegate_jni.cc
+target_link_libraries(__tflite_delegates_flex_java_src_main_native_native __tflite_delegates_flex_delegate __tflite_delegates_utils_simple_delegate __tflite_java_jni_jni __tflite_testing_init_tensorflow)
+

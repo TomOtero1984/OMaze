@@ -1,0 +1,17 @@
+# Auto-generated CMake for package tflite/converter/experimental/remat
+
+add_library(__tflite_converter_experimental_remat_metadata_util)
+  //tflite/converter/experimental/remat:metadata_util.cc
+target_sources(__tflite_converter_experimental_remat_metadata_util PRIVATE //tflite/converter/experimental/remat:metadata_util.h)
+target_link_libraries(__tflite_converter_experimental_remat_metadata_util __tflite_converter_control_edges)
+
+add_executable(__tflite_converter_experimental_remat_metadata_util_test //tflite/converter/experimental/remat:metadata_util_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_converter_experimental_remat_metadata_util_test COMMAND __tflite_converter_experimental_remat_metadata_util_test)
+
+add_library(__tflite_converter_experimental_remat_rematerializer)
+  //tflite/converter/experimental/remat:rematerializer.cc
+target_sources(__tflite_converter_experimental_remat_rematerializer PRIVATE //tflite/converter/experimental/remat:rematerializer.h)
+
+add_executable(__tflite_converter_experimental_remat_rematerializer_test //tflite/converter/experimental/remat:rematerializer_test.cc @org_tensorflow//tensorflow:libtensorflow_framework.so.2 @org_tensorflow//tensorflow:libtensorflow_framework.2.dylib)
+add_test(NAME __tflite_converter_experimental_remat_rematerializer_test COMMAND __tflite_converter_experimental_remat_rematerializer_test)
+

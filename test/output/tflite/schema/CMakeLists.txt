@@ -1,0 +1,29 @@
+# Auto-generated CMake for package tflite/schema
+
+add_library(__tflite_schema_conversion_metadata_fbs)
+  //tflite/schema:conversion_metadata_generated.h
+target_sources(__tflite_schema_conversion_metadata_fbs PRIVATE //tflite/schema:conversion_metadata_generated.h)
+target_link_libraries(__tflite_schema_conversion_metadata_fbs _flatbuffers___runtime_cc)
+
+add_library(__tflite_schema_schema_conversion_utils)
+target_sources(__tflite_schema_schema_conversion_utils PRIVATE //tflite/schema:schema_conversion_utils.h)
+target_link_libraries(__tflite_schema_schema_conversion_utils __tflite_converter_schema_schema_conversion_utils)
+
+add_library(__tflite_schema_schema_fbs)
+target_sources(__tflite_schema_schema_fbs PRIVATE //tflite/converter/schema:schema_generated.h //tflite/schema:schema_generated.h)
+target_link_libraries(__tflite_schema_schema_fbs __tflite_converter_schema_schema_fbs _flatbuffers___runtime_cc)
+
+add_library(__tflite_schema_schema_fbs_with_mutable)
+  //tflite/schema:mutable/schema_generated.h
+target_sources(__tflite_schema_schema_fbs_with_mutable PRIVATE //tflite/schema:mutable/schema_generated.h)
+target_link_libraries(__tflite_schema_schema_fbs_with_mutable _flatbuffers___runtime_cc)
+
+add_library(__tflite_schema_schema_fbs_with_reflection)
+  //tflite/schema:reflection/schema_generated.h
+target_sources(__tflite_schema_schema_fbs_with_reflection PRIVATE //tflite/schema:reflection/schema_generated.h)
+target_link_libraries(__tflite_schema_schema_fbs_with_reflection _flatbuffers___runtime_cc)
+
+add_library(__tflite_schema_schema_utils)
+target_sources(__tflite_schema_schema_utils PRIVATE //tflite/schema:schema_utils.h)
+target_link_libraries(__tflite_schema_schema_utils __tflite_converter_schema_schema_utils)
+

@@ -1,0 +1,39 @@
+# Auto-generated CMake for package tflite/profiling/telemetry/c
+
+add_library(__tflite_profiling_telemetry_c_profiler)
+target_sources(__tflite_profiling_telemetry_c_profiler PRIVATE //tflite/profiling/telemetry/c:profiler.h)
+target_link_libraries(__tflite_profiling_telemetry_c_profiler __tflite_profiling_telemetry_c_telemetry_setting)
+
+# Unsupported rule _empty_test for //tflite/profiling/telemetry/c:profiler__test_self_contained_c__tflite/profiling/telemetry/c__profiler.h_build_test
+
+# Unsupported rule genrule for //tflite/profiling/telemetry/c:profiler__test_self_contained_c__tflite/profiling/telemetry/c__profiler.h_build_test_0__deps
+
+# Unsupported rule genrule for //tflite/profiling/telemetry/c:profiler__test_self_contained_c__tflite/profiling/telemetry/c__profiler.h_gen
+
+add_library(__tflite_profiling_telemetry_c_profiler__test_self_contained_c__tflite_profiling_telemetry_c__profiler.h_lib)
+  //tflite/profiling/telemetry/c:profiler__test_self_contained_c__tflite/profiling/telemetry/c__profiler.h.c
+target_link_libraries(__tflite_profiling_telemetry_c_profiler__test_self_contained_c__tflite_profiling_telemetry_c__profiler.h_lib __tflite_profiling_telemetry_c_profiler)
+
+# Unsupported rule test_suite for //tflite/profiling/telemetry/c:profiler_self_contained_c_build_tests
+
+add_library(__tflite_profiling_telemetry_c_telemetry_setting)
+target_sources(__tflite_profiling_telemetry_c_telemetry_setting PRIVATE //tflite/profiling/telemetry/c:telemetry_setting.h)
+target_link_libraries(__tflite_profiling_telemetry_c_telemetry_setting __tflite_profiling_telemetry_c_telemetry_setting_internal __tflite_core_c_common)
+
+# Unsupported rule _empty_test for //tflite/profiling/telemetry/c:telemetry_setting__test_self_contained_c__tflite/profiling/telemetry/c__telemetry_setting.h_build_test
+
+# Unsupported rule genrule for //tflite/profiling/telemetry/c:telemetry_setting__test_self_contained_c__tflite/profiling/telemetry/c__telemetry_setting.h_build_test_0__deps
+
+# Unsupported rule genrule for //tflite/profiling/telemetry/c:telemetry_setting__test_self_contained_c__tflite/profiling/telemetry/c__telemetry_setting.h_gen
+
+add_library(__tflite_profiling_telemetry_c_telemetry_setting__test_self_contained_c__tflite_profiling_telemetry_c__telemetry_setting.h_lib)
+  //tflite/profiling/telemetry/c:telemetry_setting__test_self_contained_c__tflite/profiling/telemetry/c__telemetry_setting.h.c
+target_link_libraries(__tflite_profiling_telemetry_c_telemetry_setting__test_self_contained_c__tflite_profiling_telemetry_c__telemetry_setting.h_lib __tflite_profiling_telemetry_c_telemetry_setting)
+
+add_library(__tflite_profiling_telemetry_c_telemetry_setting_internal)
+  //tflite/profiling/telemetry/c:telemetry_setting_internal.cc
+target_sources(__tflite_profiling_telemetry_c_telemetry_setting_internal PRIVATE //tflite/profiling/telemetry/c:telemetry_setting_internal.h)
+target_link_libraries(__tflite_profiling_telemetry_c_telemetry_setting_internal __tflite_core_c_common)
+
+# Unsupported rule test_suite for //tflite/profiling/telemetry/c:telemetry_setting_self_contained_c_build_tests
+

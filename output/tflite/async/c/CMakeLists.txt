@@ -1,0 +1,18 @@
+# Auto-generated CMake for package tflite/async/c
+
+add_library(__tflite_async_c_async_kernel)
+target_sources(__tflite_async_c_async_kernel PRIVATE //tflite/async/c:async_kernel.h)
+target_link_libraries(__tflite_async_c_async_kernel __tflite_core_async_c_async_kernel)
+
+add_library(__tflite_async_c_async_signature_runner)
+target_sources(__tflite_async_c_async_signature_runner PRIVATE //tflite/async/c:async_signature_runner.h)
+target_link_libraries(__tflite_async_c_async_signature_runner __tflite_core_async_c_async_signature_runner)
+
+add_library(__tflite_async_c_task)
+target_sources(__tflite_async_c_task PRIVATE //tflite/async/c:task.h)
+target_link_libraries(__tflite_async_c_task __tflite_core_async_c_task)
+
+add_library(__tflite_async_c_types)
+target_sources(__tflite_async_c_types PRIVATE //tflite/async/c:types.h)
+target_link_libraries(__tflite_async_c_types __tflite_core_async_c_types)
+

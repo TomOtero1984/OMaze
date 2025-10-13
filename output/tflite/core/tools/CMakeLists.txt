@@ -1,0 +1,34 @@
+# Auto-generated CMake for package tflite/core/tools
+
+# Unsupported rule test_suite for //tflite/core/tools:self_contained_libs_test_suite
+
+add_library(__tflite_core_tools_verifier)
+  //tflite/core/tools:verifier.cc
+target_sources(__tflite_core_tools_verifier PRIVATE //tflite/core/tools:verifier.h)
+target_link_libraries(__tflite_core_tools_verifier __tflite_framework __tflite_schema_fbs_version __tflite_util __tflite_c_common __tflite_converter_schema_schema_utils __tflite_core_framework __tflite_core_api_error_reporter __tflite_core_api_op_resolver __tflite_core_c_common __tflite_core_tools_verifier_internal __tflite_schema_schema_fbs _com_google_absl__absl_container_flat_hash_set _com_google_absl__absl_types_optional _flatbuffers___runtime_cc)
+
+# Unsupported rule _empty_test for //tflite/core/tools:verifier_build_test
+
+# Unsupported rule genrule for //tflite/core/tools:verifier_build_test_0__deps
+
+add_library(__tflite_core_tools_verifier_internal)
+  //tflite/core/tools:verifier_internal.cc
+target_sources(__tflite_core_tools_verifier_internal PRIVATE //tflite/core/tools:verifier_internal.h)
+target_link_libraries(__tflite_core_tools_verifier_internal __tflite_schema_schema_fbs _flatbuffers___runtime_cc)
+
+# Unsupported rule _empty_test for //tflite/core/tools:verifier_internal_build_test
+
+# Unsupported rule genrule for //tflite/core/tools:verifier_internal_build_test_0__deps
+
+add_executable(__tflite_core_tools_verifier_internal_test //tflite/core/tools:verifier_internal_test.cc)
+add_test(NAME __tflite_core_tools_verifier_internal_test COMMAND __tflite_core_tools_verifier_internal_test)
+
+add_executable(__tflite_core_tools_verifier_internal_test_shared_lib )
+target_link_libraries(__tflite_core_tools_verifier_internal_test_shared_lib __tflite_core_tools_verifier_internal)
+
+add_executable(__tflite_core_tools_verifier_test //tflite/core/tools:verifier_test.cc)
+add_test(NAME __tflite_core_tools_verifier_test COMMAND __tflite_core_tools_verifier_test)
+
+add_executable(__tflite_core_tools_verifier_test_shared_lib )
+target_link_libraries(__tflite_core_tools_verifier_test_shared_lib __tflite_core_tools_verifier)
+

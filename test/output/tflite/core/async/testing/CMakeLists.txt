@@ -1,0 +1,11 @@
+# Auto-generated CMake for package tflite/core/async/testing
+
+add_library(__tflite_core_async_testing_mock_async_kernel)
+target_sources(__tflite_core_async_testing_mock_async_kernel PRIVATE //tflite/core/async/testing:mock_async_kernel.h)
+target_link_libraries(__tflite_core_async_testing_mock_async_kernel __tflite_async_testing_mock_async_kernel)
+
+add_library(__tflite_core_async_testing_test_backend)
+  //tflite/core/async/testing:test_backend.cc
+target_sources(__tflite_core_async_testing_test_backend PRIVATE //tflite/core/async/testing:test_backend.h)
+target_link_libraries(__tflite_core_async_testing_test_backend __tflite_array __tflite_builtin_ops __tflite_core_async_async_kernel_internal __tflite_core_async_c_types __tflite_core_c_c_api_types __tflite_core_c_common __tflite_delegates_utils)
+

@@ -1,0 +1,7 @@
+# Auto-generated CMake for package tflite/converter/tools
+
+add_library(__tflite_converter_tools_command_line_flags)
+  //tflite/converter/tools:command_line_flags.cc
+target_sources(__tflite_converter_tools_command_line_flags PRIVATE //tflite/converter/tools:command_line_flags.h)
+target_link_libraries(__tflite_converter_tools_command_line_flags _com_google_absl__absl_log_log _com_google_absl__absl_strings_strings)
+

@@ -1,0 +1,27 @@
+# Auto-generated CMake for package tflite/converter/quantization/ir
+
+add_library(__tflite_converter_quantization_ir_QuantOps)
+  //tflite/converter/quantization/ir:ConvertConst.cc //tflite/converter/quantization/ir:ConvertSimQuant.cc //tflite/converter/quantization/ir:QuantOps.cc //tflite/converter/quantization/ir:QuantizeUtils.cc
+target_sources(__tflite_converter_quantization_ir_QuantOps PRIVATE //tflite/converter/quantization/ir:Passes.h //tflite/converter/quantization/ir:QuantOps.h //tflite/converter/quantization/ir:QuantizeUtils.h)
+target_link_libraries(__tflite_converter_quantization_ir_QuantOps __tflite_converter_quantization_ir_QuantOpsIncGen __tflite_converter_quantization_ir_QuantPassIncGen _llvm_project__llvm_Support _llvm_project__mlir_ArithDialect _llvm_project__mlir_BytecodeOpInterface _llvm_project__mlir_FuncDialect _llvm_project__mlir_IR _llvm_project__mlir_InferTypeOpInterface _llvm_project__mlir_Pass _llvm_project__mlir_QuantOps _llvm_project__mlir_SideEffectInterfaces _llvm_project__mlir_Support _llvm_project__mlir_TransformUtils _org_tensorflow__tensorflow_compiler_mlir_quantization_common_ir_QuantOps _local_xla__xla_tsl_bazel_issue_21519 _local_tsl___bazel_issue_21519)
+
+add_library(__tflite_converter_quantization_ir_QuantOpsIncGen)
+
+# Unsupported rule filegroup for //tflite/converter/quantization/ir:QuantOpsIncGen_filegroup
+
+# Unsupported rule gentbl_rule for //tflite/converter/quantization/ir:QuantOpsIncGen_filegroup___gen_dialect_decls_425620937_genrule
+
+# Unsupported rule gentbl_rule for //tflite/converter/quantization/ir:QuantOpsIncGen_filegroup___gen_dialect_defs_1664177890_genrule
+
+# Unsupported rule gentbl_rule for //tflite/converter/quantization/ir:QuantOpsIncGen_filegroup___gen_op_decls_1294557351_genrule
+
+# Unsupported rule gentbl_rule for //tflite/converter/quantization/ir:QuantOpsIncGen_filegroup___gen_op_defs_1288686000_genrule
+
+add_library(__tflite_converter_quantization_ir_QuantPassIncGen)
+
+# Unsupported rule filegroup for //tflite/converter/quantization/ir:QuantPassIncGen_filegroup
+
+# Unsupported rule gentbl_rule for //tflite/converter/quantization/ir:QuantPassIncGen_filegroup___gen_pass_decls_1072721239_genrule
+
+# Unsupported rule td_library for //tflite/converter/quantization/ir:QuantizationOpsTdFiles
+
