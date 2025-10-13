@@ -1,8 +1,5 @@
 open Ir
 
-(* Very small, forgiving parser for a subset of Starlark used in BUILD files.
-   Supports cc_library and cc_binary with name, srcs, hdrs, deps.
-   This is intentionally simple for the prototype; extend as needed. *)
 
 let trim_quotes s =
   let s = String.trim s in
