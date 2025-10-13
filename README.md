@@ -35,7 +35,7 @@ _build/default/bin/main.exe bazel_graph.json output
 ```
 ---
 
-## Example output
+## Example
 
 #### BUILD file snippet
 ```
