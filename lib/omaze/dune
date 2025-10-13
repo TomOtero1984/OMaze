@@ -1,5 +1,5 @@
 (library
   (name omaze)
   (public_name OMaze)
-  (libraries yojson unix)
+  (libraries yojson unix fpath)
   (modules ir cmake_gen loader io_utils))

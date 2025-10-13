@@ -1,43 +1,169 @@
 open Ir
-open Printf
+(* open Printf *)
 open Io_utils
+(* open Fpath  *)
 
+(* --- sanitize bazel labels into valid CMake target names --- *)
 let sanitize_target_name s =
-  (* replace problematic characters in labels *)
-  String.map (fun c -> if c = ':' || c = '/' || c = '@' || c = '-' then '_' else c) s
+  (* remove bazel workspace/repo prefixes *)
+  let s =
+    if String.length s >= 2 && String.sub s 0 2 = "//" then
+      String.sub s 2 (String.length s - 2)
+    else if String.length s > 0 && s.[0] = '@' then
+      (match String.index_opt s '/' with
+       | Some pos ->
+           (match String.index_from_opt s (pos+1) '/' with
+            | Some pos2 when pos2 + 1 < String.length s && s.[pos2+1] = '/' ->
+                String.sub s (pos2+2) (String.length s - (pos2+2))
+            | _ -> s)
+       | None -> s)
+    else if String.length s > 0 && s.[0] = ':' then
+      String.sub s 1 (String.length s - 1)
+    else s
+  in
 
-(* helper: join list into newline-indented CMake source block *)
-let cmake_src_block label files =
-  if files = [] then ""
-  else
+  (* replace invalid chars with underscores *)
+  let buf = Buffer.create (String.length s) in
+  let last_was_uscore = ref false in
+  String.iter (fun c ->
+      let ok = (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') in
+      if ok then begin
+        Buffer.add_char buf c;
+        last_was_uscore := false
+      end else if c = ':' || c = '/' || c = '-' || c = '.' || c = '@' then begin
+        if not !last_was_uscore then begin Buffer.add_char buf '_'; last_was_uscore := true end
+      end else if c = '_' then (
+        if not !last_was_uscore then ( Buffer.add_char buf '_'; last_was_uscore := true )
+      ) else (
+        if not !last_was_uscore then ( Buffer.add_char buf '_'; last_was_uscore := true )
+      )
+    ) s;
+  let name = Buffer.contents buf in
+
+  (* trim leading/trailing underscores *)
+  let i = ref 0 in
+  while !i < String.length name && name.[!i] = '_' do incr i done;
+  let j = ref (String.length name - 1) in
+  while !j >= 0 && name.[!j] = '_' do decr j done;
+  if !i > !j then "unnamed" else String.sub name !i (!j - !i + 1)
+
+(* let sanitize_src_path s =
+  let s = String.trim s in
+  let len = String.length s in
+  let s =
+    if len >= 2 && s.[0] = '"' && s.[len-1] = '"' then
+      String.sub s 1 (len - 2)
+    else s
+  in
+  (* Replace characters that Fpath considers invalid *)
+  let buf = Buffer.create (String.length s) in
+  String.iter (fun c ->
+    match c with
+    | '/' | '\\' | '.' | '-' | '_' | ' ' | ':' | '@'
+    | 'a'..'z' | 'A'..'Z' | '0'..'9' -> Buffer.add_char buf c
+    | _ -> ()  (* drop anything else *)
+  ) s;
+  Buffer.contents buf
+;; *)
+
+(* --- join a list of files into a CMake source block --- *)
+let cmake_src_block files =
+  if files = [] then "" else
     let body = files |> String.concat "\n    " in
     Printf.sprintf "  %s\n" body
 
+
+(* --- normalize source path relative to CMakeLists or project root --- *)
+(* let normalize_src_path ~cmakelists_dir ~project_root src =
+  let src = sanitize_src_path src in
+  let project_root_fp = Fpath.(v project_root |> normalize) in
+  let cmake_dir_fp = Fpath.(v cmakelists_dir |> normalize) in
+
+  (* make src absolute by prepending project root if not already absolute *)
+  let src_fp =
+    if Filename.is_relative src then Fpath.(project_root_fp / src |> normalize)
+    else Fpath.(v src |> normalize)
+  in
+
+  (* try relative to cmakelists_dir first *)
+  match Fpath.rem_prefix cmake_dir_fp src_fp with
+  | Some rel -> Fpath.to_string rel
+  | None ->
+      (* fallback to project root relative *)
+      (match Fpath.rem_prefix project_root_fp src_fp with
+       | Some rel -> Fpath.to_string rel
+       | None -> Fpath.to_string src_fp)
+;; *)
+
+
+(* --- make a path safe for Fpath.v, or fallback to raw string --- *)
+let safe_fpath s =
+  let s = String.trim s in
+  let len = String.length s in
+  let s =
+    if len >= 2 && s.[0] = '"' && s.[len-1] = '"' then
+      String.sub s 1 (len - 2)
+    else s
+  in
+  try Fpath.v s
+  with Invalid_argument _ -> Fpath.v (Filename.concat "" s)  (* trick Fpath with dummy concat *)
+;;
+
+let normalize_src_path ~cmakelists_dir ~project_root src =
+  let project_root_fp = Fpath.(v project_root |> normalize) in
+  let cmakelists_fp = Fpath.(v cmakelists_dir |> normalize) in
+
+  (* Trim quotes and whitespace from Bazel label strings *)
+  let src_str =
+    let s = String.trim src in
+    let len = String.length s in
+    if len >= 2 && s.[0] = '"' && s.[len-1] = '"' then
+      String.sub s 1 (len - 2)
+    else s
+  in
+
+  (* Make absolute path *)
+  let src_fp =
+    let f = Fpath.v src_str in
+    if Filename.is_relative src_str then
+      Fpath.normalize (Fpath.append project_root_fp f)
+    else
+      Fpath.normalize f
+  in
+
+  (* Try relative to CMakeLists.txt first *)
+  match Fpath.rem_prefix cmakelists_fp src_fp with
+  | Some rel -> Fpath.to_string rel
+  | None ->
+      (* Fallback to project root relative *)
+      (match Fpath.rem_prefix project_root_fp src_fp with
+       | Some rel -> Fpath.to_string rel
+       | None -> Fpath.to_string src_fp)
+;;
+
+(* --- detect compilable sources --- *)
 let has_compilable_sources srcs =
   List.exists (fun f ->
-    let l = String.length f in
-    (l >= 2 && (Filename.check_suffix f ".c"  || Filename.check_suffix f ".S"))
-    || (l >= 4 && (Filename.check_suffix f ".cpp" || Filename.check_suffix f ".cc" || Filename.check_suffix f ".cxx"))
-  ) srcs
+      let l = String.length f in
+      (l >= 2 && (Filename.check_suffix f ".c"  || Filename.check_suffix f ".S"))
+      || (l >= 4 && (Filename.check_suffix f ".cpp" || Filename.check_suffix f ".cc" || Filename.check_suffix f ".cxx"))
+    ) srcs
 
-let cmake_for_target t =
+(* --- generate CMake for a target --- *)
+let cmake_for_target ~cmakelists_dir ~project_root t =
   let tgt = sanitize_target_name t.label in
-  let srcs = t.srcs in
-  let hdrs = t.hdrs in
+  let srcs = t.srcs |> List.map (normalize_src_path ~cmakelists_dir ~project_root) in
+  let hdrs = t.hdrs |> List.map (normalize_src_path ~cmakelists_dir ~project_root) in
   let deps =
     match t.deps with
     | [] -> ""
-    | ds ->
-        ds
-        |> List.map sanitize_target_name
-        |> String.concat " "
+    | ds -> ds |> List.map sanitize_target_name |> String.concat " "
   in
 
   match t.kind with
   | CC_Library ->
-      if has_compilable_sources srcs then
-        (* compiled library *)
-        let src_block = cmake_src_block tgt srcs in
+    if has_compilable_sources srcs then
+        let src_block = cmake_src_block srcs in
         let buf = Buffer.create 256 in
         Buffer.add_string buf (Printf.sprintf "add_library(%s STATIC\n" tgt);
         Buffer.add_string buf src_block;
@@ -47,7 +173,6 @@ let cmake_for_target t =
           Buffer.add_string buf (Printf.sprintf "target_link_libraries(%s PRIVATE %s)\n" tgt deps);
         Buffer.contents buf
       else if hdrs <> [] then
-        (* header-only / filegroup -> INTERFACE *)
         let buf = Buffer.create 256 in
         Buffer.add_string buf (Printf.sprintf "add_library(%s INTERFACE)\n" tgt);
         Buffer.add_string buf (Printf.sprintf "target_include_directories(%s INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})\n" tgt);
@@ -55,85 +180,61 @@ let cmake_for_target t =
           Buffer.add_string buf (Printf.sprintf "# NOTE: %s has deps but is INTERFACE; listing deps for clarity\n" tgt);
         Buffer.contents buf
       else
-        (* no sources/headers: probably a stub/filegroup from bazel *)
-        Printf.sprintf "# Skipping library %s: no sources or headers (was likely a filegroup or external artifact)\n" tgt
+        Printf.sprintf "# Skipping library %s: no sources or headers\n" tgt
 
-  | CC_Binary ->
-      if srcs = [] then
-        Printf.sprintf "# Skipping binary %s: no sources found\n" tgt
+  | CC_Binary | CC_Test ->
+      if srcs = [] then Printf.sprintf "# Skipping binary/test %s: no sources found\n" tgt
       else
-        let src_block = cmake_src_block tgt srcs in
+        let src_block = cmake_src_block srcs in
         let buf = Buffer.create 256 in
         Buffer.add_string buf (Printf.sprintf "add_executable(%s\n" tgt);
         Buffer.add_string buf src_block;
         Buffer.add_string buf ")\n";
         if deps <> "" then
           Buffer.add_string buf (Printf.sprintf "target_link_libraries(%s PRIVATE %s)\n" tgt deps);
-        Buffer.contents buf
-
-  | CC_Test ->
-      if srcs = [] then
-        Printf.sprintf "# Skipping test %s: no sources found\n" tgt
-      else
-        let src_block = cmake_src_block tgt srcs in
-        let buf = Buffer.create 256 in
-        Buffer.add_string buf (Printf.sprintf "add_executable(%s\n" tgt);
-        Buffer.add_string buf src_block;
-        Buffer.add_string buf ")\n";
-        if deps <> "" then
-          Buffer.add_string buf (Printf.sprintf "target_link_libraries(%s PRIVATE %s)\n" tgt deps);
-        Buffer.add_string buf (Printf.sprintf "add_test(NAME %s COMMAND %s)\n" tgt tgt);
+        if t.kind = CC_Test then
+          Buffer.add_string buf (Printf.sprintf "add_test(NAME %s COMMAND %s)\n" tgt tgt);
         Buffer.contents buf
 
   | Other s ->
-      (* If it's a filegroup-like rule from Bazel, treat as INTERFACE if it has headers *)
       if hdrs <> [] then
         let buf = Buffer.create 256 in
-        Buffer.add_string buf (Printf.sprintf "# Mapped Bazel rule %s -> INTERFACE target %s\n" s tgt);
+        Buffer.add_string buf (Printf.sprintf "# Bazel rule %s -> INTERFACE target %s\n" s tgt);
         Buffer.add_string buf (Printf.sprintf "add_library(%s INTERFACE)\n" tgt);
         Buffer.add_string buf (Printf.sprintf "target_include_directories(%s INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})\n" tgt);
         Buffer.contents buf
       else
         Printf.sprintf "# Unsupported rule %s for %s\n" s t.label
 
-(* requires: open Io_utils at top of file *)
+(* --- write all CMake scaffolds --- *)
 let write_scaffold ~outdir (proj : project) =
-  (* collect unique packages, sorted *)
   let packages =
-    proj.targets
-    |> List.map (fun t -> t.package)
-    |> List.sort_uniq String.compare
+    proj.targets |> List.map (fun t -> t.package) |> List.sort_uniq String.compare
   in
 
-  (* ensure root outdir exists *)
   ensure_dir outdir;
 
-  (* create package dirs *)
   List.iter (fun pkg ->
-    let pkg_dir = Filename.concat outdir pkg in
-    ensure_dir pkg_dir
-  ) packages;
+      let pkg_dir = Filename.concat outdir pkg in
+      ensure_dir pkg_dir
+    ) packages;
 
-  (* write per-package CMakeLists.txt *)
   List.iter (fun pkg ->
-    let targets_in_pkg =
-      proj.targets |> List.filter (fun t -> t.package = pkg)
-    in
-    let cmake_path = Filename.concat outdir (Filename.concat pkg "CMakeLists.txt") in
-    let oc = open_out cmake_path in
-    Printf.fprintf oc "# Auto-generated CMake for package %s\n" pkg;
-    Printf.fprintf oc "# Generated by cmake_gen.ml — inspect and tweak as needed\n\n";
-    (* Optionally set a package-local variable to the package root *)
-    Printf.fprintf oc "set(PKG_ROOT ${CMAKE_CURRENT_SOURCE_DIR})\n\n";
-
-    List.iter (fun t ->
-      (* cmake_for_target emits targets using ${CMAKE_CURRENT_SOURCE_DIR} for includes,
-         so package-local CMakeLists are fine as-is. *)
-      Printf.fprintf oc "%s\n" (cmake_for_target t)
-    ) targets_in_pkg;
-
-    close_out oc
-  ) packages;
+      let targets_in_pkg = proj.targets |> List.filter (fun t -> t.package = pkg) in
+      let cmake_path = Filename.concat outdir (Filename.concat pkg "CMakeLists.txt") in
+      let oc = open_out cmake_path in
+      Printf.fprintf oc "# Auto-generated CMake for package %s\n" pkg;
+      Printf.fprintf oc "# Generated by cmake_gen.ml\n\n";
+      Printf.fprintf oc "set(PKG_ROOT ${CMAKE_CURRENT_SOURCE_DIR})\n\n";
+      List.iter (fun t ->
+          Printf.fprintf oc "%s\n"
+            (cmake_for_target
+               ~cmakelists_dir:(Filename.concat outdir pkg)
+               ~project_root:outdir
+               t)
+        ) targets_in_pkg;
+      close_out oc
+    ) packages;
 
   (* root CMakeLists.txt *)
   let root_cmake = Filename.concat outdir "CMakeLists.txt" in
@@ -141,9 +242,6 @@ let write_scaffold ~outdir (proj : project) =
   Printf.fprintf roc "cmake_minimum_required(VERSION 3.15)\n";
   Printf.fprintf roc "project(OMaze_Converted)\n\n";
   Printf.fprintf roc "# Add package subdirectories\n";
-  List.iter (fun pkg ->
-    (* quote package in case of odd chars; generally packages are path-like and safe *)
-    Printf.fprintf roc "add_subdirectory(%s)\n" pkg
-  ) packages;
+  List.iter (fun pkg -> Printf.fprintf roc "add_subdirectory(%s)\n" pkg) packages;
   Printf.fprintf roc "\n# End of auto-generated root CMakeLists\n";
   close_out roc
