@@ -1,5 +1,0 @@
-# Auto-generated CMake for package litert/vendors/qualcomm/qnn_backend_test
-
-add_executable(__litert_vendors_qualcomm_qnn_backend_test_qnn_backend_test //litert/vendors/qualcomm/qnn_backend_test:qnn_backend_test.cc)
-add_test(NAME __litert_vendors_qualcomm_qnn_backend_test_qnn_backend_test COMMAND __litert_vendors_qualcomm_qnn_backend_test_qnn_backend_test)
-

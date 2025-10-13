@@ -1,7 +1,0 @@
-# Auto-generated CMake for package tflite/converter/delegates/flex
-
-add_library(__tflite_converter_delegates_flex_allowlisted_flex_ops_lib)
-  //tflite/converter/delegates/flex:allowlisted_flex_ops.cc
-target_sources(__tflite_converter_delegates_flex_allowlisted_flex_ops_lib PRIVATE //tflite/converter/delegates/flex:allowlisted_flex_ops.h //tflite/converter/delegates/flex:allowlisted_flex_ops_internal.h)
-target_link_libraries(__tflite_converter_delegates_flex_allowlisted_flex_ops_lib _org_tensorflow__tensorflow_core_portable_tensorflow_lib_lite _org_tensorflow__tensorflow_core_framework)
-

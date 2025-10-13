@@ -1,6 +1,0 @@
-# Auto-generated CMake for package litert/vendors/intel_openvino
-
-add_library(__litert_vendors_intel_openvino_ov_utils)
-target_sources(__litert_vendors_intel_openvino_ov_utils PRIVATE //litert/vendors/intel_openvino:utils.h)
-target_link_libraries(__litert_vendors_intel_openvino_ov_utils __litert_c_litert_runtime_c_api_shared_lib __litert_cc_dynamic_runtime_litert_model _intel_openvino___openvino)
-

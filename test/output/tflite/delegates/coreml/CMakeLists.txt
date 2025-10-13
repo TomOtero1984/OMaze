@@ -1,5 +1,0 @@
-# Auto-generated CMake for package tflite/delegates/coreml
-
-add_library(__tflite_delegates_coreml_mlmodel_proto_cc)
-target_link_libraries(__tflite_delegates_coreml_mlmodel_proto_cc _coremltools___mlmodel_cc_proto)
-

@@ -1,7 +1,0 @@
-# Auto-generated CMake for package litert/python/litert_wrapper/common
-
-add_library(__litert_python_litert_wrapper_common_litert_wrapper_utils)
-  //litert/python/litert_wrapper/common:litert_wrapper_utils.cc
-target_sources(__litert_python_litert_wrapper_common_litert_wrapper_utils PRIVATE //litert/python/litert_wrapper/common:litert_wrapper_utils.h)
-target_link_libraries(__litert_python_litert_wrapper_common_litert_wrapper_utils __litert_cc_litert_api_with_dynamic_runtime _com_google_absl__absl_strings_string_view _local_xla__third_party_python_runtime_headers)
-

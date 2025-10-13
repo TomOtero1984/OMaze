@@ -1,5 +1,0 @@
-# Auto-generated CMake for package tflite/kernels/variants/py
-
-add_executable(__tflite_kernels_variants_py_register_list_ops_py.so //tflite/kernels/variants/py:register_list_ops_py.cc)
-target_link_libraries(__tflite_kernels_variants_py_register_list_ops_py.so __tflite_mutable_op_resolver __tflite_kernels_variants_list_ops_lib _pybind11___pybind11 __tflite_kernels_variants_py_register_list_ops_py_exported_symbols.lds __tflite_kernels_variants_py_register_list_ops_py_version_script.lds)
-

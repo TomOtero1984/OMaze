@@ -1,7 +1,0 @@
-# Auto-generated CMake for package tflite/converter/kernels/internal/utils
-
-add_library(__tflite_converter_kernels_internal_utils_sparsity_format_converter)
-  //tflite/converter/kernels/internal/utils:sparsity_format_converter.cc
-target_sources(__tflite_converter_kernels_internal_utils_sparsity_format_converter PRIVATE //tflite/converter/kernels/internal/utils:sparsity_format_converter.h)
-target_link_libraries(__tflite_converter_kernels_internal_utils_sparsity_format_converter __tflite_converter_core_c_tflite_common _eigen_archive___eigen3)
-

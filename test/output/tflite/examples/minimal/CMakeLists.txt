@@ -1,5 +1,0 @@
-# Auto-generated CMake for package tflite/examples/minimal
-
-add_executable(__tflite_examples_minimal_minimal //tflite/examples/minimal:minimal.cc)
-target_link_libraries(__tflite_examples_minimal_minimal __tflite_framework __tflite_core_cc_api_stable __tflite_kernels_builtin_ops _rules_cc___link_extra_lib)
-

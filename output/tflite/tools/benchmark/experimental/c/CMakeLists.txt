@@ -1,7 +1,0 @@
-# Auto-generated CMake for package tflite/tools/benchmark/experimental/c
-
-add_library(__tflite_tools_benchmark_experimental_c_benchmark_c_api)
-  //tflite/tools/benchmark/experimental/c:benchmark_c_api.cc
-target_sources(__tflite_tools_benchmark_experimental_c_benchmark_c_api PRIVATE //tflite/tools/benchmark/experimental/c:benchmark_c_api.h)
-target_link_libraries(__tflite_tools_benchmark_experimental_c_benchmark_c_api __tflite_c_c_api_types __tflite_core_c_c_api_types __tflite_tools_benchmark_benchmark_model_lib __tflite_tools_benchmark_benchmark_params __tflite_tools_benchmark_benchmark_tflite_model_lib _local_xla__xla_tsl_util_stats_calculator_portable)
-

@@ -1,6 +1,0 @@
-# Auto-generated CMake for package tflite/delegates/hexagon/java/src/main/native
-
-add_library(__tflite_delegates_hexagon_java_src_main_native_native)
-  //tflite/delegates/hexagon/java/src/main/native:hexagon_delegate_jni.cc
-target_link_libraries(__tflite_delegates_hexagon_java_src_main_native_native __tflite_c_c_api_types __tflite_delegates_hexagon_hexagon_delegate __tflite_java_jni_jni)
-

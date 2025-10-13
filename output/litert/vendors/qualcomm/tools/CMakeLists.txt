@@ -1,7 +1,0 @@
-# Auto-generated CMake for package litert/vendors/qualcomm/tools
-
-add_library(__litert_vendors_qualcomm_tools_dump)
-  //litert/vendors/qualcomm/tools:dump.cc
-target_sources(__litert_vendors_qualcomm_tools_dump PRIVATE //litert/vendors/qualcomm/tools:dump.h)
-target_link_libraries(__litert_vendors_qualcomm_tools_dump __litert_vendors_qualcomm_qnn_manager_hdr _com_google_absl__absl_strings_strings _com_google_absl__absl_strings_str_format _com_google_absl__absl_strings_string_view _qairt___qnn_lib_headers)
-

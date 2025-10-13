@@ -34,6 +34,3 @@ bazelisk query //... --output=streamed_jsonproto > bazel_graph.jsonl
 _build/default/bin/main.exe bazel_graph.json output
 ```
 ---
-
-## Credit
-The [LiteRT-LM](https://github.com/google-ai-edge/LiteRT-LM) project was used to create the test output uploaded to this repo.
