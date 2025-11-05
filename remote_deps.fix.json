@@ -1,0 +1,110 @@
+{
+  "by_repo": {
+    "@FP16": {
+      "name": "FP16",
+      "kind": "FetchContent",
+      "url": "https://github.com/Maratyszcza/FP16.git",
+      "libs": []
+    },
+    "@XNNPACK": {
+      "name": "XNNPACK",
+      "kind": "FetchContent",
+      "url": "https://github.com/google/XNNPACK.git",
+      "libs": [
+        "XNNPACK"
+      ]
+    },
+    "@arm_neon_2_x86_sse": {
+      "name": "ARM_NEON_2_X86_SSE",
+      "kind": "FetchContent",
+      "url": "https://github.com/intel/ARM_NEON_2_X86_SSE.git",
+      "libs": []
+    },
+    "@com_google_absl": {
+      "name": "absl",
+      "kind": "FetchContent",
+      "url": "https://github.com/abseil/abseil-cpp.git",
+      "libs": [
+        "absl::strings",
+        "absl::str_format"
+      ]
+    },
+    "@com_google_googletest": {
+      "name": "GTest",
+      "kind": "FindPackage",
+      "libs": [
+        "GTest::gtest",
+        "GTest::gtest_main"
+      ]
+    },
+    "@com_google_protobuf": {
+      "name": "Protobuf",
+      "kind": "FindPackage",
+      "libs": [
+        "Protobuf::libprotobuf"
+      ]
+    },
+    "@com_github_grpc_grpc": {
+      "name": "gRPC",
+      "kind": "FindPackage",
+      "libs": [
+        "gRPC::grpc",
+        "gRPC::grpc++"
+      ]
+    },
+    "@com_googlesource_code_re2": {
+      "name": "re2",
+      "kind": "FetchContent",
+      "url": "https://github.com/google/re2.git",
+      "libs": [
+        "re2::re2"
+      ]
+    },
+    "@flatbuffers": {
+      "name": "flatbuffers",
+      "kind": "FindPackage",
+      "libs": [
+        "flatbuffers::flatbuffers"
+      ]
+    },
+    "@eigen_archive": {
+      "name": "Eigen3",
+      "kind": "FindPackage",
+      "libs": [
+        "Eigen3::Eigen"
+      ]
+    },
+    "@curl": {
+      "name": "CURL",
+      "kind": "FindPackage",
+      "libs": [
+        "CURL::libcurl"
+      ]
+    },
+    "@cpuinfo": {
+      "name": "cpuinfo",
+      "kind": "FetchContent",
+      "url": "https://github.com/pytorch/cpuinfo.git",
+      "libs": []
+    },
+    "@compute_library": {
+      "name": "ArmComputeLibrary",
+      "kind": "FetchContent",
+      "url": "https://github.com/ARM-software/ComputeLibrary.git",
+      "libs": []
+    },
+    "@farmhash_archive": {
+      "name": "farmhash",
+      "kind": "FetchContent",
+      "url": "https://github.com/google/farmhash.git",
+      "libs": []
+    },
+    "@llvm-project": {
+      "name": "LLVM",
+      "kind": "FetchContent",
+      "url": "https://github.com/llvm/llvm-project.git",
+      "libs": []
+    }
+  },
+  "by_label": {}
+}

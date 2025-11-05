@@ -142,3 +142,96 @@ let parse_target ~label json =
          { targets = List.rev acc }
      in
      loop []
+
+
+(* --- Remote dependency mapping support (optional) --- *)
+module Remote_map = struct
+  (* open Yojson.Basic *)
+
+  let kind_of_string = function
+    | "FetchContent" -> Ir.RK_FetchContent
+    | "FindPackage"  -> Ir.RK_FindPackage
+    | "ExternalProject" -> Ir.RK_ExternalProject
+    | "HeaderOnly"   -> Ir.RK_HeaderOnly
+    | s -> failwith ("Unknown remote dep kind: "^s)
+
+  let assoc_opt key (alist : (string * Yojson.Basic.t) list) =
+    match List.assoc_opt key alist with
+    | None -> None
+    | Some (`String s) -> Some s
+    | _ -> None
+
+  let assoc_str_list key (alist : (string * Yojson.Basic.t) list) =
+    match List.assoc_opt key alist with
+    | Some (`List xs) -> xs |> List.filter_map (function `String s -> Some s | _ -> None)
+    | _ -> []
+
+  let assoc_kv_list key (alist : (string * Yojson.Basic.t) list) =
+    match List.assoc_opt key alist with
+    | Some (`Assoc kvs) -> kvs |> List.filter_map (function (k, `String v) -> Some (k, v) | _ -> None)
+    | _ -> []
+
+  let repo_of_label (label : string) =
+    if String.length label > 0 && label.[0] = '@' then
+      match String.index_opt label '/' with
+      | Some i -> String.sub label 0 i
+      | None -> label
+    else
+      ""
+end
+
+let register_remote_deps_from_json ~(path : string) ~(proj : Ir.project) =
+  if Sys.file_exists path then begin
+    let json = Yojson.Basic.from_file path in
+    match json with
+    | `Assoc top ->
+        let by_repo =
+          match List.assoc_opt "by_repo" top with Some (`Assoc m) -> m | _ -> []
+        in
+        let by_label =
+          match List.assoc_opt "by_label" top with Some (`Assoc m) -> m | _ -> []
+        in
+        List.iter (fun (t : Ir.target) ->
+          let rd_list =
+            t.deps
+            |> List.filter_map (fun dep_label ->
+                 let entry_opt =
+                   match List.assoc_opt dep_label by_label with
+                   | Some (`Assoc fields) -> Some fields
+                   | _ ->
+                      (match List.assoc_opt (Remote_map.repo_of_label dep_label) by_repo with
+                       | Some (`Assoc fields) -> Some fields
+                       | _ -> None)
+                 in
+                 match entry_opt with
+                 | None -> None
+                 | Some fields ->
+                   let name = match List.assoc_opt "name" fields with
+                     | Some (`String s) -> s | _ -> failwith "remote dep missing name"
+                   in
+                   let kind =
+                     match List.assoc_opt "kind" fields with
+                     | Some (`String s) -> Remote_map.kind_of_string s
+                     | _ -> Ir.RK_FindPackage
+                   in
+                   let url = Remote_map.assoc_opt "url" fields in
+                   let tag = Remote_map.assoc_opt "tag" fields in
+                   let options = Remote_map.assoc_kv_list "options" fields in
+                   let include_dirs = Remote_map.assoc_str_list "include_dirs" fields in
+                   let libs = Remote_map.assoc_str_list "libs" fields in
+                   let optional =
+                     match List.assoc_opt "optional" fields with
+                     | Some (`Bool b) -> b | _ -> false
+                   in
+                   let rd = {
+                     Ir.rd_name = name; rd_kind = kind; rd_url = url; rd_tag = tag;
+                     rd_options = options; rd_include_dirs = include_dirs;
+                     rd_libs = libs; rd_optional = optional;
+                   } in
+                   Some rd
+               )
+          in
+          if rd_list <> [] then Ir.add_remote_deps ~label:t.label rd_list
+        ) proj.targets
+    | _ -> ()
+  end

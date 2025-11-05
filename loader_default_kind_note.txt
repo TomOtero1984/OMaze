@@ -1,0 +1,19 @@
+
+# loader.ml change (optional, to avoid accidental find_package defaults)
+
+-- Before --
+let kind =
+  match List.assoc_opt "kind" fields with
+  | Some (`String s) -> kind_of_string s
+  | _ -> Ir.RK_FindPackage
+
+-- After --
+let kind =
+  match List.assoc_opt "kind" fields with
+  | Some (`String s) -> kind_of_string s
+  | _ -> raise Exit
+
+(* and wrap the creation in try/with to skip entries that raise Exit *)
+try
+  (* build rd *)
+with Exit -> None

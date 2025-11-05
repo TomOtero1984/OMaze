@@ -1,0 +1,16 @@
+message(STATUS "Conan: Using CMakeDeps conandeps_legacy.cmake aggregator via include()")
+message(STATUS "Conan: It is recommended to use explicit find_package() per dependency instead")
+
+find_package(protobuf)
+find_package(re2)
+find_package(absl)
+find_package(flatbuffers)
+find_package(nlohmann_json)
+find_package(GTest)
+find_package(minizip)
+find_package(ZLIB)
+find_package(kissfft)
+find_package(miniaudio)
+find_package(stb)
+
+set(CONANDEPS_LEGACY  protobuf::protobuf  re2::re2  abseil::abseil  flatbuffers::flatbuffers  nlohmann_json::nlohmann_json  gtest::gtest  MINIZIP::minizip  ZLIB::ZLIB  kissfft::kissfft  miniaudio::miniaudio  stb::stb )

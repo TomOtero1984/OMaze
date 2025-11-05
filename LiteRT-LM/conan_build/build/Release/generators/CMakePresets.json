@@ -1,0 +1,49 @@
+{
+    "version": 3,
+    "vendor": {
+        "conan": {}
+    },
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 15,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "conan-release",
+            "displayName": "'conan-release' config",
+            "description": "'conan-release' configure using 'Unix Makefiles' generator",
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "environment": {
+                "PATH": "/Users/totero/.conan2/p/protoae4d17427b99d/p/bin:$penv{PATH}",
+                "LD_LIBRARY_PATH": "/Users/totero/.conan2/p/protoae4d17427b99d/p/lib:$penv{LD_LIBRARY_PATH}",
+                "DYLD_LIBRARY_PATH": "/Users/totero/.conan2/p/protoae4d17427b99d/p/lib:$penv{DYLD_LIBRARY_PATH}"
+            },
+            "toolchainFile": "generators/conan_toolchain.cmake",
+            "binaryDir": "/Users/totero/Studio/Projects/OMaze/LiteRT-LM/conan_build/build/Release"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "conan-release",
+            "configurePreset": "conan-release",
+            "jobs": 8
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "conan-release",
+            "configurePreset": "conan-release",
+            "execution": {
+                "jobs": 8
+            },
+            "environment": {
+                "OPENSSL_MODULES": "/Users/totero/.conan2/p/b/opens5dd459f172531/p/lib/ossl-modules"
+            }
+        }
+    ]
+}

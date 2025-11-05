@@ -1,0 +1,1 @@
+. "/Users/totero/Studio/Projects/OMaze/build/Release/generators/deactivate_conanbuildenv-release-armv8.sh"

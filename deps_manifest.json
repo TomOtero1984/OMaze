@@ -1,0 +1,292 @@
+{
+  "deps": [
+    {
+      "id": "absl",
+      "find_package": "absl",
+      "pkg_config": null,
+      "managers": {
+        "brew": "abseil",
+        "apt": "abseil",
+        "choco": null,
+        "vcpkg": "abseil"
+      },
+      "notes": "Abseil C++ common libs"
+    },
+    {
+      "id": "GTest",
+      "find_package": "GTest",
+      "pkg_config": null,
+      "managers": {
+        "brew": "googletest",
+        "apt": "googletest",
+        "choco": "googletest",
+        "vcpkg": "gtest"
+      },
+      "notes": "GoogleTest C++ test framework"
+    },
+    {
+      "id": "Protobuf",
+      "find_package": "Protobuf",
+      "pkg_config": "protobuf",
+      "managers": {
+        "brew": "protobuf",
+        "apt": "protobuf-compiler libprotobuf-dev",
+        "choco": "protobuf",
+        "vcpkg": "protobuf"
+      },
+      "notes": "libprotobuf + protoc if codegen"
+    },
+    {
+      "id": "gRPC",
+      "find_package": "gRPC",
+      "pkg_config": null,
+      "managers": {
+        "brew": "grpc",
+        "apt": "grpc",
+        "choco": "grpc",
+        "vcpkg": "grpc"
+      },
+      "notes": "Core + C++"
+    },
+    {
+      "id": "re2",
+      "find_package": "re2",
+      "pkg_config": null,
+      "managers": {
+        "brew": "re2",
+        "apt": "re2",
+        "choco": null,
+        "vcpkg": "re2"
+      },
+      "notes": "Regex engine"
+    },
+    {
+      "id": "Eigen3",
+      "find_package": "Eigen3",
+      "pkg_config": null,
+      "managers": {
+        "brew": "eigen",
+        "apt": "libeigen3-dev",
+        "choco": null,
+        "vcpkg": "eigen3"
+      },
+      "notes": "Header-only math"
+    },
+    {
+      "id": "CURL",
+      "find_package": "CURL",
+      "pkg_config": "libcurl",
+      "managers": {
+        "brew": "curl",
+        "apt": "libcurl4-openssl-dev",
+        "choco": "curl",
+        "vcpkg": "curl"
+      },
+      "notes": "HTTP client libcurl"
+    },
+    {
+      "id": "flatbuffers",
+      "find_package": "flatbuffers",
+      "pkg_config": null,
+      "managers": {
+        "brew": "flatbuffers",
+        "apt": "flatbuffers-compiler libflatbuffers-dev",
+        "choco": null,
+        "vcpkg": "flatbuffers"
+      },
+      "notes": "Schema + library"
+    },
+    {
+      "id": "OpenCL",
+      "find_package": "OpenCL",
+      "pkg_config": "OpenCL",
+      "managers": {
+        "brew": "opencl-headers",
+        "apt": "ocl-icd-opencl-dev",
+        "choco": null,
+        "vcpkg": "opencl"
+      },
+      "notes": "Headers + ICD loader"
+    },
+    {
+      "id": "ZLIB",
+      "find_package": "ZLIB",
+      "pkg_config": "zlib",
+      "managers": {
+        "brew": "zlib",
+        "apt": "zlib1g-dev",
+        "choco": null,
+        "vcpkg": "zlib"
+      },
+      "notes": "Compression"
+    },
+    {
+      "id": "PNG",
+      "find_package": "PNG",
+      "pkg_config": "libpng",
+      "managers": {
+        "brew": "libpng",
+        "apt": "libpng-dev",
+        "choco": null,
+        "vcpkg": "libpng"
+      },
+      "notes": "PNG image"
+    },
+    {
+      "id": "hwloc",
+      "find_package": "hwloc",
+      "pkg_config": "hwloc",
+      "managers": {
+        "brew": "hwloc",
+        "apt": "hwloc",
+        "choco": "hwloc",
+        "vcpkg": "hwloc"
+      },
+      "notes": "Topology (optional)"
+    },
+    {
+      "id": "DNNL",
+      "find_package": "oneDNN",
+      "pkg_config": null,
+      "managers": {
+        "brew": "onednn",
+        "apt": "libdnnl-dev",
+        "choco": null,
+        "vcpkg": "onednn"
+      },
+      "notes": "oneDNN (optional)"
+    },
+    {
+      "id": "jsoncpp",
+      "find_package": "jsoncpp",
+      "pkg_config": null,
+      "managers": {
+        "brew": "jsoncpp",
+        "apt": "libjsoncpp-dev",
+        "choco": null,
+        "vcpkg": "jsoncpp"
+      },
+      "notes": "JSON (optional)"
+    },
+    {
+      "id": "nlohmann_json",
+      "find_package": "nlohmann_json",
+      "pkg_config": null,
+      "managers": {
+        "brew": "nlohmann-json",
+        "apt": "nlohmann-json3-dev",
+        "choco": null,
+        "vcpkg": "nlohmann-json"
+      },
+      "notes": "Header-only JSON"
+    },
+    {
+      "id": "OpenCLHeaders",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": "opencl-headers",
+        "apt": "opencl-headers",
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "Headers only (if OpenCL missing)"
+    },
+    {
+      "id": "FP16",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": null,
+        "apt": null,
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "Prefer vendored/FetchContent"
+    },
+    {
+      "id": "FXdiv",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": null,
+        "apt": null,
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "Prefer vendored/FetchContent"
+    },
+    {
+      "id": "XNNPACK",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": null,
+        "apt": null,
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "Prefer vendored/FetchContent"
+    },
+    {
+      "id": "ARM_NEON_2_X86_SSE",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": null,
+        "apt": null,
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "Prefer vendored/FetchContent"
+    },
+    {
+      "id": "cpuinfo",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": "cpuinfo",
+        "apt": null,
+        "choco": null,
+        "vcpkg": "cpuinfo"
+      },
+      "notes": "Prefer vendored/FetchContent"
+    },
+    {
+      "id": "ComputeLibrary",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": null,
+        "apt": null,
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "Arm Compute Library (usually source build)"
+    },
+    {
+      "id": "farmhash",
+      "find_package": null,
+      "pkg_config": null,
+      "managers": {
+        "brew": null,
+        "apt": null,
+        "choco": null,
+        "vcpkg": null
+      },
+      "notes": "farmhash (usually source build)"
+    },
+    {
+      "id": "LLVM",
+      "find_package": "LLVM",
+      "pkg_config": null,
+      "managers": {
+        "brew": "llvm",
+        "apt": "llvm",
+        "choco": "llvm",
+        "vcpkg": "llvm"
+      },
+      "notes": "Use system LLVM if present"
+    }
+  ]
+}

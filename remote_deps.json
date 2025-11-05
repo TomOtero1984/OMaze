@@ -1,0 +1,150 @@
+{
+  "by_repo": {
+    "@absl_py": {
+      "name": "absl_py",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@antlr3_runtime": {
+      "name": "antlr3_runtime",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@antlr4": {
+      "name": "antlr4",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@antlr4_runtime": {
+      "name": "antlr4_runtime",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@antlr4_tool": {
+      "name": "antlr4_tool",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@bazel_tools": {
+      "name": "bazel_tools",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@com_google_absl": {
+      "name": "com_google_absl",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@com_google_googletest": {
+      "name": "com_google_googletest",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@com_google_protobuf": {
+      "name": "com_google_protobuf",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@com_googlesource_code_re2": {
+      "name": "com_googlesource_code_re2",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@flatbuffers": {
+      "name": "flatbuffers",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@javax_json": {
+      "name": "javax_json",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@kissfft": {
+      "name": "kissfft",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@litert": {
+      "name": "litert",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@maven": {
+      "name": "maven",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@miniaudio": {
+      "name": "miniaudio",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@minizip": {
+      "name": "minizip",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@minja": {
+      "name": "minja",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@nlohmann_json": {
+      "name": "nlohmann_json",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@platforms": {
+      "name": "platforms",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@rules_antlr": {
+      "name": "rules_antlr",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@rules_java": {
+      "name": "rules_java",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@rules_kotlin": {
+      "name": "rules_kotlin",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@rules_python": {
+      "name": "rules_python",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@sentencepiece": {
+      "name": "sentencepiece",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@stb": {
+      "name": "stb",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@stringtemplate4": {
+      "name": "stringtemplate4",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@tokenizers_cpp": {
+      "name": "tokenizers_cpp",
+      "kind": "FindPackage",
+      "libs": []
+    },
+    "@zlib": {
+      "name": "zlib",
+      "kind": "FindPackage",
+      "libs": []
+    }
+  },
+  "by_label": {}
+}

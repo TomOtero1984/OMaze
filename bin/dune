@@ -1,4 +1,5 @@
 (executable
   (name main)
+  (public_name omaze_cli)
   (modules main)
-  (libraries str unix omaze))
+  (libraries omaze))

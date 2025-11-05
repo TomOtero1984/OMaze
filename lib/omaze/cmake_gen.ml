@@ -3,6 +3,32 @@ open Ir
 open Io_utils
 (* open Fpath  *)
 
+
+
+(* --- remote dep rendering helpers --- *)
+let render_remote_deps_for_label ~tgt ~label =
+  let rds = Ir.get_remote_deps label in
+  let buf = Buffer.create 256 in
+  List.iter (fun rd ->
+    match rd.rd_kind with
+    | Ir.RK_FetchContent | Ir.RK_FindPackage ->
+        List.iter (fun lib ->
+          Buffer.add_string buf (Printf.sprintf "target_link_libraries(%s PRIVATE %s)\n" tgt lib)
+        ) rd.rd_libs
+    | Ir.RK_HeaderOnly ->
+        List.iter (fun inc ->
+          Buffer.add_string buf (Printf.sprintf "target_include_directories(%s PRIVATE %s)\n" tgt inc)
+        ) rd.rd_include_dirs
+    | Ir.RK_ExternalProject ->
+        Buffer.add_string buf (Printf.sprintf "# ExternalProject %s requires manual create of imported targets\n" rd.rd_name)
+  ) rds;
+  Buffer.contents buf
+
+let collect_all_remote_deps (proj : Ir.project) =
+  proj.targets
+  |> List.map (fun t -> Ir.get_remote_deps t.label)
+  |> List.flatten
+  |> List.sort_uniq (fun a b -> String.compare a.rd_name b.rd_name)
 (* --- sanitize bazel labels into valid CMake target names --- *)
 let sanitize_target_name s =
   (* remove bazel workspace/repo prefixes *)
@@ -190,6 +216,8 @@ let cmake_for_target ~cmakelists_dir ~project_root t =
         Buffer.add_string buf (Printf.sprintf "add_executable(%s\n" tgt);
         Buffer.add_string buf src_block;
         Buffer.add_string buf ")\n";
+        (* attach remote deps linked libraries / include dirs (always) *)
+        Buffer.add_string buf (render_remote_deps_for_label ~tgt ~label:t.label);
         if deps <> "" then
           Buffer.add_string buf (Printf.sprintf "target_link_libraries(%s PRIVATE %s)\n" tgt deps);
         if t.kind = CC_Test then
@@ -241,6 +269,36 @@ let write_scaffold ~outdir (proj : project) =
   let roc = open_out root_cmake in
   Printf.fprintf roc "cmake_minimum_required(VERSION 3.15)\n";
   Printf.fprintf roc "project(OMaze_Converted)\n\n";
+  (* --- emit remote dependency bootstrap (FetchContent/find_package) --- *)
+  let rdeps = collect_all_remote_deps proj in
+  let remote_bootstrap_buf = Buffer.create 512 in
+  if rdeps <> [] then Buffer.add_string remote_bootstrap_buf "include(FetchContent)\nset(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/third_party)\n\n";
+  List.iter (fun rd ->
+    match rd.rd_kind with
+    | Ir.RK_FetchContent ->
+        (match rd.rd_url with
+         | Some url ->
+             Buffer.add_string remote_bootstrap_buf (Printf.sprintf "FetchContent_Declare(%s\n  GIT_REPOSITORY %s\n" rd.rd_name url);
+             (match rd.rd_tag with Some tag -> Buffer.add_string remote_bootstrap_buf (Printf.sprintf "  GIT_TAG %s\n" tag) | None -> ());
+             Buffer.add_string remote_bootstrap_buf ")\n";
+             Buffer.add_string remote_bootstrap_buf (Printf.sprintf "FetchContent_MakeAvailable(%s)\n\n" rd.rd_name)
+         | None ->
+             Buffer.add_string remote_bootstrap_buf (Printf.sprintf "# FetchContent %s has no URL\n" rd.rd_name))
+    | Ir.RK_FindPackage ->
+        let version_opt = try List.assoc "VERSION" rd.rd_options with Not_found -> "" in
+        let req = if rd.rd_optional then "" else " REQUIRED" in
+        if version_opt = "" then
+          Buffer.add_string remote_bootstrap_buf (Printf.sprintf "find_package(%s%s)\n" rd.rd_name req)
+        else
+          Buffer.add_string remote_bootstrap_buf (Printf.sprintf "find_package(%s %s%s)\n" rd.rd_name version_opt req)
+    | Ir.RK_HeaderOnly ->
+        Buffer.add_string remote_bootstrap_buf (Printf.sprintf "# header-only remote dep %s\n" rd.rd_name)
+    | Ir.RK_ExternalProject ->
+        Buffer.add_string remote_bootstrap_buf (Printf.sprintf "# ExternalProject %s requires manual handling\n" rd.rd_name)
+  ) rdeps;
+  let remote_bootstrap = Buffer.contents remote_bootstrap_buf in
+  Printf.fprintf roc "%s\n" remote_bootstrap;
+
   Printf.fprintf roc "# Add package subdirectories\n";
   List.iter (fun pkg -> Printf.fprintf roc "add_subdirectory(%s)\n" pkg) packages;
   Printf.fprintf roc "\n# End of auto-generated root CMakeLists\n";

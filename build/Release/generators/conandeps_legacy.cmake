@@ -1,0 +1,16 @@
+message(STATUS "Conan: Using CMakeDeps conandeps_legacy.cmake aggregator via include()")
+message(STATUS "Conan: It is recommended to use explicit find_package() per dependency instead")
+
+find_package(gRPC)
+find_package(protobuf)
+find_package(Eigen3)
+find_package(flatbuffers)
+find_package(c-ares)
+find_package(CURL)
+find_package(OpenSSL)
+find_package(xnnpack)
+find_package(OpenCLICDLoader)
+find_package(OpenCLHeaders)
+find_package(fp16)
+
+set(CONANDEPS_LEGACY  grpc::grpc  protobuf::protobuf  Eigen3::Eigen  flatbuffers::flatbuffers  c-ares::cares  CURL::libcurl  openssl::openssl  xnnpack::xnnpack  OpenCL::OpenCL  OpenCL::Headers  fp16::fp16 )
